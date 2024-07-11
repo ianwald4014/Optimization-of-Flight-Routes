@@ -1,0 +1,1440 @@
+Flight: 1
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 64
+Distance (Nautical Miles): 310.73
+Flight Time (Hours): 13.33
+Maintenance Flight Hour: 76728.94
+Layover Time (Hours): 0.00
+Maintenance Cost: $76728.94
+Income of Flight: $2216736.00
+Net Profit of the Flight: $2063278.13
+Total Passenger Miles: 19886.57 passenger miles. 
+
+Flight: 2
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 2
+  Stop1: DEN
+  Stop2: ABQ
+Passengers: 123
+Distance (Nautical Miles): 722.11
+Flight Time (Hours): 12.83
+Maintenance Flight Hour: 73883.72
+Layover Time (Hours): 1.98
+Maintenance Cost: $74136.58
+Income of Flight: $4260289.50
+Net Profit of the Flight: $4112269.20
+Total Passenger Miles: 88819.15 passenger miles. 
+
+Flight: 3
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 2
+  Stop1: LAX
+  Stop2: MCI
+Passengers: 84
+Distance (Nautical Miles): 1064.51
+Flight Time (Hours): 13.37
+Maintenance Flight Hour: 76948.49
+Layover Time (Hours): 1.47
+Maintenance Cost: $77165.39
+Income of Flight: $2909466.00
+Net Profit of the Flight: $2755352.12
+Total Passenger Miles: 89418.65 passenger miles. 
+
+Flight: 4
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 2
+  Stop1: SEA
+  Stop2: PHX
+Passengers: 159
+Distance (Nautical Miles): 2140.49
+Flight Time (Hours): 12.75
+Maintenance Flight Hour: 73427.50
+Layover Time (Hours): 1.22
+Maintenance Cost: $73481.53
+Income of Flight: $5507203.50
+Net Profit of the Flight: $5360294.47
+Total Passenger Miles: 340337.22 passenger miles. 
+
+Flight: 5
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 116
+Distance (Nautical Miles): 2032.92
+Flight Time (Hours): 13.78
+Maintenance Flight Hour: 79326.90
+Layover Time (Hours): 0.00
+Maintenance Cost: $79326.90
+Income of Flight: $4017834.00
+Net Profit of the Flight: $3859180.20
+Total Passenger Miles: 235819.19 passenger miles. 
+
+Flight: 6
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 1
+  Stop1: PHX
+  Stop2: None
+Passengers: 185
+Distance (Nautical Miles): 833.48
+Flight Time (Hours): 12.08
+Maintenance Flight Hour: 69545.82
+Layover Time (Hours): 1.47
+Maintenance Cost: $69692.12
+Income of Flight: $6407752.50
+Net Profit of the Flight: $6268514.57
+Total Passenger Miles: 154193.38 passenger miles. 
+
+Flight: 7
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 1
+  Stop1: ABQ
+  Stop2: None
+Passengers: 198
+Distance (Nautical Miles): 1505.69
+Flight Time (Hours): 12.63
+Maintenance Flight Hour: 72730.46
+Layover Time (Hours): 1.82
+Maintenance Cost: $72987.03
+Income of Flight: $6858027.00
+Net Profit of the Flight: $6712309.51
+Total Passenger Miles: 298126.77 passenger miles. 
+
+Flight: 8
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 193
+Distance (Nautical Miles): 577.42
+Flight Time (Hours): 13.21
+Maintenance Flight Hour: 76047.97
+Layover Time (Hours): 0.00
+Maintenance Cost: $76047.97
+Income of Flight: $6684844.50
+Net Profit of the Flight: $6532748.56
+Total Passenger Miles: 111442.56 passenger miles. 
+
+Flight: 9
+Origin: LAX (Lat: 34.0522, Lon: -118.2437)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 2
+  Stop1: ABQ
+  Stop2: JFK
+Passengers: 22
+Distance (Nautical Miles): 1174.59
+Flight Time (Hours): 12.87
+Maintenance Flight Hour: 74102.74
+Layover Time (Hours): 1.46
+Maintenance Cost: $74239.76
+Income of Flight: $762003.00
+Net Profit of the Flight: $613660.50
+Total Passenger Miles: 25841.03 passenger miles. 
+
+Flight: 10
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 30
+Distance (Nautical Miles): 310.73
+Flight Time (Hours): 13.07
+Maintenance Flight Hour: 75252.51
+Layover Time (Hours): 0.00
+Maintenance Cost: $75252.51
+Income of Flight: $1039095.00
+Net Profit of the Flight: $888589.98
+Total Passenger Miles: 9321.83 passenger miles. 
+
+Flight: 11
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 127
+Distance (Nautical Miles): 508.78
+Flight Time (Hours): 12.69
+Maintenance Flight Hour: 73064.19
+Layover Time (Hours): 0.00
+Maintenance Cost: $73064.19
+Income of Flight: $4398835.50
+Net Profit of the Flight: $4252707.12
+Total Passenger Miles: 64615.58 passenger miles. 
+
+Flight: 12
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 1
+  Stop1: DEN
+  Stop2: None
+Passengers: 145
+Distance (Nautical Miles): 757.18
+Flight Time (Hours): 13.14
+Maintenance Flight Hour: 75631.66
+Layover Time (Hours): 1.01
+Maintenance Cost: $75744.72
+Income of Flight: $5022292.50
+Net Profit of the Flight: $4870916.12
+Total Passenger Miles: 109791.33 passenger miles. 
+
+Flight: 13
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 62
+Distance (Nautical Miles): 1873.69
+Flight Time (Hours): 12.62
+Maintenance Flight Hour: 72669.94
+Layover Time (Hours): 0.00
+Maintenance Cost: $72669.94
+Income of Flight: $2147463.00
+Net Profit of the Flight: $2002123.13
+Total Passenger Miles: 116168.52 passenger miles. 
+
+Flight: 14
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 1
+  Stop1: DEN
+  Stop2: None
+Passengers: 195
+Distance (Nautical Miles): 1722.28
+Flight Time (Hours): 13.46
+Maintenance Flight Hour: 77463.24
+Layover Time (Hours): 1.79
+Maintenance Cost: $77636.31
+Income of Flight: $6754117.50
+Net Profit of the Flight: $6599017.95
+Total Passenger Miles: 335844.11 passenger miles. 
+
+Flight: 15
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 37
+Distance (Nautical Miles): 968.02
+Flight Time (Hours): 12.03
+Maintenance Flight Hour: 69229.35
+Layover Time (Hours): 0.00
+Maintenance Cost: $69229.35
+Income of Flight: $1281550.50
+Net Profit of the Flight: $1143091.80
+Total Passenger Miles: 35816.66 passenger miles. 
+
+Flight: 16
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 2
+  Stop1: ABQ
+  Stop2: MCI
+Passengers: 73
+Distance (Nautical Miles): 1253.46
+Flight Time (Hours): 12.52
+Maintenance Flight Hour: 72062.87
+Layover Time (Hours): 1.26
+Maintenance Cost: $72108.73
+Income of Flight: $2528464.50
+Net Profit of the Flight: $2384292.89
+Total Passenger Miles: 91502.44 passenger miles. 
+
+Flight: 17
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 58
+Distance (Nautical Miles): 286.90
+Flight Time (Hours): 13.01
+Maintenance Flight Hour: 74894.57
+Layover Time (Hours): 0.00
+Maintenance Cost: $74894.57
+Income of Flight: $2008917.00
+Net Profit of the Flight: $1859127.85
+Total Passenger Miles: 16640.26 passenger miles. 
+
+Flight: 18
+Origin: PHX (Lat: 33.4484, Lon: -112.074)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 2
+  Stop1: DEN
+  Stop2: JFK
+Passengers: 169
+Distance (Nautical Miles): 909.32
+Flight Time (Hours): 12.72
+Maintenance Flight Hour: 73252.54
+Layover Time (Hours): 1.90
+Maintenance Cost: $73385.32
+Income of Flight: $5853568.50
+Net Profit of the Flight: $5706930.64
+Total Passenger Miles: 153675.58 passenger miles. 
+
+Flight: 19
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 144
+Distance (Nautical Miles): 722.11
+Flight Time (Hours): 12.04
+Maintenance Flight Hour: 69332.72
+Layover Time (Hours): 0.00
+Maintenance Cost: $69332.72
+Income of Flight: $4987656.00
+Net Profit of the Flight: $4848990.56
+Total Passenger Miles: 103983.40 passenger miles. 
+
+Flight: 20
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 203
+Distance (Nautical Miles): 508.78
+Flight Time (Hours): 12.08
+Maintenance Flight Hour: 69518.66
+Layover Time (Hours): 0.00
+Maintenance Cost: $69518.66
+Income of Flight: $7031209.50
+Net Profit of the Flight: $6892172.18
+Total Passenger Miles: 103283.17 passenger miles. 
+
+Flight: 21
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 2
+  Stop1: ORD
+  Stop2: PHX
+Passengers: 79
+Distance (Nautical Miles): 562.22
+Flight Time (Hours): 12.10
+Maintenance Flight Hour: 69683.71
+Layover Time (Hours): 1.15
+Maintenance Cost: $69776.22
+Income of Flight: $2736283.50
+Net Profit of the Flight: $2596823.57
+Total Passenger Miles: 44415.07 passenger miles. 
+
+Flight: 22
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 1
+  Stop1: ABQ
+  Stop2: None
+Passengers: 171
+Distance (Nautical Miles): 1428.63
+Flight Time (Hours): 11.63
+Maintenance Flight Hour: 66965.43
+Layover Time (Hours): 1.04
+Maintenance Cost: $67095.87
+Income of Flight: $5922841.50
+Net Profit of the Flight: $5788780.19
+Total Passenger Miles: 244295.73 passenger miles. 
+
+Flight: 23
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 1
+  Stop1: DFW
+  Stop2: None
+Passengers: 21
+Distance (Nautical Miles): 1500.12
+Flight Time (Hours): 12.41
+Maintenance Flight Hour: 71424.29
+Layover Time (Hours): 1.12
+Maintenance Cost: $71497.57
+Income of Flight: $727366.50
+Net Profit of the Flight: $584444.64
+Total Passenger Miles: 31502.57 passenger miles. 
+
+Flight: 24
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 2
+  Stop1: MIA
+  Stop2: SEA
+Passengers: 195
+Distance (Nautical Miles): 887.45
+Flight Time (Hours): 11.09
+Maintenance Flight Hour: 63819.81
+Layover Time (Hours): 1.62
+Maintenance Cost: $63873.23
+Income of Flight: $6754117.50
+Net Profit of the Flight: $6626424.46
+Total Passenger Miles: 173052.60 passenger miles. 
+
+Flight: 25
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 1
+  Stop1: SEA
+  Stop2: None
+Passengers: 58
+Distance (Nautical Miles): 787.96
+Flight Time (Hours): 11.54
+Maintenance Flight Hour: 66411.08
+Layover Time (Hours): 1.07
+Maintenance Cost: $66563.68
+Income of Flight: $2008917.00
+Net Profit of the Flight: $1875942.24
+Total Passenger Miles: 45701.80 passenger miles. 
+
+Flight: 26
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 71
+Distance (Nautical Miles): 290.00
+Flight Time (Hours): 11.99
+Maintenance Flight Hour: 69002.67
+Layover Time (Hours): 0.00
+Maintenance Cost: $69002.67
+Income of Flight: $2459191.50
+Net Profit of the Flight: $2321186.17
+Total Passenger Miles: 20590.10 passenger miles. 
+
+Flight: 27
+Origin: DEN (Lat: 39.7392, Lon: -104.9903)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 1
+  Stop1: MIA
+  Stop2: None
+Passengers: 114
+Distance (Nautical Miles): 477.62
+Flight Time (Hours): 11.72
+Maintenance Flight Hour: 67497.68
+Layover Time (Hours): 1.26
+Maintenance Cost: $67674.03
+Income of Flight: $3948561.00
+Net Profit of the Flight: $3813389.28
+Total Passenger Miles: 54448.26 passenger miles. 
+
+Flight: 28
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 118
+Distance (Nautical Miles): 1064.51
+Flight Time (Hours): 12.26
+Maintenance Flight Hour: 70558.72
+Layover Time (Hours): 0.00
+Maintenance Cost: $70558.72
+Income of Flight: $4087107.00
+Net Profit of the Flight: $3945989.55
+Total Passenger Miles: 125611.92 passenger miles. 
+
+Flight: 29
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 2
+  Stop1: DEN
+  Stop2: ORD
+Passengers: 127
+Distance (Nautical Miles): 757.18
+Flight Time (Hours): 12.27
+Maintenance Flight Hour: 70657.11
+Layover Time (Hours): 1.42
+Maintenance Cost: $70767.07
+Income of Flight: $4398835.50
+Net Profit of the Flight: $4257411.32
+Total Passenger Miles: 96162.06 passenger miles. 
+
+Flight: 30
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 2
+  Stop1: ABQ
+  Stop2: SEA
+Passengers: 62
+Distance (Nautical Miles): 562.22
+Flight Time (Hours): 12.04
+Maintenance Flight Hour: 69334.84
+Layover Time (Hours): 1.05
+Maintenance Cost: $69432.02
+Income of Flight: $2147463.00
+Net Profit of the Flight: $2008696.13
+Total Passenger Miles: 34857.40 passenger miles. 
+
+Flight: 31
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 105
+Distance (Nautical Miles): 1208.92
+Flight Time (Hours): 12.00
+Maintenance Flight Hour: 69091.39
+Layover Time (Hours): 0.00
+Maintenance Cost: $69091.39
+Income of Flight: $3636832.50
+Net Profit of the Flight: $3498649.72
+Total Passenger Miles: 126936.76 passenger miles. 
+
+Flight: 32
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 2
+  Stop1: LAX
+  Stop2: ABQ
+Passengers: 35
+Distance (Nautical Miles): 979.72
+Flight Time (Hours): 12.40
+Maintenance Flight Hour: 71392.50
+Layover Time (Hours): 1.58
+Maintenance Cost: $71595.58
+Income of Flight: $1212277.50
+Net Profit of the Flight: $1069289.42
+Total Passenger Miles: 34290.37 passenger miles. 
+
+Flight: 33
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 174
+Distance (Nautical Miles): 1447.40
+Flight Time (Hours): 11.60
+Maintenance Flight Hour: 66768.14
+Layover Time (Hours): 0.00
+Maintenance Cost: $66768.14
+Income of Flight: $6026751.00
+Net Profit of the Flight: $5893214.72
+Total Passenger Miles: 251848.13 passenger miles. 
+
+Flight: 34
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 1
+  Stop1: ABQ
+  Stop2: None
+Passengers: 122
+Distance (Nautical Miles): 696.77
+Flight Time (Hours): 11.93
+Maintenance Flight Hour: 68705.87
+Layover Time (Hours): 1.41
+Maintenance Cost: $68818.50
+Income of Flight: $4225653.00
+Net Profit of the Flight: $4088128.63
+Total Passenger Miles: 85005.81 passenger miles. 
+
+Flight: 35
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 55
+Distance (Nautical Miles): 496.77
+Flight Time (Hours): 12.22
+Maintenance Flight Hour: 70376.54
+Layover Time (Hours): 0.00
+Maintenance Cost: $70376.54
+Income of Flight: $1905007.50
+Net Profit of the Flight: $1764254.43
+Total Passenger Miles: 27322.23 passenger miles. 
+
+Flight: 36
+Origin: DFW (Lat: 32.8975, Lon: -97.0404)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 99
+Distance (Nautical Miles): 399.76
+Flight Time (Hours): 12.06
+Maintenance Flight Hour: 69449.07
+Layover Time (Hours): 0.00
+Maintenance Cost: $69449.07
+Income of Flight: $3429013.50
+Net Profit of the Flight: $3290115.36
+Total Passenger Miles: 39576.55 passenger miles. 
+
+Flight: 37
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 1
+  Stop1: JFK
+  Stop2: None
+Passengers: 195
+Distance (Nautical Miles): 2140.49
+Flight Time (Hours): 9.94
+Maintenance Flight Hour: 57204.08
+Layover Time (Hours): 1.73
+Maintenance Cost: $57442.31
+Income of Flight: $6754117.50
+Net Profit of the Flight: $6639471.11
+Total Passenger Miles: 417394.70 passenger miles. 
+
+Flight: 38
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 2
+  Stop1: MIA
+  Stop2: DEN
+Passengers: 199
+Distance (Nautical Miles): 1873.69
+Flight Time (Hours): 9.94
+Maintenance Flight Hour: 57232.09
+Layover Time (Hours): 1.10
+Maintenance Cost: $57362.22
+Income of Flight: $6892663.50
+Net Profit of the Flight: $6778069.19
+Total Passenger Miles: 372863.49 passenger miles. 
+
+Flight: 39
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 1
+  Stop1: PHX
+  Stop2: None
+Passengers: 91
+Distance (Nautical Miles): 1428.63
+Flight Time (Hours): 9.86
+Maintenance Flight Hour: 56742.40
+Layover Time (Hours): 1.31
+Maintenance Cost: $56831.26
+Income of Flight: $3151921.50
+Net Profit of the Flight: $3038347.85
+Total Passenger Miles: 130005.33 passenger miles. 
+
+Flight: 40
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 1
+  Stop1: JFK
+  Stop2: None
+Passengers: 75
+Distance (Nautical Miles): 1208.92
+Flight Time (Hours): 9.95
+Maintenance Flight Hour: 57254.34
+Layover Time (Hours): 1.93
+Maintenance Cost: $57531.14
+Income of Flight: $2597737.50
+Net Profit of the Flight: $2482952.01
+Total Passenger Miles: 90669.11 passenger miles. 
+
+Flight: 41
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 2
+  Stop1: MCI
+  Stop2: JFK
+Passengers: 148
+Distance (Nautical Miles): 947.07
+Flight Time (Hours): 9.95
+Maintenance Flight Hour: 57282.77
+Layover Time (Hours): 1.73
+Maintenance Cost: $57530.27
+Income of Flight: $5126202.00
+Net Profit of the Flight: $5011388.95
+Total Passenger Miles: 140165.93 passenger miles. 
+
+Flight: 42
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 2
+  Stop1: LAX
+  Stop2: JFK
+Passengers: 30
+Distance (Nautical Miles): 2103.86
+Flight Time (Hours): 9.63
+Maintenance Flight Hour: 55457.00
+Layover Time (Hours): 1.28
+Maintenance Cost: $55648.76
+Income of Flight: $1039095.00
+Net Profit of the Flight: $927989.24
+Total Passenger Miles: 63115.87 passenger miles. 
+
+Flight: 43
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 1
+  Stop1: MCI
+  Stop2: None
+Passengers: 162
+Distance (Nautical Miles): 643.02
+Flight Time (Hours): 9.81
+Maintenance Flight Hour: 56456.15
+Layover Time (Hours): 1.61
+Maintenance Cost: $56678.10
+Income of Flight: $5611113.00
+Net Profit of the Flight: $5497978.76
+Total Passenger Miles: 104168.61 passenger miles. 
+
+Flight: 44
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 1
+  Stop1: LAX
+  Stop2: None
+Passengers: 159
+Distance (Nautical Miles): 1587.26
+Flight Time (Hours): 9.93
+Maintenance Flight Hour: 57147.21
+Layover Time (Hours): 1.46
+Maintenance Cost: $57339.99
+Income of Flight: $5507203.50
+Net Profit of the Flight: $5392716.30
+Total Passenger Miles: 252374.29 passenger miles. 
+
+Flight: 45
+Origin: JFK (Lat: 40.6413, Lon: -73.7781)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 1
+  Stop1: DEN
+  Stop2: None
+Passengers: 124
+Distance (Nautical Miles): 966.82
+Flight Time (Hours): 9.86
+Maintenance Flight Hour: 56791.62
+Layover Time (Hours): 1.16
+Maintenance Cost: $56886.21
+Income of Flight: $4294926.00
+Net Profit of the Flight: $4181248.17
+Total Passenger Miles: 119885.23 passenger miles. 
+
+Flight: 46
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 1
+  Stop1: DEN
+  Stop2: None
+Passengers: 150
+Distance (Nautical Miles): 2032.92
+Flight Time (Hours): 11.61
+Maintenance Flight Hour: 66838.76
+Layover Time (Hours): 1.67
+Maintenance Cost: $67060.58
+Income of Flight: $5195475.00
+Net Profit of the Flight: $5061575.66
+Total Passenger Miles: 304938.61 passenger miles. 
+
+Flight: 47
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 52
+Distance (Nautical Miles): 1722.28
+Flight Time (Hours): 11.60
+Maintenance Flight Hour: 66786.42
+Layover Time (Hours): 0.00
+Maintenance Cost: $66786.42
+Income of Flight: $1801098.00
+Net Profit of the Flight: $1667525.16
+Total Passenger Miles: 89558.43 passenger miles. 
+
+Flight: 48
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 1
+  Stop1: PHX
+  Stop2: None
+Passengers: 202
+Distance (Nautical Miles): 1500.12
+Flight Time (Hours): 11.64
+Maintenance Flight Hour: 67034.01
+Layover Time (Hours): 1.35
+Maintenance Cost: $67137.74
+Income of Flight: $6996573.00
+Net Profit of the Flight: $6862401.25
+Total Passenger Miles: 303024.72 passenger miles. 
+
+Flight: 49
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 1
+  Stop1: ABQ
+  Stop2: None
+Passengers: 151
+Distance (Nautical Miles): 979.72
+Flight Time (Hours): 11.59
+Maintenance Flight Hour: 66733.60
+Layover Time (Hours): 1.02
+Maintenance Cost: $66790.75
+Income of Flight: $5230111.50
+Net Profit of the Flight: $5096587.14
+Total Passenger Miles: 147938.47 passenger miles. 
+
+Flight: 50
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 2
+  Stop1: MIA
+  Stop2: JFK
+Passengers: 109
+Distance (Nautical Miles): 947.07
+Flight Time (Hours): 11.64
+Maintenance Flight Hour: 67013.60
+Layover Time (Hours): 1.45
+Maintenance Cost: $67110.06
+Income of Flight: $3775378.50
+Net Profit of the Flight: $3641254.84
+Total Passenger Miles: 103230.31 passenger miles. 
+
+Flight: 51
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 2
+  Stop1: LAX
+  Stop2: DFW
+Passengers: 186
+Distance (Nautical Miles): 2376.07
+Flight Time (Hours): 11.53
+Maintenance Flight Hour: 66360.39
+Layover Time (Hours): 1.88
+Maintenance Cost: $66552.78
+Income of Flight: $6442389.00
+Net Profit of the Flight: $6309475.83
+Total Passenger Miles: 441948.40 passenger miles. 
+
+Flight: 52
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 86
+Distance (Nautical Miles): 1043.78
+Flight Time (Hours): 11.63
+Maintenance Flight Hour: 66956.61
+Layover Time (Hours): 0.00
+Maintenance Cost: $66956.61
+Income of Flight: $2978739.00
+Net Profit of the Flight: $2844825.79
+Total Passenger Miles: 89764.93 passenger miles. 
+
+Flight: 53
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 128
+Distance (Nautical Miles): 1475.86
+Flight Time (Hours): 11.62
+Maintenance Flight Hour: 66914.58
+Layover Time (Hours): 0.00
+Maintenance Cost: $66914.58
+Income of Flight: $4433472.00
+Net Profit of the Flight: $4299642.84
+Total Passenger Miles: 188910.11 passenger miles. 
+
+Flight: 54
+Origin: MIA (Lat: 25.7617, Lon: -80.1918)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 25
+Distance (Nautical Miles): 1092.33
+Flight Time (Hours): 11.64
+Maintenance Flight Hour: 67038.75
+Layover Time (Hours): 0.00
+Maintenance Cost: $67038.75
+Income of Flight: $865912.50
+Net Profit of the Flight: $731835.00
+Total Passenger Miles: 27308.17 passenger miles. 
+
+Flight: 55
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 2
+  Stop1: JFK
+  Stop2: MCI
+Passengers: 66
+Distance (Nautical Miles): 833.48
+Flight Time (Hours): 11.87
+Maintenance Flight Hour: 68317.99
+Layover Time (Hours): 1.36
+Maintenance Cost: $68454.17
+Income of Flight: $2286009.00
+Net Profit of the Flight: $2149236.84
+Total Passenger Miles: 55009.53 passenger miles. 
+
+Flight: 56
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 1
+  Stop1: ABQ
+  Stop2: None
+Passengers: 41
+Distance (Nautical Miles): 968.02
+Flight Time (Hours): 11.92
+Maintenance Flight Hour: 68632.28
+Layover Time (Hours): 1.41
+Maintenance Cost: $68791.23
+Income of Flight: $1420096.50
+Net Profit of the Flight: $1282672.99
+Total Passenger Miles: 39688.73 passenger miles. 
+
+Flight: 57
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 204
+Distance (Nautical Miles): 887.45
+Flight Time (Hours): 11.32
+Maintenance Flight Hour: 65169.89
+Layover Time (Hours): 0.00
+Maintenance Cost: $65169.89
+Income of Flight: $7065846.00
+Net Profit of the Flight: $6935506.21
+Total Passenger Miles: 181039.65 passenger miles. 
+
+Flight: 58
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 140
+Distance (Nautical Miles): 1447.40
+Flight Time (Hours): 11.97
+Maintenance Flight Hour: 68915.55
+Layover Time (Hours): 0.00
+Maintenance Cost: $68915.55
+Income of Flight: $4849110.00
+Net Profit of the Flight: $4711278.89
+Total Passenger Miles: 202636.42 passenger miles. 
+
+Flight: 59
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 44
+Distance (Nautical Miles): 2103.86
+Flight Time (Hours): 11.23
+Maintenance Flight Hour: 64640.81
+Layover Time (Hours): 0.00
+Maintenance Cost: $64640.81
+Income of Flight: $1524006.00
+Net Profit of the Flight: $1394724.38
+Total Passenger Miles: 92569.95 passenger miles. 
+
+Flight: 60
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 1
+  Stop1: DEN
+  Stop2: None
+Passengers: 107
+Distance (Nautical Miles): 2376.07
+Flight Time (Hours): 12.55
+Maintenance Flight Hour: 72271.44
+Layover Time (Hours): 1.57
+Maintenance Cost: $72335.23
+Income of Flight: $3706105.50
+Net Profit of the Flight: $3561498.83
+Total Passenger Miles: 254239.13 passenger miles. 
+
+Flight: 61
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 2
+  Stop1: DEN
+  Stop2: LAX
+Passengers: 141
+Distance (Nautical Miles): 1496.08
+Flight Time (Hours): 11.09
+Maintenance Flight Hour: 63842.40
+Layover Time (Hours): 1.42
+Maintenance Cost: $64029.14
+Income of Flight: $4883746.50
+Net Profit of the Flight: $4755874.95
+Total Passenger Miles: 210946.63 passenger miles. 
+
+Flight: 62
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 2
+  Stop1: SEA
+  Stop2: DFW
+Passengers: 115
+Distance (Nautical Miles): 1028.61
+Flight Time (Hours): 11.77
+Maintenance Flight Hour: 67771.58
+Layover Time (Hours): 1.80
+Maintenance Cost: $67903.29
+Income of Flight: $3983197.50
+Net Profit of the Flight: $3847522.63
+Total Passenger Miles: 118290.68 passenger miles. 
+
+Flight: 63
+Origin: SEA (Lat: 47.6062, Lon: -122.3321)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 27
+Distance (Nautical Miles): 1297.10
+Flight Time (Hours): 11.36
+Maintenance Flight Hour: 65425.92
+Layover Time (Hours): 0.00
+Maintenance Cost: $65425.92
+Income of Flight: $935185.50
+Net Profit of the Flight: $804333.65
+Total Passenger Miles: 35021.69 passenger miles. 
+
+Flight: 64
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 169
+Distance (Nautical Miles): 1505.69
+Flight Time (Hours): 10.82
+Maintenance Flight Hour: 62299.95
+Layover Time (Hours): 0.00
+Maintenance Cost: $62299.95
+Income of Flight: $5853568.50
+Net Profit of the Flight: $5728968.60
+Total Passenger Miles: 254461.74 passenger miles. 
+
+Flight: 65
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 193
+Distance (Nautical Miles): 1253.46
+Flight Time (Hours): 10.84
+Maintenance Flight Hour: 62405.08
+Layover Time (Hours): 0.00
+Maintenance Cost: $62405.08
+Income of Flight: $6684844.50
+Net Profit of the Flight: $6560034.34
+Total Passenger Miles: 241917.41 passenger miles. 
+
+Flight: 66
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 2
+  Stop1: MIA
+  Stop2: ABQ
+Passengers: 76
+Distance (Nautical Miles): 787.96
+Flight Time (Hours): 10.61
+Maintenance Flight Hour: 61084.20
+Layover Time (Hours): 1.29
+Maintenance Cost: $61257.46
+Income of Flight: $2632374.00
+Net Profit of the Flight: $2510032.34
+Total Passenger Miles: 59885.12 passenger miles. 
+
+Flight: 67
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 1
+  Stop1: MIA
+  Stop2: None
+Passengers: 180
+Distance (Nautical Miles): 696.77
+Flight Time (Hours): 10.86
+Maintenance Flight Hour: 62497.09
+Layover Time (Hours): 1.81
+Maintenance Cost: $62667.87
+Income of Flight: $6234570.00
+Net Profit of the Flight: $6109405.04
+Total Passenger Miles: 125418.41 passenger miles. 
+
+Flight: 68
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 1
+  Stop1: ABQ
+  Stop2: None
+Passengers: 31
+Distance (Nautical Miles): 643.02
+Flight Time (Hours): 10.57
+Maintenance Flight Hour: 60853.13
+Layover Time (Hours): 1.51
+Maintenance Cost: $60945.97
+Income of Flight: $1073731.50
+Net Profit of the Flight: $951932.40
+Total Passenger Miles: 19933.50 passenger miles. 
+
+Flight: 69
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 2
+  Stop1: LAX
+  Stop2: SEA
+Passengers: 175
+Distance (Nautical Miles): 1043.78
+Flight Time (Hours): 11.01
+Maintenance Flight Hour: 63366.54
+Layover Time (Hours): 1.87
+Maintenance Cost: $63592.56
+Income of Flight: $6061387.50
+Net Profit of the Flight: $5934428.40
+Total Passenger Miles: 182661.19 passenger miles. 
+
+Flight: 70
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 1
+  Stop1: JFK
+  Stop2: None
+Passengers: 104
+Distance (Nautical Miles): 1496.08
+Flight Time (Hours): 10.20
+Maintenance Flight Hour: 58710.90
+Layover Time (Hours): 1.68
+Maintenance Cost: $58877.10
+Income of Flight: $3602196.00
+Net Profit of the Flight: $3484607.99
+Total Passenger Miles: 155591.84 passenger miles. 
+
+Flight: 71
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 156
+Distance (Nautical Miles): 971.72
+Flight Time (Hours): 10.79
+Maintenance Flight Hour: 62109.75
+Layover Time (Hours): 0.00
+Maintenance Cost: $62109.75
+Income of Flight: $5403294.00
+Net Profit of the Flight: $5279074.49
+Total Passenger Miles: 151588.57 passenger miles. 
+
+Flight: 72
+Origin: ORD (Lat: 41.9786, Lon: -87.9048)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 185
+Distance (Nautical Miles): 349.95
+Flight Time (Hours): 10.63
+Maintenance Flight Hour: 61193.41
+Layover Time (Hours): 0.00
+Maintenance Cost: $61193.41
+Income of Flight: $6407752.50
+Net Profit of the Flight: $6285365.67
+Total Passenger Miles: 64740.87 passenger miles. 
+
+Flight: 73
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 1
+  Stop1: PHX
+  Stop2: None
+Passengers: 83
+Distance (Nautical Miles): 577.42
+Flight Time (Hours): 12.62
+Maintenance Flight Hour: 72627.29
+Layover Time (Hours): 1.30
+Maintenance Cost: $72685.49
+Income of Flight: $2874829.50
+Net Profit of the Flight: $2729516.72
+Total Passenger Miles: 47926.07 passenger miles. 
+
+Flight: 74
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 188
+Distance (Nautical Miles): 286.90
+Flight Time (Hours): 12.65
+Maintenance Flight Hour: 72799.86
+Layover Time (Hours): 0.00
+Maintenance Cost: $72799.86
+Income of Flight: $6511662.00
+Net Profit of the Flight: $6366062.28
+Total Passenger Miles: 53937.40 passenger miles. 
+
+Flight: 75
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 67
+Distance (Nautical Miles): 290.00
+Flight Time (Hours): 12.28
+Maintenance Flight Hour: 70714.96
+Layover Time (Hours): 0.00
+Maintenance Cost: $70714.96
+Income of Flight: $2320645.50
+Net Profit of the Flight: $2179215.58
+Total Passenger Miles: 19430.09 passenger miles. 
+
+Flight: 76
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 66
+Distance (Nautical Miles): 496.77
+Flight Time (Hours): 12.67
+Maintenance Flight Hour: 72952.12
+Layover Time (Hours): 0.00
+Maintenance Cost: $72952.12
+Income of Flight: $2286009.00
+Net Profit of the Flight: $2140104.76
+Total Passenger Miles: 32786.67 passenger miles. 
+
+Flight: 77
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 2
+  Stop1: JFK
+  Stop2: DEN
+Passengers: 129
+Distance (Nautical Miles): 1587.26
+Flight Time (Hours): 12.22
+Maintenance Flight Hour: 70365.03
+Layover Time (Hours): 1.00
+Maintenance Cost: $70442.72
+Income of Flight: $4468108.50
+Net Profit of the Flight: $4327300.75
+Total Passenger Miles: 204756.50 passenger miles. 
+
+Flight: 78
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 141
+Distance (Nautical Miles): 1475.86
+Flight Time (Hours): 12.94
+Maintenance Flight Hour: 74474.43
+Layover Time (Hours): 0.00
+Maintenance Cost: $74474.43
+Income of Flight: $4883746.50
+Net Profit of the Flight: $4734797.64
+Total Passenger Miles: 208096.29 passenger miles. 
+
+Flight: 79
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 1
+  Stop1: MCI
+  Stop2: None
+Passengers: 105
+Distance (Nautical Miles): 1028.61
+Flight Time (Hours): 11.68
+Maintenance Flight Hour: 67260.68
+Layover Time (Hours): 1.96
+Maintenance Cost: $67362.94
+Income of Flight: $3636832.50
+Net Profit of the Flight: $3502208.88
+Total Passenger Miles: 108004.53 passenger miles. 
+
+Flight: 80
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 55
+Distance (Nautical Miles): 971.72
+Flight Time (Hours): 12.13
+Maintenance Flight Hour: 69823.58
+Layover Time (Hours): 0.00
+Maintenance Cost: $69823.58
+Income of Flight: $1905007.50
+Net Profit of the Flight: $1765360.34
+Total Passenger Miles: 53444.69 passenger miles. 
+
+Flight: 81
+Origin: ABQ (Lat: 35.0844, Lon: -106.6504)
+Destination: MCI (Lat: 39.2978, Lon: -94.7139)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 39
+Distance (Nautical Miles): 624.81
+Flight Time (Hours): 12.31
+Maintenance Flight Hour: 70881.63
+Layover Time (Hours): 0.00
+Maintenance Cost: $70881.63
+Income of Flight: $1350823.50
+Net Profit of the Flight: $1209060.25
+Total Passenger Miles: 24367.77 passenger miles. 
+
+Flight: 82
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: LAX (Lat: 34.0522, Lon: -118.2437)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 120
+Distance (Nautical Miles): 1174.59
+Flight Time (Hours): 11.50
+Maintenance Flight Hour: 66198.03
+Layover Time (Hours): 0.00
+Maintenance Cost: $66198.03
+Income of Flight: $4156380.00
+Net Profit of the Flight: $4023983.95
+Total Passenger Miles: 140951.05 passenger miles. 
+
+Flight: 83
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: PHX (Lat: 33.4484, Lon: -112.074)
+Stops: 1
+  Stop1: MIA
+  Stop2: None
+Passengers: 156
+Distance (Nautical Miles): 909.32
+Flight Time (Hours): 11.52
+Maintenance Flight Hour: 66322.01
+Layover Time (Hours): 1.54
+Maintenance Cost: $66375.39
+Income of Flight: $5403294.00
+Net Profit of the Flight: $5270596.59
+Total Passenger Miles: 141854.38 passenger miles. 
+
+Flight: 84
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: DEN (Lat: 39.7392, Lon: -104.9903)
+Stops: 1
+  Stop1: LAX
+  Stop2: None
+Passengers: 94
+Distance (Nautical Miles): 477.62
+Flight Time (Hours): 11.25
+Maintenance Flight Hour: 64777.51
+Layover Time (Hours): 1.27
+Maintenance Cost: $64872.77
+Income of Flight: $3255831.00
+Net Profit of the Flight: $3126180.72
+Total Passenger Miles: 44895.93 passenger miles. 
+
+Flight: 85
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: DFW (Lat: 32.8975, Lon: -97.0404)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 52
+Distance (Nautical Miles): 399.76
+Flight Time (Hours): 11.54
+Maintenance Flight Hour: 66430.69
+Layover Time (Hours): 0.00
+Maintenance Cost: $66430.69
+Income of Flight: $1801098.00
+Net Profit of the Flight: $1668236.62
+Total Passenger Miles: 20787.68 passenger miles. 
+
+Flight: 86
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: JFK (Lat: 40.6413, Lon: -73.7781)
+Stops: 2
+  Stop1: JFK
+  Stop2: MCI
+Passengers: 155
+Distance (Nautical Miles): 966.82
+Flight Time (Hours): 11.21
+Maintenance Flight Hour: 64510.01
+Layover Time (Hours): 1.08
+Maintenance Cost: $64591.56
+Income of Flight: $5368657.50
+Net Profit of the Flight: $5239555.93
+Total Passenger Miles: 149856.54 passenger miles. 
+
+Flight: 87
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: MIA (Lat: 25.7617, Lon: -80.1918)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 105
+Distance (Nautical Miles): 1092.33
+Flight Time (Hours): 11.72
+Maintenance Flight Hour: 67464.72
+Layover Time (Hours): 0.00
+Maintenance Cost: $67464.72
+Income of Flight: $3636832.50
+Net Profit of the Flight: $3501903.07
+Total Passenger Miles: 114694.30 passenger miles. 
+
+Flight: 88
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: SEA (Lat: 47.6062, Lon: -122.3321)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 79
+Distance (Nautical Miles): 1297.10
+Flight Time (Hours): 10.78
+Maintenance Flight Hour: 62060.59
+Layover Time (Hours): 0.00
+Maintenance Cost: $62060.59
+Income of Flight: $2736283.50
+Net Profit of the Flight: $2612162.32
+Total Passenger Miles: 102470.86 passenger miles. 
+
+Flight: 89
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: ORD (Lat: 41.9786, Lon: -87.9048)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 113
+Distance (Nautical Miles): 349.95
+Flight Time (Hours): 11.13
+Maintenance Flight Hour: 64092.26
+Layover Time (Hours): 0.00
+Maintenance Cost: $64092.26
+Income of Flight: $3913924.50
+Net Profit of the Flight: $3785739.98
+Total Passenger Miles: 39544.42 passenger miles. 
+
+Flight: 90
+Origin: MCI (Lat: 39.2978, Lon: -94.7139)
+Destination: ABQ (Lat: 35.0844, Lon: -106.6504)
+Stops: 0
+  Stop1: None
+  Stop2: None
+Passengers: 117
+Distance (Nautical Miles): 624.81
+Flight Time (Hours): 11.46
+Maintenance Flight Hour: 65974.21
+Layover Time (Hours): 0.00
+Maintenance Cost: $65974.21
+Income of Flight: $4052470.50
+Net Profit of the Flight: $3920522.08
+Total Passenger Miles: 73103.32 passenger miles. 
+
