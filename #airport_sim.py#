@@ -54,7 +54,7 @@ class FlightSimulation:
             elif line.startswith("Income of Flight:"):
                 flight_data[flight_number]['flight_income'] = float(line.split(": $")[1].strip()))
             elif line.startswith("Net Profit of the Flight:"):
-                flight_data[flight_number]['net_profit'] = float(line.split(":")[1].strip())
+                flight_data[flight_number]['net_profit'] = float(line.split(": $")[1].strip())
             elif line.startswith("Total Passenger Miles:"):
                 flight_data[flight_number]['total_passenger_miles'] = float(line.split(":")[1].strip())
 
