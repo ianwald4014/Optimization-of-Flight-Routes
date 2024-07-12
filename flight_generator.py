@@ -62,15 +62,15 @@ for origin_code, origin_data in airports.items():
             passengers = random.randint(20, 204)
             
             # Calculate flight time and maintenance cost
-            flight_time, operational_cost  = calculate_flight_time(origin_data['lon'], origin_data['lat'], dest_data['lon'], dest_data['lat'])
-            layover_time, maintenance_cost = simulate_layover(stops, flight_time, operational_cost)
+            flight_time, operating_cost  = calculate_flight_time(origin_data['lon'], origin_data['lat'], dest_data['lon'], dest_data['lat'])
+            layover_time, maintenance_cost = simulate_layover(stops, flight_time, operating_cost)
                        
             # Calculate income for the flight
             ticket_price = 384.85  # Ticket price from Bureau of Transportation
             flight_income = ticket_price * passengers * 90  # Number of flights
 
             # Calculate the net profit
-            net_profit = flight_income - (maintenance_cost + operational_cost)
+            net_profit = flight_income - (maintenance_cost + operating_cost)
             
             # Calculate total passenger miles
             passenger_miles = passengers * distance_nm
@@ -91,7 +91,7 @@ for origin_code, origin_data in airports.items():
                 'Passengers': passengers,
                 'Distance_Nautical_Miles': distance_nm,
                 'Flight_Time': flight_time,
-                'Operational_Cost': operational_cost,
+                'Operating_Cost': operating_cost,
                 'Layover_Time': layover_time,
                 'Maintenance_Cost': maintenance_cost,
                 'Flight_Income': flight_income,
@@ -115,7 +115,7 @@ with open('flights.txt', 'w') as file:
         file.write(f"Passengers: {route['Passengers']}\n")
         file.write(f"Distance (Nautical Miles): {route['Distance_Nautical_Miles']:.2f}\n")
         file.write(f"Flight Time (Hours): {route['Flight_Time']:.2f}\n")
-        file.write(f"Operational Cost: ${route['Operational_Cost']:.2f}\n")
+        file.write(f"Operating Cost: ${route['Operating_Cost']:.2f}\n")
         file.write(f"Layover Time (Hours): {route['Layover_Time']:.2f}\n")
         file.write(f"Maintenance Cost: ${route['Maintenance_Cost']:.2f}\n")
         file.write(f"Income of Flight: ${route['Flight_Income']:.2f}\n")
