@@ -17,10 +17,10 @@ airports = {
 
 def calculate_flight_time(lon1, lat1, lon2, lat2):
     """Calculate flight time and maintenance flight hour."""
-    distance_nm = geodesic((lat1, lon1), (lat2, lat2)).nautical
+    distance_nm = geodesic((lat1, lon1), (lat2, lon2)).nautical
     speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
     flight_time = distance_nm / speed_knots
-    operational_cost  = 5757 * flight_time
+    operational_cost = 5757 * flight_time
     return flight_time, operational_cost
 
 def simulate_layover(stops, flight_time, operational_cost):
@@ -53,16 +53,20 @@ for origin_code, origin_data in airports.items():
                 stop_cities = random.sample(list(airports.keys()), stops)
                 stop1 = stop_cities[0] if stops >= 1 else 'None'
                 stop2 = stop_cities[1] if stops >= 2 else 'None'
+                stop1_data = airports.get(stop1, {'lat': None, 'lon': None})
+                stop2_data = airports.get(stop2, {'lat': None, 'lon': None})
             else:
                 stops = 0
                 stop1 = 'None'
                 stop2 = 'None'
+                stop1_data = {'lat': None, 'lon': None}
+                stop2_data = {'lat': None, 'lon': None}
             
             # Random number of passengers (1 to 204)
             passengers = random.randint(20, 204)
             
             # Calculate flight time and maintenance cost
-            flight_time, operating_cost  = calculate_flight_time(origin_data['lon'], origin_data['lat'], dest_data['lon'], dest_data['lat'])
+            flight_time, operating_cost = calculate_flight_time(origin_data['lon'], origin_data['lat'], dest_data['lon'], dest_data['lat'])
             layover_time, maintenance_cost = simulate_layover(stops, flight_time, operating_cost)
                        
             # Calculate income for the flight
@@ -87,7 +91,11 @@ for origin_code, origin_data in airports.items():
                 'Destination_Longitude': dest_data['lon'],
                 'Stops': stops,
                 'Stop1': stop1,
+                'Stop1_Latitude': stop1_data['lat'],
+                'Stop1_Longitude': stop1_data['lon'],
                 'Stop2': stop2,
+                'Stop2_Latitude': stop2_data['lat'],
+                'Stop2_Longitude': stop2_data['lon'],
                 'Passengers': passengers,
                 'Distance_Nautical_Miles': distance_nm,
                 'Flight_Time': flight_time,
@@ -110,8 +118,14 @@ with open('flights.txt', 'w') as file:
         file.write(f"Origin: {route['Origin']} (Lat: {route['Origin_Latitude']}, Lon: {route['Origin_Longitude']})\n")
         file.write(f"Destination: {route['Destination']} (Lat: {route['Destination_Latitude']}, Lon: {route['Destination_Longitude']})\n")
         file.write(f"Stops: {route['Stops']}\n")
-        file.write(f"  Stop1: {route['Stop1']}\n")
-        file.write(f"  Stop2: {route['Stop2']}\n")
+        if route['Stop1'] != 'None':
+            file.write(f"  Stop1: {route['Stop1']} (Lat: {route['Stop1_Latitude']}, Lon: {route['Stop1_Longitude']})\n")
+        else:
+            file.write(f"  Stop1: {route['Stop1']}\n")
+        if route['Stop2'] != 'None':
+            file.write(f"  Stop2: {route['Stop2']} (Lat: {route['Stop2_Latitude']}, Lon: {route['Stop2_Longitude']})\n")
+        else:
+            file.write(f"  Stop2: {route['Stop2']}\n")
         file.write(f"Passengers: {route['Passengers']}\n")
         file.write(f"Distance (Nautical Miles): {route['Distance_Nautical_Miles']:.2f}\n")
         file.write(f"Flight Time (Hours): {route['Flight_Time']:.2f}\n")
@@ -120,7 +134,7 @@ with open('flights.txt', 'w') as file:
         file.write(f"Maintenance Cost: ${route['Maintenance_Cost']:.2f}\n")
         file.write(f"Income of Flight: ${route['Flight_Income']:.2f}\n")
         file.write(f"Net Profit of the Flight: ${route['Net_Profit']:.2f}\n")
-        file.write(f"Total Passenger Miles: {route['Passenger_Miles']:.2f} passenger miles. \n")
+        file.write(f"Total Passenger Miles: {route['Passenger_Miles']:.2f} passenger miles.\n")
         file.write("\n")
 
 print("All possible flight routes data generated and saved to flights.txt")
