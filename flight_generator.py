@@ -146,3 +146,4 @@ with open('flights.txt', 'w') as file:
         file.write("\n")
 
 print("All possible flight routes data generated and saved to flights.txt")
+
