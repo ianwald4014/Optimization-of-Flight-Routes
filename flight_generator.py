@@ -19,7 +19,7 @@ airports = {
 
 def calculate_flight_time(lon1, lat1, lon2, lat2):
     """Calculate flight time and maintenance flight hour."""
-    distance_nm = geodesic((lat1, lon1), (lat2, lon2)).nautical
+    distance_nm = geodesic((lat1, lon1), (lat2, lat2)).nautical
     speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
     flight_time = distance_nm / speed_knots
     operational_cost = 5757 * flight_time
@@ -51,8 +51,9 @@ for origin_code, origin_data in airports.items():
             
             # Determine number of stops based on distance
             if distance_nm > 434.488:  # 500 miles in nautical miles
-                stops = random.randint(0, 2)
-                stop_cities = random.sample(list(airports.keys()), stops)
+                possible_stops = [code for code in airports.keys() if code not in [origin_code, dest_code]]
+                stops = random.randint(0, min(2, len(possible_stops)))
+                stop_cities = random.sample(possible_stops, stops)
                 stop1 = stop_cities[0] if stops >= 1 else 'None'
                 stop2 = stop_cities[1] if stops >= 2 else 'None'
                 stop1_data = airports.get(stop1, {'lat': None, 'lon': None})
@@ -145,4 +146,3 @@ with open('flights.txt', 'w') as file:
         file.write("\n")
 
 print("All possible flight routes data generated and saved to flights.txt")
-
