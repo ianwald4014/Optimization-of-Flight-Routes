@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import random
 from geopy.distance import geodesic
 
@@ -115,17 +117,22 @@ for origin_code, origin_data in airports.items():
 with open('flights.txt', 'w') as file:
     for route in routes:
         file.write(f"Flight: {route['Route']}\n")
-        file.write(f"Origin: {route['Origin']} (Lat: {route['Origin_Latitude']}, Lon: {route['Origin_Longitude']})\n")
-        file.write(f"Destination: {route['Destination']} (Lat: {route['Destination_Latitude']}, Lon: {route['Destination_Longitude']})\n")
+        file.write(f"Flight Path: {route['Origin']}, {route['Stop1']}, {route['Stop2']}, {route['Destination']}\n")
+        file.write(f"Origin: {route['Origin']}\n")
+        file.write(f"Origin Coordinates: {route['Origin_Latitude']}, {route['Origin_Longitude']}\n")
+        file.write(f"Destination: {route['Destination']}\n")
+        file.write(f"Destination Coordinates: {route['Destination_Latitude']}, {route['Destination_Longitude']}\n")
         file.write(f"Stops: {route['Stops']}\n")
         if route['Stop1'] != 'None':
-            file.write(f"  Stop1: {route['Stop1']} (Lat: {route['Stop1_Latitude']}, Lon: {route['Stop1_Longitude']})\n")
+            file.write(f"Stop1: {route['Stop1']}\n")
+            file.write(f"Stop1 Coordinates: {route['Stop1_Latitude']},{route['Stop1_Longitude']}\n")
         else:
-            file.write(f"  Stop1: {route['Stop1']}\n")
+            file.write(f"Stop1: {route['Stop1']}\n")
         if route['Stop2'] != 'None':
-            file.write(f"  Stop2: {route['Stop2']} (Lat: {route['Stop2_Latitude']}, Lon: {route['Stop2_Longitude']})\n")
+            file.write(f"Stop2: {route['Stop2']}\n")
+            file.write(f"Stop 2 Coordinates: {route['Stop2_Latitude']},{route['Stop2_Longitude']}\n")
         else:
-            file.write(f"  Stop2: {route['Stop2']}\n")
+            file.write(f"Stop2: {route['Stop2']}\n")
         file.write(f"Passengers: {route['Passengers']}\n")
         file.write(f"Distance (Nautical Miles): {route['Distance_Nautical_Miles']:.2f}\n")
         file.write(f"Flight Time (Hours): {route['Flight_Time']:.2f}\n")
@@ -138,3 +145,4 @@ with open('flights.txt', 'w') as file:
         file.write("\n")
 
 print("All possible flight routes data generated and saved to flights.txt")
+
