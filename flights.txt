@@ -7,56 +7,56 @@ Destination Coordinates: 33.4484, -112.074
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 78
+Passengers: 118
 Distance (Nautical Miles): 310.73
-Flight Time (Hours): 0.64
-Operating Cost: $3688.37
+Flight Time (Hours): 13.33
+Operating Cost: $76728.94
 Layover Time (Hours): 0.00
-Maintenance Cost: $3688.37
-Income of Flight: $2701647.00
-Net Profit of the Flight: $2694270.26
-Total Passenger Miles: 24236.76 passenger miles.
+Maintenance Cost: $76728.94
+Income of Flight: $4087107.00
+Net Profit of the Flight: $3933649.13
+Total Passenger Miles: 36665.86 passenger miles.
 
 Flight: 2
-Flight Path: LAX, DFW, JFK, DEN
+Flight Path: LAX, ORD, DFW, DEN
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: DEN
 Destination Coordinates: 39.7392, -104.9903
 Stops: 2
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
-Stop2: JFK
-Stop 2 Coordinates: 40.6413,-73.7781
-Passengers: 71
+Stop1: ORD
+Stop1 Coordinates: 41.9786,-87.9048
+Stop2: DFW
+Stop 2 Coordinates: 32.8975,-97.0404
+Passengers: 173
 Distance (Nautical Miles): 722.11
-Flight Time (Hours): 1.49
-Operating Cost: $8571.48
-Layover Time (Hours): 1.89
-Maintenance Cost: $8743.93
-Income of Flight: $2459191.50
-Net Profit of the Flight: $2441876.09
-Total Passenger Miles: 51269.59 passenger miles.
+Flight Time (Hours): 12.83
+Operating Cost: $73883.72
+Layover Time (Hours): 1.01
+Maintenance Cost: $73989.15
+Income of Flight: $5992114.50
+Net Profit of the Flight: $5844241.64
+Total Passenger Miles: 124924.50 passenger miles.
 
 Flight: 3
-Flight Path: LAX, DFW, None, DFW
+Flight Path: LAX, SEA, None, DFW
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: DFW
 Destination Coordinates: 32.8975, -97.0404
 Stops: 1
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
+Stop1: SEA
+Stop1 Coordinates: 47.6062,-122.3321
 Stop2: None
-Passengers: 146
+Passengers: 29
 Distance (Nautical Miles): 1064.51
-Flight Time (Hours): 2.19
-Operating Cost: $12635.82
-Layover Time (Hours): 1.73
-Maintenance Cost: $12760.98
-Income of Flight: $5056929.00
-Net Profit of the Flight: $5031532.20
-Total Passenger Miles: 155418.14 passenger miles.
+Flight Time (Hours): 13.37
+Operating Cost: $76948.49
+Layover Time (Hours): 1.23
+Maintenance Cost: $77054.90
+Income of Flight: $1004458.50
+Net Profit of the Flight: $850455.11
+Total Passenger Miles: 30870.73 passenger miles.
 
 Flight: 4
 Flight Path: LAX, ABQ, None, JFK
@@ -68,116 +68,119 @@ Stops: 1
 Stop1: ABQ
 Stop1 Coordinates: 35.0844,-106.6504
 Stop2: None
-Passengers: 111
+Passengers: 122
 Distance (Nautical Miles): 2140.49
-Flight Time (Hours): 4.41
-Operating Cost: $25407.79
-Layover Time (Hours): 1.49
-Maintenance Cost: $25592.72
-Income of Flight: $3844651.50
-Net Profit of the Flight: $3793650.99
-Total Passenger Miles: 237593.91 passenger miles.
+Flight Time (Hours): 12.75
+Operating Cost: $73427.50
+Layover Time (Hours): 1.54
+Maintenance Cost: $73539.41
+Income of Flight: $4225653.00
+Net Profit of the Flight: $4078686.09
+Total Passenger Miles: 261139.25 passenger miles.
 
 Flight: 5
-Flight Path: LAX, DEN, PHX, MIA
+Flight Path: LAX, DFW, ABQ, MIA
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
 Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 61
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
+Stop2: ABQ
+Stop 2 Coordinates: 35.0844,-106.6504
+Passengers: 24
 Distance (Nautical Miles): 2032.92
-Flight Time (Hours): 4.19
-Operating Cost: $24131.02
-Layover Time (Hours): 1.57
-Maintenance Cost: $24306.30
-Income of Flight: $2112826.50
-Net Profit of the Flight: $2064389.18
-Total Passenger Miles: 124008.37 passenger miles.
+Flight Time (Hours): 13.78
+Operating Cost: $79326.90
+Layover Time (Hours): 1.75
+Maintenance Cost: $79563.73
+Income of Flight: $831276.00
+Net Profit of the Flight: $672385.36
+Total Passenger Miles: 48790.18 passenger miles.
 
 Flight: 6
-Flight Path: LAX, None, None, SEA
+Flight Path: LAX, JFK, DFW, SEA
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 181
+Stops: 2
+Stop1: JFK
+Stop1 Coordinates: 40.6413,-73.7781
+Stop2: DFW
+Stop 2 Coordinates: 32.8975,-97.0404
+Passengers: 163
 Distance (Nautical Miles): 833.48
-Flight Time (Hours): 1.72
-Operating Cost: $9893.47
-Layover Time (Hours): 0.00
-Maintenance Cost: $9893.47
-Income of Flight: $6269206.50
-Net Profit of the Flight: $6249419.57
-Total Passenger Miles: 150859.47 passenger miles.
+Flight Time (Hours): 12.08
+Operating Cost: $69545.82
+Layover Time (Hours): 1.94
+Maintenance Cost: $69644.86
+Income of Flight: $5645749.50
+Net Profit of the Flight: $5506558.82
+Total Passenger Miles: 135856.87 passenger miles.
 
 Flight: 7
-Flight Path: LAX, DEN, SEA, ORD
+Flight Path: LAX, ABQ, DEN, ORD
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
 Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: SEA
-Stop 2 Coordinates: 47.6062,-122.3321
-Passengers: 38
+Stop1: ABQ
+Stop1 Coordinates: 35.0844,-106.6504
+Stop2: DEN
+Stop 2 Coordinates: 39.7392,-104.9903
+Passengers: 23
 Distance (Nautical Miles): 1505.69
-Flight Time (Hours): 3.10
-Operating Cost: $17872.70
-Layover Time (Hours): 1.89
-Maintenance Cost: $18129.23
-Income of Flight: $1316187.00
-Net Profit of the Flight: $1280185.07
-Total Passenger Miles: 57216.25 passenger miles.
+Flight Time (Hours): 12.63
+Operating Cost: $72730.46
+Layover Time (Hours): 1.01
+Maintenance Cost: $72819.23
+Income of Flight: $796639.50
+Net Profit of the Flight: $651089.81
+Total Passenger Miles: 34630.89 passenger miles.
 
 Flight: 8
-Flight Path: LAX, MIA, PHX, ABQ
+Flight Path: LAX, ORD, JFK, ABQ
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: ABQ
 Destination Coordinates: 35.0844, -106.6504
 Stops: 2
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 150
+Stop1: ORD
+Stop1 Coordinates: 41.9786,-87.9048
+Stop2: JFK
+Stop 2 Coordinates: 40.6413,-73.7781
+Passengers: 149
 Distance (Nautical Miles): 577.42
-Flight Time (Hours): 1.19
-Operating Cost: $6854.07
-Layover Time (Hours): 1.77
-Maintenance Cost: $6962.31
-Income of Flight: $5195475.00
-Net Profit of the Flight: $5181658.63
-Total Passenger Miles: 86613.39 passenger miles.
+Flight Time (Hours): 13.21
+Operating Cost: $76047.97
+Layover Time (Hours): 1.15
+Maintenance Cost: $76139.93
+Income of Flight: $5160838.50
+Net Profit of the Flight: $5008650.60
+Total Passenger Miles: 86035.96 passenger miles.
 
 Flight: 9
-Flight Path: LAX, None, None, MCI
+Flight Path: LAX, DEN, None, MCI
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: MCI
 Destination Coordinates: 39.2978, -94.7139
-Stops: 0
-Stop1: None
+Stops: 1
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
 Stop2: None
-Passengers: 31
+Passengers: 41
 Distance (Nautical Miles): 1174.59
-Flight Time (Hours): 2.42
-Operating Cost: $13942.53
-Layover Time (Hours): 0.00
-Maintenance Cost: $13942.53
-Income of Flight: $1073731.50
-Net Profit of the Flight: $1045846.44
-Total Passenger Miles: 36412.36 passenger miles.
+Flight Time (Hours): 12.87
+Operating Cost: $74102.74
+Layover Time (Hours): 1.15
+Maintenance Cost: $74231.93
+Income of Flight: $1420096.50
+Net Profit of the Flight: $1271761.83
+Total Passenger Miles: 48158.28 passenger miles.
 
 Flight: 10
 Flight Path: PHX, None, None, LAX
@@ -188,134 +191,134 @@ Destination Coordinates: 34.0522, -118.2437
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 74
+Passengers: 85
 Distance (Nautical Miles): 310.73
-Flight Time (Hours): 0.64
-Operating Cost: $3688.37
+Flight Time (Hours): 13.07
+Operating Cost: $75252.51
 Layover Time (Hours): 0.00
-Maintenance Cost: $3688.37
-Income of Flight: $2563101.00
-Net Profit of the Flight: $2555724.26
-Total Passenger Miles: 22993.85 passenger miles.
+Maintenance Cost: $75252.51
+Income of Flight: $2944102.50
+Net Profit of the Flight: $2793597.48
+Total Passenger Miles: 26411.85 passenger miles.
 
 Flight: 11
-Flight Path: PHX, None, None, DEN
+Flight Path: PHX, ABQ, MIA, DEN
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: DEN
 Destination Coordinates: 39.7392, -104.9903
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 82
+Stops: 2
+Stop1: ABQ
+Stop1 Coordinates: 35.0844,-106.6504
+Stop2: MIA
+Stop 2 Coordinates: 25.7617,-80.1918
+Passengers: 75
 Distance (Nautical Miles): 508.78
-Flight Time (Hours): 1.05
-Operating Cost: $6039.32
-Layover Time (Hours): 0.00
-Maintenance Cost: $6039.32
-Income of Flight: $2840193.00
-Net Profit of the Flight: $2828114.36
-Total Passenger Miles: 41720.30 passenger miles.
+Flight Time (Hours): 12.69
+Operating Cost: $73064.19
+Layover Time (Hours): 1.12
+Maintenance Cost: $73157.40
+Income of Flight: $2597737.50
+Net Profit of the Flight: $2451515.91
+Total Passenger Miles: 38158.81 passenger miles.
 
 Flight: 12
-Flight Path: PHX, DFW, None, DFW
+Flight Path: PHX, None, None, DFW
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: DFW
 Destination Coordinates: 32.8975, -97.0404
-Stops: 1
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 141
+Passengers: 24
 Distance (Nautical Miles): 757.18
-Flight Time (Hours): 1.56
-Operating Cost: $8987.82
-Layover Time (Hours): 1.39
-Maintenance Cost: $9150.32
-Income of Flight: $4883746.50
-Net Profit of the Flight: $4865608.36
-Total Passenger Miles: 106762.61 passenger miles.
+Flight Time (Hours): 13.14
+Operating Cost: $75631.66
+Layover Time (Hours): 0.00
+Maintenance Cost: $75631.66
+Income of Flight: $831276.00
+Net Profit of the Flight: $680012.68
+Total Passenger Miles: 18172.36 passenger miles.
 
 Flight: 13
-Flight Path: PHX, LAX, None, JFK
+Flight Path: PHX, None, None, JFK
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
-Stops: 1
-Stop1: LAX
-Stop1 Coordinates: 34.0522,-118.2437
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 20
+Passengers: 59
 Distance (Nautical Miles): 1873.69
-Flight Time (Hours): 3.86
-Operating Cost: $22240.84
-Layover Time (Hours): 1.99
-Maintenance Cost: $22438.73
-Income of Flight: $692730.00
-Net Profit of the Flight: $648050.42
-Total Passenger Miles: 37473.72 passenger miles.
+Flight Time (Hours): 12.62
+Operating Cost: $72669.94
+Layover Time (Hours): 0.00
+Maintenance Cost: $72669.94
+Income of Flight: $2043553.50
+Net Profit of the Flight: $1898213.63
+Total Passenger Miles: 110547.47 passenger miles.
 
 Flight: 14
-Flight Path: PHX, None, None, MIA
+Flight Path: PHX, JFK, None, MIA
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
-Stops: 0
-Stop1: None
+Stops: 1
+Stop1: JFK
+Stop1 Coordinates: 40.6413,-73.7781
 Stop2: None
-Passengers: 45
+Passengers: 116
 Distance (Nautical Miles): 1722.28
-Flight Time (Hours): 3.55
-Operating Cost: $20443.61
-Layover Time (Hours): 0.00
-Maintenance Cost: $20443.61
-Income of Flight: $1558642.50
-Net Profit of the Flight: $1517755.28
-Total Passenger Miles: 77502.49 passenger miles.
+Flight Time (Hours): 13.46
+Operating Cost: $77463.24
+Layover Time (Hours): 1.09
+Maintenance Cost: $77512.68
+Income of Flight: $4017834.00
+Net Profit of the Flight: $3862858.08
+Total Passenger Miles: 199784.19 passenger miles.
 
 Flight: 15
-Flight Path: PHX, ORD, DFW, SEA
+Flight Path: PHX, None, None, SEA
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
-Stops: 2
-Stop1: ORD
-Stop1 Coordinates: 41.9786,-87.9048
-Stop2: DFW
-Stop 2 Coordinates: 32.8975,-97.0404
-Passengers: 145
+Stops: 0
+Stop1: None
+Stop2: None
+Passengers: 79
 Distance (Nautical Miles): 968.02
-Flight Time (Hours): 2.00
-Operating Cost: $11490.47
-Layover Time (Hours): 1.81
-Maintenance Cost: $11579.68
-Income of Flight: $5022292.50
-Net Profit of the Flight: $4999222.35
-Total Passenger Miles: 140362.58 passenger miles.
+Flight Time (Hours): 12.03
+Operating Cost: $69229.35
+Layover Time (Hours): 0.00
+Maintenance Cost: $69229.35
+Income of Flight: $2736283.50
+Net Profit of the Flight: $2597824.80
+Total Passenger Miles: 76473.40 passenger miles.
 
 Flight: 16
-Flight Path: PHX, DFW, None, ORD
+Flight Path: PHX, MCI, DEN, ORD
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
-Stops: 1
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
-Stop2: None
-Passengers: 153
+Stops: 2
+Stop1: MCI
+Stop1 Coordinates: 39.2978,-94.7139
+Stop2: DEN
+Stop 2 Coordinates: 39.7392,-104.9903
+Passengers: 124
 Distance (Nautical Miles): 1253.46
-Flight Time (Hours): 2.58
-Operating Cost: $14878.68
-Layover Time (Hours): 1.88
-Maintenance Cost: $15022.72
-Income of Flight: $5299384.50
-Net Profit of the Flight: $5269483.11
-Total Passenger Miles: 191779.09 passenger miles.
+Flight Time (Hours): 12.52
+Operating Cost: $72062.87
+Layover Time (Hours): 1.73
+Maintenance Cost: $72292.55
+Income of Flight: $4294926.00
+Net Profit of the Flight: $4150570.58
+Total Passenger Miles: 155428.80 passenger miles.
 
 Flight: 17
 Flight Path: PHX, None, None, ABQ
@@ -326,178 +329,177 @@ Destination Coordinates: 35.0844, -106.6504
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 40
+Passengers: 45
 Distance (Nautical Miles): 286.90
-Flight Time (Hours): 0.59
-Operating Cost: $3405.55
+Flight Time (Hours): 13.01
+Operating Cost: $74894.57
 Layover Time (Hours): 0.00
-Maintenance Cost: $3405.55
-Income of Flight: $1385460.00
-Net Profit of the Flight: $1378648.91
-Total Passenger Miles: 11476.04 passenger miles.
+Maintenance Cost: $74894.57
+Income of Flight: $1558642.50
+Net Profit of the Flight: $1408853.35
+Total Passenger Miles: 12910.55 passenger miles.
 
 Flight: 18
-Flight Path: PHX, DFW, JFK, MCI
+Flight Path: PHX, SEA, None, MCI
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: MCI
 Destination Coordinates: 39.2978, -94.7139
-Stops: 2
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
-Stop2: JFK
-Stop 2 Coordinates: 40.6413,-73.7781
-Passengers: 110
+Stops: 1
+Stop1: SEA
+Stop1 Coordinates: 47.6062,-122.3321
+Stop2: None
+Passengers: 135
 Distance (Nautical Miles): 909.32
-Flight Time (Hours): 1.87
-Operating Cost: $10793.76
-Layover Time (Hours): 1.31
-Maintenance Cost: $10912.24
-Income of Flight: $3810015.00
-Net Profit of the Flight: $3788309.01
-Total Passenger Miles: 100025.53 passenger miles.
+Flight Time (Hours): 12.72
+Operating Cost: $73252.54
+Layover Time (Hours): 1.53
+Maintenance Cost: $73351.55
+Income of Flight: $4675927.50
+Net Profit of the Flight: $4529323.41
+Total Passenger Miles: 122758.60 passenger miles.
 
 Flight: 19
-Flight Path: DEN, ORD, None, LAX
+Flight Path: DEN, None, None, LAX
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: LAX
 Destination Coordinates: 34.0522, -118.2437
-Stops: 1
-Stop1: ORD
-Stop1 Coordinates: 41.9786,-87.9048
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 191
+Passengers: 90
 Distance (Nautical Miles): 722.11
-Flight Time (Hours): 1.49
-Operating Cost: $8571.48
-Layover Time (Hours): 1.78
-Maintenance Cost: $8727.07
-Income of Flight: $6615571.50
-Net Profit of the Flight: $6598272.94
-Total Passenger Miles: 137922.42 passenger miles.
+Flight Time (Hours): 12.04
+Operating Cost: $69332.72
+Layover Time (Hours): 0.00
+Maintenance Cost: $69332.72
+Income of Flight: $3117285.00
+Net Profit of the Flight: $2978619.56
+Total Passenger Miles: 64989.62 passenger miles.
 
 Flight: 20
-Flight Path: DEN, DFW, MCI, PHX
+Flight Path: DEN, None, None, PHX
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: PHX
 Destination Coordinates: 33.4484, -112.074
-Stops: 2
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
-Stop2: MCI
-Stop 2 Coordinates: 39.2978,-94.7139
-Passengers: 40
+Stops: 0
+Stop1: None
+Stop2: None
+Passengers: 75
 Distance (Nautical Miles): 508.78
-Flight Time (Hours): 1.05
-Operating Cost: $6039.32
-Layover Time (Hours): 1.41
-Maintenance Cost: $6210.67
-Income of Flight: $1385460.00
-Net Profit of the Flight: $1373210.01
-Total Passenger Miles: 20351.36 passenger miles.
+Flight Time (Hours): 12.08
+Operating Cost: $69518.66
+Layover Time (Hours): 0.00
+Maintenance Cost: $69518.66
+Income of Flight: $2597737.50
+Net Profit of the Flight: $2458700.18
+Total Passenger Miles: 38158.81 passenger miles.
 
 Flight: 21
-Flight Path: DEN, MIA, DFW, DFW
+Flight Path: DEN, PHX, ORD, DFW
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: DFW
 Destination Coordinates: 32.8975, -97.0404
 Stops: 2
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
-Stop2: DFW
-Stop 2 Coordinates: 32.8975,-97.0404
-Passengers: 73
+Stop1: PHX
+Stop1 Coordinates: 33.4484,-112.074
+Stop2: ORD
+Stop 2 Coordinates: 41.9786,-87.9048
+Passengers: 188
 Distance (Nautical Miles): 562.22
-Flight Time (Hours): 1.16
-Operating Cost: $6673.56
-Layover Time (Hours): 1.83
-Maintenance Cost: $6784.56
-Income of Flight: $2528464.50
-Net Profit of the Flight: $2515006.38
-Total Passenger Miles: 41041.77 passenger miles.
+Flight Time (Hours): 12.10
+Operating Cost: $69683.71
+Layover Time (Hours): 1.62
+Maintenance Cost: $69855.94
+Income of Flight: $6511662.00
+Net Profit of the Flight: $6372122.35
+Total Passenger Miles: 105696.62 passenger miles.
 
 Flight: 22
-Flight Path: DEN, None, None, JFK
+Flight Path: DEN, ABQ, SEA, JFK
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 59
+Stops: 2
+Stop1: ABQ
+Stop1 Coordinates: 35.0844,-106.6504
+Stop2: SEA
+Stop 2 Coordinates: 47.6062,-122.3321
+Passengers: 140
 Distance (Nautical Miles): 1428.63
-Flight Time (Hours): 2.95
-Operating Cost: $16957.99
-Layover Time (Hours): 0.00
-Maintenance Cost: $16957.99
-Income of Flight: $2043553.50
-Net Profit of the Flight: $2009637.53
-Total Passenger Miles: 84289.17 passenger miles.
+Flight Time (Hours): 11.63
+Operating Cost: $66965.43
+Layover Time (Hours): 1.58
+Maintenance Cost: $67072.94
+Income of Flight: $4849110.00
+Net Profit of the Flight: $4715071.62
+Total Passenger Miles: 200008.20 passenger miles.
 
 Flight: 23
-Flight Path: DEN, MIA, JFK, MIA
+Flight Path: DEN, ABQ, None, MIA
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
-Stops: 2
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
-Stop2: JFK
-Stop 2 Coordinates: 40.6413,-73.7781
-Passengers: 200
+Stops: 1
+Stop1: ABQ
+Stop1 Coordinates: 35.0844,-106.6504
+Stop2: None
+Passengers: 184
 Distance (Nautical Miles): 1500.12
-Flight Time (Hours): 3.09
-Operating Cost: $17806.61
-Layover Time (Hours): 1.46
-Maintenance Cost: $17952.36
-Income of Flight: $6927300.00
-Net Profit of the Flight: $6891541.03
-Total Passenger Miles: 300024.48 passenger miles.
+Flight Time (Hours): 12.41
+Operating Cost: $71424.29
+Layover Time (Hours): 1.26
+Maintenance Cost: $71549.49
+Income of Flight: $6373116.00
+Net Profit of the Flight: $6230142.22
+Total Passenger Miles: 276022.52 passenger miles.
 
 Flight: 24
-Flight Path: DEN, None, None, SEA
+Flight Path: DEN, ABQ, ORD, SEA
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 77
+Stops: 2
+Stop1: ABQ
+Stop1 Coordinates: 35.0844,-106.6504
+Stop2: ORD
+Stop 2 Coordinates: 41.9786,-87.9048
+Passengers: 126
 Distance (Nautical Miles): 887.45
-Flight Time (Hours): 1.83
-Operating Cost: $10534.11
-Layover Time (Hours): 0.00
-Maintenance Cost: $10534.11
-Income of Flight: $2667010.50
-Net Profit of the Flight: $2645942.27
-Total Passenger Miles: 68333.59 passenger miles.
+Flight Time (Hours): 11.09
+Operating Cost: $63819.81
+Layover Time (Hours): 1.26
+Maintenance Cost: $63955.84
+Income of Flight: $4364199.00
+Net Profit of the Flight: $4236423.35
+Total Passenger Miles: 111818.61 passenger miles.
 
 Flight: 25
-Flight Path: DEN, DEN, JFK, ORD
+Flight Path: DEN, DFW, JFK, ORD
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
 Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
 Stop2: JFK
 Stop 2 Coordinates: 40.6413,-73.7781
-Passengers: 155
+Passengers: 204
 Distance (Nautical Miles): 787.96
-Flight Time (Hours): 1.62
-Operating Cost: $9353.19
-Layover Time (Hours): 1.13
-Maintenance Cost: $9474.87
-Income of Flight: $5368657.50
-Net Profit of the Flight: $5349829.44
-Total Passenger Miles: 122134.12 passenger miles.
+Flight Time (Hours): 11.54
+Operating Cost: $66411.08
+Layover Time (Hours): 1.38
+Maintenance Cost: $66481.47
+Income of Flight: $7065846.00
+Net Profit of the Flight: $6932953.45
+Total Passenger Miles: 160744.27 passenger miles.
 
 Flight: 26
 Flight Path: DEN, None, None, ABQ
@@ -508,180 +510,175 @@ Destination Coordinates: 35.0844, -106.6504
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 143
+Passengers: 194
 Distance (Nautical Miles): 290.00
-Flight Time (Hours): 0.60
-Operating Cost: $3442.35
+Flight Time (Hours): 11.99
+Operating Cost: $69002.67
 Layover Time (Hours): 0.00
-Maintenance Cost: $3442.35
-Income of Flight: $4953019.50
-Net Profit of the Flight: $4946134.81
-Total Passenger Miles: 41470.20 passenger miles.
+Maintenance Cost: $69002.67
+Income of Flight: $6719481.00
+Net Profit of the Flight: $6581475.67
+Total Passenger Miles: 56260.27 passenger miles.
 
 Flight: 27
-Flight Path: DEN, JFK, ORD, MCI
+Flight Path: DEN, None, None, MCI
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: MCI
 Destination Coordinates: 39.2978, -94.7139
-Stops: 2
-Stop1: JFK
-Stop1 Coordinates: 40.6413,-73.7781
-Stop2: ORD
-Stop 2 Coordinates: 41.9786,-87.9048
-Passengers: 199
+Stops: 0
+Stop1: None
+Stop2: None
+Passengers: 157
 Distance (Nautical Miles): 477.62
-Flight Time (Hours): 0.98
-Operating Cost: $5669.35
-Layover Time (Hours): 1.04
-Maintenance Cost: $5718.55
-Income of Flight: $6892663.50
-Net Profit of the Flight: $6881275.60
-Total Passenger Miles: 95045.65 passenger miles.
+Flight Time (Hours): 11.72
+Operating Cost: $67497.68
+Layover Time (Hours): 0.00
+Maintenance Cost: $67497.68
+Income of Flight: $5437930.50
+Net Profit of the Flight: $5302935.13
+Total Passenger Miles: 74985.76 passenger miles.
 
 Flight: 28
-Flight Path: DFW, SEA, JFK, LAX
+Flight Path: DFW, MIA, JFK, LAX
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: LAX
 Destination Coordinates: 34.0522, -118.2437
 Stops: 2
-Stop1: SEA
-Stop1 Coordinates: 47.6062,-122.3321
+Stop1: MIA
+Stop1 Coordinates: 25.7617,-80.1918
 Stop2: JFK
 Stop 2 Coordinates: 40.6413,-73.7781
-Passengers: 69
+Passengers: 61
 Distance (Nautical Miles): 1064.51
-Flight Time (Hours): 2.19
-Operating Cost: $12635.82
-Layover Time (Hours): 1.93
-Maintenance Cost: $12903.90
-Income of Flight: $2389918.50
-Net Profit of the Flight: $2364378.79
-Total Passenger Miles: 73451.04 passenger miles.
+Flight Time (Hours): 12.26
+Operating Cost: $70558.72
+Layover Time (Hours): 1.79
+Maintenance Cost: $70729.14
+Income of Flight: $2112826.50
+Net Profit of the Flight: $1971538.64
+Total Passenger Miles: 64934.98 passenger miles.
 
 Flight: 29
-Flight Path: DFW, ABQ, None, PHX
+Flight Path: DFW, LAX, SEA, PHX
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: PHX
 Destination Coordinates: 33.4484, -112.074
-Stops: 1
-Stop1: ABQ
-Stop1 Coordinates: 35.0844,-106.6504
-Stop2: None
-Passengers: 148
+Stops: 2
+Stop1: LAX
+Stop1 Coordinates: 34.0522,-118.2437
+Stop2: SEA
+Stop 2 Coordinates: 47.6062,-122.3321
+Passengers: 176
 Distance (Nautical Miles): 757.18
-Flight Time (Hours): 1.56
-Operating Cost: $8987.82
-Layover Time (Hours): 1.22
-Maintenance Cost: $9136.24
-Income of Flight: $5126202.00
-Net Profit of the Flight: $5108077.94
-Total Passenger Miles: 112062.88 passenger miles.
+Flight Time (Hours): 12.27
+Operating Cost: $70657.11
+Layover Time (Hours): 1.78
+Maintenance Cost: $70803.04
+Income of Flight: $6096024.00
+Net Profit of the Flight: $5954563.85
+Total Passenger Miles: 133263.96 passenger miles.
 
 Flight: 30
-Flight Path: DFW, DFW, None, DEN
+Flight Path: DFW, None, None, DEN
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: DEN
 Destination Coordinates: 39.7392, -104.9903
-Stops: 1
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 95
+Passengers: 70
 Distance (Nautical Miles): 562.22
-Flight Time (Hours): 1.16
-Operating Cost: $6673.56
-Layover Time (Hours): 1.26
-Maintenance Cost: $6858.68
-Income of Flight: $3290467.50
-Net Profit of the Flight: $3276935.26
-Total Passenger Miles: 53410.53 passenger miles.
+Flight Time (Hours): 12.04
+Operating Cost: $69334.84
+Layover Time (Hours): 0.00
+Maintenance Cost: $69334.84
+Income of Flight: $2424555.00
+Net Profit of the Flight: $2285885.31
+Total Passenger Miles: 39355.13 passenger miles.
 
 Flight: 31
-Flight Path: DFW, ABQ, PHX, JFK
+Flight Path: DFW, None, None, JFK
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
-Stops: 2
-Stop1: ABQ
-Stop1 Coordinates: 35.0844,-106.6504
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 204
+Stops: 0
+Stop1: None
+Stop2: None
+Passengers: 62
 Distance (Nautical Miles): 1208.92
-Flight Time (Hours): 2.49
-Operating Cost: $14350.02
-Layover Time (Hours): 1.50
-Maintenance Cost: $14536.75
-Income of Flight: $7065846.00
-Net Profit of the Flight: $7036959.23
-Total Passenger Miles: 246619.99 passenger miles.
+Flight Time (Hours): 12.00
+Operating Cost: $69091.39
+Layover Time (Hours): 0.00
+Maintenance Cost: $69091.39
+Income of Flight: $2147463.00
+Net Profit of the Flight: $2009280.22
+Total Passenger Miles: 74953.13 passenger miles.
 
 Flight: 32
-Flight Path: DFW, JFK, MIA, MIA
+Flight Path: DFW, MCI, LAX, MIA
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
 Stops: 2
-Stop1: JFK
-Stop1 Coordinates: 40.6413,-73.7781
-Stop2: MIA
-Stop 2 Coordinates: 25.7617,-80.1918
-Passengers: 162
+Stop1: MCI
+Stop1 Coordinates: 39.2978,-94.7139
+Stop2: LAX
+Stop 2 Coordinates: 34.0522,-118.2437
+Passengers: 47
 Distance (Nautical Miles): 979.72
-Flight Time (Hours): 2.02
-Operating Cost: $11629.44
-Layover Time (Hours): 1.59
-Maintenance Cost: $11698.74
-Income of Flight: $5611113.00
-Net Profit of the Flight: $5587784.82
-Total Passenger Miles: 158715.44 passenger miles.
+Flight Time (Hours): 12.40
+Operating Cost: $71392.50
+Layover Time (Hours): 1.60
+Maintenance Cost: $71496.15
+Income of Flight: $1627915.50
+Net Profit of the Flight: $1485026.85
+Total Passenger Miles: 46047.07 passenger miles.
 
 Flight: 33
-Flight Path: DFW, LAX, None, SEA
+Flight Path: DFW, ABQ, None, SEA
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
 Stops: 1
-Stop1: LAX
-Stop1 Coordinates: 34.0522,-118.2437
+Stop1: ABQ
+Stop1 Coordinates: 35.0844,-106.6504
 Stop2: None
-Passengers: 195
+Passengers: 148
 Distance (Nautical Miles): 1447.40
-Flight Time (Hours): 2.98
-Operating Cost: $17180.82
-Layover Time (Hours): 1.72
-Maintenance Cost: $17420.30
-Income of Flight: $6754117.50
-Net Profit of the Flight: $6719516.37
-Total Passenger Miles: 282243.59 passenger miles.
+Flight Time (Hours): 11.60
+Operating Cost: $66768.14
+Layover Time (Hours): 1.92
+Maintenance Cost: $66854.15
+Income of Flight: $5126202.00
+Net Profit of the Flight: $4992579.71
+Total Passenger Miles: 214215.65 passenger miles.
 
 Flight: 34
-Flight Path: DFW, DEN, MCI, ORD
+Flight Path: DFW, JFK, None, ORD
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
-Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: MCI
-Stop 2 Coordinates: 39.2978,-94.7139
-Passengers: 30
+Stops: 1
+Stop1: JFK
+Stop1 Coordinates: 40.6413,-73.7781
+Stop2: None
+Passengers: 47
 Distance (Nautical Miles): 696.77
-Flight Time (Hours): 1.44
-Operating Cost: $8270.72
-Layover Time (Hours): 1.25
-Maintenance Cost: $8451.15
-Income of Flight: $1039095.00
-Net Profit of the Flight: $1022373.13
-Total Passenger Miles: 20903.07 passenger miles.
+Flight Time (Hours): 11.93
+Operating Cost: $68705.87
+Layover Time (Hours): 1.44
+Maintenance Cost: $68856.79
+Income of Flight: $1627915.50
+Net Profit of the Flight: $1490352.84
+Total Passenger Miles: 32748.14 passenger miles.
 
 Flight: 35
 Flight Path: DFW, None, None, ABQ
@@ -692,15 +689,15 @@ Destination Coordinates: 35.0844, -106.6504
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 191
+Passengers: 105
 Distance (Nautical Miles): 496.77
-Flight Time (Hours): 1.02
-Operating Cost: $5896.68
+Flight Time (Hours): 12.22
+Operating Cost: $70376.54
 Layover Time (Hours): 0.00
-Maintenance Cost: $5896.68
-Income of Flight: $6615571.50
-Net Profit of the Flight: $6603778.13
-Total Passenger Miles: 94882.64 passenger miles.
+Maintenance Cost: $70376.54
+Income of Flight: $3636832.50
+Net Profit of the Flight: $3496079.43
+Total Passenger Miles: 52160.61 passenger miles.
 
 Flight: 36
 Flight Path: DFW, None, None, MCI
@@ -711,15 +708,15 @@ Destination Coordinates: 39.2978, -94.7139
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 204
+Passengers: 123
 Distance (Nautical Miles): 399.76
-Flight Time (Hours): 0.82
-Operating Cost: $4745.23
+Flight Time (Hours): 12.06
+Operating Cost: $69449.07
 Layover Time (Hours): 0.00
-Maintenance Cost: $4745.23
-Income of Flight: $7065846.00
-Net Profit of the Flight: $7056355.54
-Total Passenger Miles: 81551.68 passenger miles.
+Maintenance Cost: $69449.07
+Income of Flight: $4260289.50
+Net Profit of the Flight: $4121391.36
+Total Passenger Miles: 49170.86 passenger miles.
 
 Flight: 37
 Flight Path: JFK, None, None, LAX
@@ -730,217 +727,214 @@ Destination Coordinates: 34.0522, -118.2437
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 112
+Passengers: 169
 Distance (Nautical Miles): 2140.49
-Flight Time (Hours): 4.41
-Operating Cost: $25407.79
+Flight Time (Hours): 9.94
+Operating Cost: $57204.08
 Layover Time (Hours): 0.00
-Maintenance Cost: $25407.79
-Income of Flight: $3879288.00
-Net Profit of the Flight: $3828472.43
-Total Passenger Miles: 239734.39 passenger miles.
+Maintenance Cost: $57204.08
+Income of Flight: $5853568.50
+Net Profit of the Flight: $5739160.35
+Total Passenger Miles: 361742.07 passenger miles.
 
 Flight: 38
-Flight Path: JFK, DEN, ABQ, PHX
+Flight Path: JFK, DFW, None, PHX
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: PHX
 Destination Coordinates: 33.4484, -112.074
-Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: ABQ
-Stop 2 Coordinates: 35.0844,-106.6504
-Passengers: 120
+Stops: 1
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
+Stop2: None
+Passengers: 111
 Distance (Nautical Miles): 1873.69
-Flight Time (Hours): 3.86
-Operating Cost: $22240.84
-Layover Time (Hours): 1.78
-Maintenance Cost: $22461.45
-Income of Flight: $4156380.00
-Net Profit of the Flight: $4111677.71
-Total Passenger Miles: 224842.30 passenger miles.
+Flight Time (Hours): 9.94
+Operating Cost: $57232.09
+Layover Time (Hours): 1.03
+Maintenance Cost: $57380.53
+Income of Flight: $3844651.50
+Net Profit of the Flight: $3730038.87
+Total Passenger Miles: 207979.13 passenger miles.
 
 Flight: 39
-Flight Path: JFK, JFK, LAX, DEN
+Flight Path: JFK, DFW, None, DEN
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: DEN
 Destination Coordinates: 39.7392, -104.9903
-Stops: 2
-Stop1: JFK
-Stop1 Coordinates: 40.6413,-73.7781
-Stop2: LAX
-Stop 2 Coordinates: 34.0522,-118.2437
-Passengers: 193
+Stops: 1
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
+Stop2: None
+Passengers: 69
 Distance (Nautical Miles): 1428.63
-Flight Time (Hours): 2.95
-Operating Cost: $16957.99
-Layover Time (Hours): 1.48
-Maintenance Cost: $17050.56
-Income of Flight: $6684844.50
-Net Profit of the Flight: $6650835.96
-Total Passenger Miles: 275725.59 passenger miles.
+Flight Time (Hours): 9.86
+Operating Cost: $56742.40
+Layover Time (Hours): 1.06
+Maintenance Cost: $56810.47
+Income of Flight: $2389918.50
+Net Profit of the Flight: $2276365.63
+Total Passenger Miles: 98575.47 passenger miles.
 
 Flight: 40
-Flight Path: JFK, PHX, None, DFW
+Flight Path: JFK, None, None, DFW
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: DFW
 Destination Coordinates: 32.8975, -97.0404
-Stops: 1
-Stop1: PHX
-Stop1 Coordinates: 33.4484,-112.074
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 90
+Passengers: 174
 Distance (Nautical Miles): 1208.92
-Flight Time (Hours): 2.49
-Operating Cost: $14350.02
-Layover Time (Hours): 1.40
-Maintenance Cost: $14453.15
-Income of Flight: $3117285.00
-Net Profit of the Flight: $3088481.82
-Total Passenger Miles: 108802.94 passenger miles.
+Flight Time (Hours): 9.95
+Operating Cost: $57254.34
+Layover Time (Hours): 0.00
+Maintenance Cost: $57254.34
+Income of Flight: $6026751.00
+Net Profit of the Flight: $5912242.31
+Total Passenger Miles: 210352.34 passenger miles.
 
 Flight: 41
-Flight Path: JFK, DEN, None, MIA
+Flight Path: JFK, DEN, PHX, MIA
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
-Stops: 1
+Stops: 2
 Stop1: DEN
 Stop1 Coordinates: 39.7392,-104.9903
-Stop2: None
-Passengers: 34
+Stop2: PHX
+Stop 2 Coordinates: 33.4484,-112.074
+Passengers: 80
 Distance (Nautical Miles): 947.07
-Flight Time (Hours): 1.95
-Operating Cost: $11241.78
-Layover Time (Hours): 1.91
-Maintenance Cost: $11446.47
-Income of Flight: $1177641.00
-Net Profit of the Flight: $1154952.75
-Total Passenger Miles: 32200.28 passenger miles.
+Flight Time (Hours): 9.95
+Operating Cost: $57282.77
+Layover Time (Hours): 1.97
+Maintenance Cost: $57570.05
+Income of Flight: $2770920.00
+Net Profit of the Flight: $2656067.18
+Total Passenger Miles: 75765.37 passenger miles.
 
 Flight: 42
-Flight Path: JFK, ABQ, DEN, SEA
+Flight Path: JFK, None, None, SEA
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
-Stops: 2
-Stop1: ABQ
-Stop1 Coordinates: 35.0844,-106.6504
-Stop2: DEN
-Stop 2 Coordinates: 39.7392,-104.9903
-Passengers: 139
+Stops: 0
+Stop1: None
+Stop2: None
+Passengers: 47
 Distance (Nautical Miles): 2103.86
-Flight Time (Hours): 4.34
-Operating Cost: $24973.06
-Layover Time (Hours): 1.31
-Maintenance Cost: $25101.01
-Income of Flight: $4814473.50
-Net Profit of the Flight: $4764399.43
-Total Passenger Miles: 292436.87 passenger miles.
+Flight Time (Hours): 9.63
+Operating Cost: $55457.00
+Layover Time (Hours): 0.00
+Maintenance Cost: $55457.00
+Income of Flight: $1627915.50
+Net Profit of the Flight: $1517001.49
+Total Passenger Miles: 98881.53 passenger miles.
 
 Flight: 43
-Flight Path: JFK, MIA, PHX, ORD
+Flight Path: JFK, DEN, None, ORD
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
-Stops: 2
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 166
+Stops: 1
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: None
+Passengers: 202
 Distance (Nautical Miles): 643.02
-Flight Time (Hours): 1.33
-Operating Cost: $7632.67
-Layover Time (Hours): 1.97
-Maintenance Cost: $7892.53
-Income of Flight: $5749659.00
-Net Profit of the Flight: $5734133.80
-Total Passenger Miles: 106740.68 passenger miles.
+Flight Time (Hours): 9.81
+Operating Cost: $56456.15
+Layover Time (Hours): 1.16
+Maintenance Cost: $56533.38
+Income of Flight: $6996573.00
+Net Profit of the Flight: $6883583.47
+Total Passenger Miles: 129889.26 passenger miles.
 
 Flight: 44
-Flight Path: JFK, None, None, ABQ
+Flight Path: JFK, DFW, LAX, ABQ
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: ABQ
 Destination Coordinates: 35.0844, -106.6504
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 107
+Stops: 2
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
+Stop2: LAX
+Stop 2 Coordinates: 34.0522,-118.2437
+Passengers: 47
 Distance (Nautical Miles): 1587.26
-Flight Time (Hours): 3.27
-Operating Cost: $18840.94
-Layover Time (Hours): 0.00
-Maintenance Cost: $18840.94
-Income of Flight: $3706105.50
-Net Profit of the Flight: $3668423.63
-Total Passenger Miles: 169836.79 passenger miles.
+Flight Time (Hours): 9.93
+Operating Cost: $57147.21
+Layover Time (Hours): 1.62
+Maintenance Cost: $57208.70
+Income of Flight: $1627915.50
+Net Profit of the Flight: $1513559.59
+Total Passenger Miles: 74601.21 passenger miles.
 
 Flight: 45
-Flight Path: JFK, None, None, MCI
+Flight Path: JFK, DEN, SEA, MCI
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: MCI
 Destination Coordinates: 39.2978, -94.7139
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 93
+Stops: 2
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: SEA
+Stop 2 Coordinates: 47.6062,-122.3321
+Passengers: 41
 Distance (Nautical Miles): 966.82
-Flight Time (Hours): 1.99
-Operating Cost: $11476.21
-Layover Time (Hours): 0.00
-Maintenance Cost: $11476.21
-Income of Flight: $3221194.50
-Net Profit of the Flight: $3198242.08
-Total Passenger Miles: 89913.92 passenger miles.
+Flight Time (Hours): 9.86
+Operating Cost: $56791.62
+Layover Time (Hours): 1.53
+Maintenance Cost: $56941.82
+Income of Flight: $1420096.50
+Net Profit of the Flight: $1306363.06
+Total Passenger Miles: 39639.47 passenger miles.
 
 Flight: 46
-Flight Path: MIA, MCI, None, LAX
+Flight Path: MIA, ORD, None, LAX
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: LAX
 Destination Coordinates: 34.0522, -118.2437
 Stops: 1
-Stop1: MCI
-Stop1 Coordinates: 39.2978,-94.7139
+Stop1: ORD
+Stop1 Coordinates: 41.9786,-87.9048
 Stop2: None
-Passengers: 22
+Passengers: 37
 Distance (Nautical Miles): 2032.92
-Flight Time (Hours): 4.19
-Operating Cost: $24131.02
-Layover Time (Hours): 1.06
-Maintenance Cost: $24203.15
-Income of Flight: $762003.00
-Net Profit of the Flight: $713668.84
-Total Passenger Miles: 44724.33 passenger miles.
+Flight Time (Hours): 11.61
+Operating Cost: $66838.76
+Layover Time (Hours): 1.21
+Maintenance Cost: $66918.49
+Income of Flight: $1281550.50
+Net Profit of the Flight: $1147793.25
+Total Passenger Miles: 75218.19 passenger miles.
 
 Flight: 47
-Flight Path: MIA, MIA, SEA, PHX
+Flight Path: MIA, None, None, PHX
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: PHX
 Destination Coordinates: 33.4484, -112.074
-Stops: 2
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
-Stop2: SEA
-Stop 2 Coordinates: 47.6062,-122.3321
+Stops: 0
+Stop1: None
+Stop2: None
 Passengers: 178
 Distance (Nautical Miles): 1722.28
-Flight Time (Hours): 3.55
-Operating Cost: $20443.61
-Layover Time (Hours): 1.80
-Maintenance Cost: $20711.53
+Flight Time (Hours): 11.60
+Operating Cost: $66786.42
+Layover Time (Hours): 0.00
+Maintenance Cost: $66786.42
 Income of Flight: $6165297.00
-Net Profit of the Flight: $6124141.86
+Net Profit of the Flight: $6031724.16
 Total Passenger Miles: 306565.39 passenger miles.
 
 Flight: 48
@@ -952,301 +946,299 @@ Destination Coordinates: 39.7392, -104.9903
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 53
+Passengers: 41
 Distance (Nautical Miles): 1500.12
-Flight Time (Hours): 3.09
-Operating Cost: $17806.61
+Flight Time (Hours): 11.64
+Operating Cost: $67034.01
 Layover Time (Hours): 0.00
-Maintenance Cost: $17806.61
-Income of Flight: $1835734.50
-Net Profit of the Flight: $1800121.29
-Total Passenger Miles: 79506.49 passenger miles.
+Maintenance Cost: $67034.01
+Income of Flight: $1420096.50
+Net Profit of the Flight: $1286028.48
+Total Passenger Miles: 61505.02 passenger miles.
 
 Flight: 49
-Flight Path: MIA, MIA, ORD, DFW
+Flight Path: MIA, PHX, None, DFW
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: DFW
 Destination Coordinates: 32.8975, -97.0404
-Stops: 2
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
-Stop2: ORD
-Stop 2 Coordinates: 41.9786,-87.9048
-Passengers: 136
+Stops: 1
+Stop1: PHX
+Stop1 Coordinates: 33.4484,-112.074
+Stop2: None
+Passengers: 79
 Distance (Nautical Miles): 979.72
-Flight Time (Hours): 2.02
-Operating Cost: $11629.44
-Layover Time (Hours): 1.24
-Maintenance Cost: $11779.74
-Income of Flight: $4710564.00
-Net Profit of the Flight: $4687154.83
-Total Passenger Miles: 133242.59 passenger miles.
+Flight Time (Hours): 11.59
+Operating Cost: $66733.60
+Layover Time (Hours): 1.83
+Maintenance Cost: $66853.88
+Income of Flight: $2736283.50
+Net Profit of the Flight: $2602696.02
+Total Passenger Miles: 77398.27 passenger miles.
 
 Flight: 50
-Flight Path: MIA, ABQ, None, JFK
+Flight Path: MIA, MCI, None, JFK
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
 Stops: 1
-Stop1: ABQ
-Stop1 Coordinates: 35.0844,-106.6504
+Stop1: MCI
+Stop1 Coordinates: 39.2978,-94.7139
 Stop2: None
-Passengers: 103
+Passengers: 117
 Distance (Nautical Miles): 947.07
-Flight Time (Hours): 1.95
-Operating Cost: $11241.78
-Layover Time (Hours): 1.47
-Maintenance Cost: $11401.72
-Income of Flight: $3567559.50
-Net Profit of the Flight: $3544915.99
-Total Passenger Miles: 97547.91 passenger miles.
+Flight Time (Hours): 11.64
+Operating Cost: $67013.60
+Layover Time (Hours): 1.51
+Maintenance Cost: $67072.91
+Income of Flight: $4052470.50
+Net Profit of the Flight: $3918383.99
+Total Passenger Miles: 110806.85 passenger miles.
 
 Flight: 51
-Flight Path: MIA, DFW, SEA, SEA
+Flight Path: MIA, MCI, PHX, SEA
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
 Stops: 2
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
-Stop2: SEA
-Stop 2 Coordinates: 47.6062,-122.3321
-Passengers: 60
+Stop1: MCI
+Stop1 Coordinates: 39.2978,-94.7139
+Stop2: PHX
+Stop 2 Coordinates: 33.4484,-112.074
+Passengers: 76
 Distance (Nautical Miles): 2376.07
-Flight Time (Hours): 4.90
-Operating Cost: $28204.16
-Layover Time (Hours): 1.24
-Maintenance Cost: $28287.37
-Income of Flight: $2078190.00
-Net Profit of the Flight: $2021698.48
-Total Passenger Miles: 142564.00 passenger miles.
+Flight Time (Hours): 11.53
+Operating Cost: $66360.39
+Layover Time (Hours): 1.31
+Maintenance Cost: $66528.98
+Income of Flight: $2632374.00
+Net Profit of the Flight: $2499484.63
+Total Passenger Miles: 180581.07 passenger miles.
 
 Flight: 52
-Flight Path: MIA, LAX, None, ORD
+Flight Path: MIA, DEN, PHX, ORD
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
-Stops: 1
-Stop1: LAX
-Stop1 Coordinates: 34.0522,-118.2437
-Stop2: None
-Passengers: 42
+Stops: 2
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: PHX
+Stop 2 Coordinates: 33.4484,-112.074
+Passengers: 29
 Distance (Nautical Miles): 1043.78
-Flight Time (Hours): 2.15
-Operating Cost: $12389.76
-Layover Time (Hours): 1.53
-Maintenance Cost: $12501.47
-Income of Flight: $1454733.00
-Net Profit of the Flight: $1429841.77
-Total Passenger Miles: 43838.69 passenger miles.
+Flight Time (Hours): 11.63
+Operating Cost: $66956.61
+Layover Time (Hours): 1.06
+Maintenance Cost: $67074.23
+Income of Flight: $1004458.50
+Net Profit of the Flight: $870427.66
+Total Passenger Miles: 30269.57 passenger miles.
 
 Flight: 53
-Flight Path: MIA, ABQ, JFK, ABQ
+Flight Path: MIA, MCI, JFK, ABQ
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: ABQ
 Destination Coordinates: 35.0844, -106.6504
 Stops: 2
-Stop1: ABQ
-Stop1 Coordinates: 35.0844,-106.6504
+Stop1: MCI
+Stop1 Coordinates: 39.2978,-94.7139
 Stop2: JFK
 Stop 2 Coordinates: 40.6413,-73.7781
-Passengers: 170
+Passengers: 125
 Distance (Nautical Miles): 1475.86
-Flight Time (Hours): 3.04
-Operating Cost: $17518.61
-Layover Time (Hours): 1.79
-Maintenance Cost: $17589.73
-Income of Flight: $5888205.00
-Net Profit of the Flight: $5853096.65
-Total Passenger Miles: 250896.24 passenger miles.
+Flight Time (Hours): 11.62
+Operating Cost: $66914.58
+Layover Time (Hours): 1.54
+Maintenance Cost: $67063.25
+Income of Flight: $4329562.50
+Net Profit of the Flight: $4195584.67
+Total Passenger Miles: 184482.53 passenger miles.
 
 Flight: 54
-Flight Path: MIA, None, None, MCI
+Flight Path: MIA, DEN, None, MCI
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: MCI
 Destination Coordinates: 39.2978, -94.7139
-Stops: 0
-Stop1: None
+Stops: 1
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
 Stop2: None
-Passengers: 91
+Passengers: 29
 Distance (Nautical Miles): 1092.33
-Flight Time (Hours): 2.25
-Operating Cost: $12966.03
-Layover Time (Hours): 0.00
-Maintenance Cost: $12966.03
-Income of Flight: $3151921.50
-Net Profit of the Flight: $3125989.44
-Total Passenger Miles: 99401.73 passenger miles.
+Flight Time (Hours): 11.64
+Operating Cost: $67038.75
+Layover Time (Hours): 1.85
+Maintenance Cost: $67229.77
+Income of Flight: $1004458.50
+Net Profit of the Flight: $870189.98
+Total Passenger Miles: 31677.47 passenger miles.
 
 Flight: 55
-Flight Path: SEA, None, None, LAX
+Flight Path: SEA, PHX, None, LAX
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: LAX
 Destination Coordinates: 34.0522, -118.2437
-Stops: 0
-Stop1: None
+Stops: 1
+Stop1: PHX
+Stop1 Coordinates: 33.4484,-112.074
 Stop2: None
-Passengers: 45
+Passengers: 129
 Distance (Nautical Miles): 833.48
-Flight Time (Hours): 1.72
-Operating Cost: $9893.47
-Layover Time (Hours): 0.00
-Maintenance Cost: $9893.47
-Income of Flight: $1558642.50
-Net Profit of the Flight: $1538855.57
-Total Passenger Miles: 37506.50 passenger miles.
+Flight Time (Hours): 11.87
+Operating Cost: $68317.99
+Layover Time (Hours): 1.11
+Maintenance Cost: $68373.87
+Income of Flight: $4468108.50
+Net Profit of the Flight: $4331416.63
+Total Passenger Miles: 107518.63 passenger miles.
 
 Flight: 56
-Flight Path: SEA, PHX, None, PHX
+Flight Path: SEA, ORD, None, PHX
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: PHX
 Destination Coordinates: 33.4484, -112.074
 Stops: 1
-Stop1: PHX
-Stop1 Coordinates: 33.4484,-112.074
+Stop1: ORD
+Stop1 Coordinates: 41.9786,-87.9048
 Stop2: None
-Passengers: 95
+Passengers: 160
 Distance (Nautical Miles): 968.02
-Flight Time (Hours): 2.00
-Operating Cost: $11490.47
-Layover Time (Hours): 1.94
-Maintenance Cost: $11692.89
-Income of Flight: $3290467.50
-Net Profit of the Flight: $3267284.14
-Total Passenger Miles: 91961.69 passenger miles.
+Flight Time (Hours): 11.92
+Operating Cost: $68632.28
+Layover Time (Hours): 1.79
+Maintenance Cost: $68729.53
+Income of Flight: $5541840.00
+Net Profit of the Flight: $5404478.18
+Total Passenger Miles: 154882.84 passenger miles.
 
 Flight: 57
-Flight Path: SEA, ABQ, SEA, DEN
+Flight Path: SEA, MIA, JFK, DEN
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: DEN
 Destination Coordinates: 39.7392, -104.9903
 Stops: 2
-Stop1: ABQ
-Stop1 Coordinates: 35.0844,-106.6504
-Stop2: SEA
-Stop 2 Coordinates: 47.6062,-122.3321
-Passengers: 53
+Stop1: MIA
+Stop1 Coordinates: 25.7617,-80.1918
+Stop2: JFK
+Stop 2 Coordinates: 40.6413,-73.7781
+Passengers: 98
 Distance (Nautical Miles): 887.45
-Flight Time (Hours): 1.83
-Operating Cost: $10534.11
-Layover Time (Hours): 2.00
-Maintenance Cost: $10741.92
-Income of Flight: $1835734.50
-Net Profit of the Flight: $1814458.47
-Total Passenger Miles: 47034.81 passenger miles.
+Flight Time (Hours): 11.32
+Operating Cost: $65169.89
+Layover Time (Hours): 1.09
+Maintenance Cost: $65259.95
+Income of Flight: $3394377.00
+Net Profit of the Flight: $3263947.16
+Total Passenger Miles: 86970.03 passenger miles.
 
 Flight: 58
-Flight Path: SEA, MIA, None, DFW
+Flight Path: SEA, None, None, DFW
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: DFW
 Destination Coordinates: 32.8975, -97.0404
-Stops: 1
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 24
+Passengers: 165
 Distance (Nautical Miles): 1447.40
-Flight Time (Hours): 2.98
-Operating Cost: $17180.82
-Layover Time (Hours): 1.58
-Maintenance Cost: $17356.50
-Income of Flight: $831276.00
-Net Profit of the Flight: $796738.67
-Total Passenger Miles: 34737.67 passenger miles.
+Flight Time (Hours): 11.97
+Operating Cost: $68915.55
+Layover Time (Hours): 0.00
+Maintenance Cost: $68915.55
+Income of Flight: $5715022.50
+Net Profit of the Flight: $5577191.39
+Total Passenger Miles: 238821.50 passenger miles.
 
 Flight: 59
-Flight Path: SEA, MCI, MIA, JFK
+Flight Path: SEA, LAX, None, JFK
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
-Stops: 2
-Stop1: MCI
-Stop1 Coordinates: 39.2978,-94.7139
-Stop2: MIA
-Stop 2 Coordinates: 25.7617,-80.1918
-Passengers: 151
+Stops: 1
+Stop1: LAX
+Stop1 Coordinates: 34.0522,-118.2437
+Stop2: None
+Passengers: 85
 Distance (Nautical Miles): 2103.86
-Flight Time (Hours): 4.34
-Operating Cost: $24973.06
-Layover Time (Hours): 1.97
-Maintenance Cost: $25050.57
-Income of Flight: $5230111.50
-Net Profit of the Flight: $5180087.87
-Total Passenger Miles: 317683.22 passenger miles.
+Flight Time (Hours): 11.23
+Operating Cost: $64640.81
+Layover Time (Hours): 1.59
+Maintenance Cost: $64805.40
+Income of Flight: $2944102.50
+Net Profit of the Flight: $2814656.29
+Total Passenger Miles: 178828.30 passenger miles.
 
 Flight: 60
-Flight Path: SEA, DEN, ORD, MIA
+Flight Path: SEA, DFW, PHX, MIA
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
 Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: ORD
-Stop 2 Coordinates: 41.9786,-87.9048
-Passengers: 23
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
+Stop2: PHX
+Stop 2 Coordinates: 33.4484,-112.074
+Passengers: 44
 Distance (Nautical Miles): 2376.07
-Flight Time (Hours): 4.90
-Operating Cost: $28204.16
-Layover Time (Hours): 1.51
-Maintenance Cost: $28257.16
-Income of Flight: $796639.50
-Net Profit of the Flight: $740178.19
-Total Passenger Miles: 54649.53 passenger miles.
+Flight Time (Hours): 12.55
+Operating Cost: $72271.44
+Layover Time (Hours): 1.82
+Maintenance Cost: $72442.27
+Income of Flight: $1524006.00
+Net Profit of the Flight: $1379292.29
+Total Passenger Miles: 104546.93 passenger miles.
 
 Flight: 61
-Flight Path: SEA, DEN, ABQ, ORD
+Flight Path: SEA, MIA, None, ORD
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
-Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: ABQ
-Stop 2 Coordinates: 35.0844,-106.6504
-Passengers: 150
+Stops: 1
+Stop1: MIA
+Stop1 Coordinates: 25.7617,-80.1918
+Stop2: None
+Passengers: 173
 Distance (Nautical Miles): 1496.08
-Flight Time (Hours): 3.08
-Operating Cost: $17758.57
-Layover Time (Hours): 1.67
-Maintenance Cost: $17887.59
-Income of Flight: $5195475.00
-Net Profit of the Flight: $5159828.84
-Total Passenger Miles: 224411.31 passenger miles.
+Flight Time (Hours): 11.09
+Operating Cost: $63842.40
+Layover Time (Hours): 1.80
+Maintenance Cost: $64082.09
+Income of Flight: $5992114.50
+Net Profit of the Flight: $5864190.01
+Total Passenger Miles: 258821.05 passenger miles.
 
 Flight: 62
-Flight Path: SEA, JFK, PHX, ABQ
+Flight Path: SEA, ORD, None, ABQ
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: ABQ
 Destination Coordinates: 35.0844, -106.6504
-Stops: 2
-Stop1: JFK
-Stop1 Coordinates: 40.6413,-73.7781
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 89
+Stops: 1
+Stop1: ORD
+Stop1 Coordinates: 41.9786,-87.9048
+Stop2: None
+Passengers: 167
 Distance (Nautical Miles): 1028.61
-Flight Time (Hours): 2.12
-Operating Cost: $12209.76
-Layover Time (Hours): 1.88
-Maintenance Cost: $12388.18
-Income of Flight: $3082648.50
-Net Profit of the Flight: $3058050.56
-Total Passenger Miles: 91546.70 passenger miles.
+Flight Time (Hours): 11.77
+Operating Cost: $67771.58
+Layover Time (Hours): 1.83
+Maintenance Cost: $67999.15
+Income of Flight: $5784295.50
+Net Profit of the Flight: $5648524.77
+Total Passenger Miles: 171778.64 passenger miles.
 
 Flight: 63
 Flight Path: SEA, None, None, MCI
@@ -1257,176 +1249,179 @@ Destination Coordinates: 39.2978, -94.7139
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 143
+Passengers: 28
 Distance (Nautical Miles): 1297.10
-Flight Time (Hours): 2.67
-Operating Cost: $15396.71
+Flight Time (Hours): 11.36
+Operating Cost: $65425.92
 Layover Time (Hours): 0.00
-Maintenance Cost: $15396.71
-Income of Flight: $4953019.50
-Net Profit of the Flight: $4922226.09
-Total Passenger Miles: 185485.23 passenger miles.
+Maintenance Cost: $65425.92
+Income of Flight: $969822.00
+Net Profit of the Flight: $838970.15
+Total Passenger Miles: 36318.79 passenger miles.
 
 Flight: 64
-Flight Path: ORD, LAX, MIA, LAX
+Flight Path: ORD, MCI, DEN, LAX
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: LAX
 Destination Coordinates: 34.0522, -118.2437
 Stops: 2
-Stop1: LAX
-Stop1 Coordinates: 34.0522,-118.2437
-Stop2: MIA
-Stop 2 Coordinates: 25.7617,-80.1918
-Passengers: 29
+Stop1: MCI
+Stop1 Coordinates: 39.2978,-94.7139
+Stop2: DEN
+Stop 2 Coordinates: 39.7392,-104.9903
+Passengers: 27
 Distance (Nautical Miles): 1505.69
-Flight Time (Hours): 3.10
-Operating Cost: $17872.70
-Layover Time (Hours): 1.29
-Maintenance Cost: $18042.71
-Income of Flight: $1004458.50
-Net Profit of the Flight: $968543.09
-Total Passenger Miles: 43665.03 passenger miles.
+Flight Time (Hours): 10.82
+Operating Cost: $62299.95
+Layover Time (Hours): 1.56
+Maintenance Cost: $62381.65
+Income of Flight: $935185.50
+Net Profit of the Flight: $810503.90
+Total Passenger Miles: 40653.65 passenger miles.
 
 Flight: 65
-Flight Path: ORD, PHX, MCI, PHX
+Flight Path: ORD, SEA, DFW, PHX
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: PHX
 Destination Coordinates: 33.4484, -112.074
 Stops: 2
-Stop1: PHX
-Stop1 Coordinates: 33.4484,-112.074
-Stop2: MCI
-Stop 2 Coordinates: 39.2978,-94.7139
-Passengers: 165
+Stop1: SEA
+Stop1 Coordinates: 47.6062,-122.3321
+Stop2: DFW
+Stop 2 Coordinates: 32.8975,-97.0404
+Passengers: 136
 Distance (Nautical Miles): 1253.46
-Flight Time (Hours): 2.58
-Operating Cost: $14878.68
-Layover Time (Hours): 1.41
-Maintenance Cost: $15033.35
-Income of Flight: $5715022.50
-Net Profit of the Flight: $5685110.47
-Total Passenger Miles: 206820.58 passenger miles.
+Flight Time (Hours): 10.84
+Operating Cost: $62405.08
+Layover Time (Hours): 1.26
+Maintenance Cost: $62452.53
+Income of Flight: $4710564.00
+Net Profit of the Flight: $4585706.39
+Total Passenger Miles: 170470.30 passenger miles.
 
 Flight: 66
-Flight Path: ORD, None, None, DEN
+Flight Path: ORD, DFW, PHX, DEN
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: DEN
 Destination Coordinates: 39.7392, -104.9903
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 169
+Stops: 2
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
+Stop2: PHX
+Stop 2 Coordinates: 33.4484,-112.074
+Passengers: 154
 Distance (Nautical Miles): 787.96
-Flight Time (Hours): 1.62
-Operating Cost: $9353.19
-Layover Time (Hours): 0.00
-Maintenance Cost: $9353.19
-Income of Flight: $5853568.50
-Net Profit of the Flight: $5834862.12
-Total Passenger Miles: 133165.59 passenger miles.
+Flight Time (Hours): 10.61
+Operating Cost: $61084.20
+Layover Time (Hours): 1.10
+Maintenance Cost: $61173.78
+Income of Flight: $5334021.00
+Net Profit of the Flight: $5211763.01
+Total Passenger Miles: 121346.16 passenger miles.
 
 Flight: 67
-Flight Path: ORD, None, None, DFW
+Flight Path: ORD, ABQ, JFK, DFW
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: DFW
 Destination Coordinates: 32.8975, -97.0404
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 105
+Stops: 2
+Stop1: ABQ
+Stop1 Coordinates: 35.0844,-106.6504
+Stop2: JFK
+Stop 2 Coordinates: 40.6413,-73.7781
+Passengers: 163
 Distance (Nautical Miles): 696.77
-Flight Time (Hours): 1.44
-Operating Cost: $8270.72
-Layover Time (Hours): 0.00
-Maintenance Cost: $8270.72
-Income of Flight: $3636832.50
-Net Profit of the Flight: $3620291.06
-Total Passenger Miles: 73160.74 passenger miles.
+Flight Time (Hours): 10.86
+Operating Cost: $62497.09
+Layover Time (Hours): 1.89
+Maintenance Cost: $62701.77
+Income of Flight: $5645749.50
+Net Profit of the Flight: $5520550.64
+Total Passenger Miles: 113573.34 passenger miles.
 
 Flight: 68
-Flight Path: ORD, LAX, None, JFK
+Flight Path: ORD, None, None, JFK
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
-Stops: 1
-Stop1: LAX
-Stop1 Coordinates: 34.0522,-118.2437
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 144
+Passengers: 158
 Distance (Nautical Miles): 643.02
-Flight Time (Hours): 1.33
-Operating Cost: $7632.67
-Layover Time (Hours): 1.65
-Maintenance Cost: $7696.15
-Income of Flight: $4987656.00
-Net Profit of the Flight: $4972327.18
-Total Passenger Miles: 92594.32 passenger miles.
+Flight Time (Hours): 10.57
+Operating Cost: $60853.13
+Layover Time (Hours): 0.00
+Maintenance Cost: $60853.13
+Income of Flight: $5472567.00
+Net Profit of the Flight: $5350860.74
+Total Passenger Miles: 101596.55 passenger miles.
 
 Flight: 69
-Flight Path: ORD, DEN, MIA, MIA
+Flight Path: ORD, LAX, None, MIA
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
-Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: MIA
-Stop 2 Coordinates: 25.7617,-80.1918
-Passengers: 175
+Stops: 1
+Stop1: LAX
+Stop1 Coordinates: 34.0522,-118.2437
+Stop2: None
+Passengers: 57
 Distance (Nautical Miles): 1043.78
-Flight Time (Hours): 2.15
-Operating Cost: $12389.76
-Layover Time (Hours): 1.64
-Maintenance Cost: $12555.26
-Income of Flight: $6061387.50
-Net Profit of the Flight: $6036442.49
-Total Passenger Miles: 182661.19 passenger miles.
+Flight Time (Hours): 11.01
+Operating Cost: $63366.54
+Layover Time (Hours): 1.33
+Maintenance Cost: $63474.34
+Income of Flight: $1974280.50
+Net Profit of the Flight: $1847439.62
+Total Passenger Miles: 59495.36 passenger miles.
 
 Flight: 70
-Flight Path: ORD, DEN, PHX, SEA
+Flight Path: ORD, PHX, DEN, SEA
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
 Stops: 2
-Stop1: DEN
-Stop1 Coordinates: 39.7392,-104.9903
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 121
+Stop1: PHX
+Stop1 Coordinates: 33.4484,-112.074
+Stop2: DEN
+Stop 2 Coordinates: 39.7392,-104.9903
+Passengers: 76
 Distance (Nautical Miles): 1496.08
-Flight Time (Hours): 3.08
-Operating Cost: $17758.57
-Layover Time (Hours): 1.24
-Maintenance Cost: $17836.36
-Income of Flight: $4191016.50
-Net Profit of the Flight: $4155421.57
-Total Passenger Miles: 181025.13 passenger miles.
+Flight Time (Hours): 10.20
+Operating Cost: $58710.90
+Layover Time (Hours): 1.35
+Maintenance Cost: $58903.64
+Income of Flight: $2632374.00
+Net Profit of the Flight: $2514759.45
+Total Passenger Miles: 113701.73 passenger miles.
 
 Flight: 71
-Flight Path: ORD, None, None, ABQ
+Flight Path: ORD, PHX, None, ABQ
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: ABQ
 Destination Coordinates: 35.0844, -106.6504
-Stops: 0
-Stop1: None
+Stops: 1
+Stop1: PHX
+Stop1 Coordinates: 33.4484,-112.074
 Stop2: None
-Passengers: 170
+Passengers: 190
 Distance (Nautical Miles): 971.72
-Flight Time (Hours): 2.00
-Operating Cost: $11534.44
-Layover Time (Hours): 0.00
-Maintenance Cost: $11534.44
-Income of Flight: $5888205.00
-Net Profit of the Flight: $5865136.13
-Total Passenger Miles: 165192.68 passenger miles.
+Flight Time (Hours): 10.79
+Operating Cost: $62109.75
+Layover Time (Hours): 1.55
+Maintenance Cost: $62335.06
+Income of Flight: $6580935.00
+Net Profit of the Flight: $6456490.18
+Total Passenger Miles: 184627.11 passenger miles.
 
 Flight: 72
 Flight Path: ORD, None, None, MCI
@@ -1437,35 +1432,36 @@ Destination Coordinates: 39.2978, -94.7139
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 202
+Passengers: 150
 Distance (Nautical Miles): 349.95
-Flight Time (Hours): 0.72
-Operating Cost: $4153.95
+Flight Time (Hours): 10.63
+Operating Cost: $61193.41
 Layover Time (Hours): 0.00
-Maintenance Cost: $4153.95
-Income of Flight: $6996573.00
-Net Profit of the Flight: $6988265.10
-Total Passenger Miles: 70690.03 passenger miles.
+Maintenance Cost: $61193.41
+Income of Flight: $5195475.00
+Net Profit of the Flight: $5073088.17
+Total Passenger Miles: 52492.60 passenger miles.
 
 Flight: 73
-Flight Path: ABQ, ORD, None, LAX
+Flight Path: ABQ, ORD, DEN, LAX
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: LAX
 Destination Coordinates: 34.0522, -118.2437
-Stops: 1
+Stops: 2
 Stop1: ORD
 Stop1 Coordinates: 41.9786,-87.9048
-Stop2: None
-Passengers: 55
+Stop2: DEN
+Stop 2 Coordinates: 39.7392,-104.9903
+Passengers: 173
 Distance (Nautical Miles): 577.42
-Flight Time (Hours): 1.19
-Operating Cost: $6854.07
-Layover Time (Hours): 1.41
-Maintenance Cost: $6987.98
-Income of Flight: $1905007.50
-Net Profit of the Flight: $1891165.46
-Total Passenger Miles: 31758.24 passenger miles.
+Flight Time (Hours): 12.62
+Operating Cost: $72627.29
+Layover Time (Hours): 1.28
+Maintenance Cost: $72742.90
+Income of Flight: $5992114.50
+Net Profit of the Flight: $5846744.31
+Total Passenger Miles: 99894.11 passenger miles.
 
 Flight: 74
 Flight Path: ABQ, None, None, PHX
@@ -1476,15 +1472,15 @@ Destination Coordinates: 33.4484, -112.074
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 120
+Passengers: 161
 Distance (Nautical Miles): 286.90
-Flight Time (Hours): 0.59
-Operating Cost: $3405.55
+Flight Time (Hours): 12.65
+Operating Cost: $72799.86
 Layover Time (Hours): 0.00
-Maintenance Cost: $3405.55
-Income of Flight: $4156380.00
-Net Profit of the Flight: $4149568.91
-Total Passenger Miles: 34428.13 passenger miles.
+Maintenance Cost: $72799.86
+Income of Flight: $5576476.50
+Net Profit of the Flight: $5430876.78
+Total Passenger Miles: 46191.07 passenger miles.
 
 Flight: 75
 Flight Path: ABQ, None, None, DEN
@@ -1495,18 +1491,18 @@ Destination Coordinates: 39.7392, -104.9903
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 113
+Passengers: 46
 Distance (Nautical Miles): 290.00
-Flight Time (Hours): 0.60
-Operating Cost: $3442.35
+Flight Time (Hours): 12.28
+Operating Cost: $70714.96
 Layover Time (Hours): 0.00
-Maintenance Cost: $3442.35
-Income of Flight: $3913924.50
-Net Profit of the Flight: $3907039.81
-Total Passenger Miles: 32770.16 passenger miles.
+Maintenance Cost: $70714.96
+Income of Flight: $1593279.00
+Net Profit of the Flight: $1451849.08
+Total Passenger Miles: 13340.06 passenger miles.
 
 Flight: 76
-Flight Path: ABQ, JFK, PHX, DFW
+Flight Path: ABQ, JFK, ORD, DFW
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: DFW
@@ -1514,179 +1510,177 @@ Destination Coordinates: 32.8975, -97.0404
 Stops: 2
 Stop1: JFK
 Stop1 Coordinates: 40.6413,-73.7781
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 95
+Stop2: ORD
+Stop 2 Coordinates: 41.9786,-87.9048
+Passengers: 191
 Distance (Nautical Miles): 496.77
-Flight Time (Hours): 1.02
-Operating Cost: $5896.68
-Layover Time (Hours): 1.71
-Maintenance Cost: $6131.25
-Income of Flight: $3290467.50
-Net Profit of the Flight: $3278439.56
-Total Passenger Miles: 47192.94 passenger miles.
+Flight Time (Hours): 12.67
+Operating Cost: $72952.12
+Layover Time (Hours): 1.46
+Maintenance Cost: $73165.75
+Income of Flight: $6615571.50
+Net Profit of the Flight: $6469453.64
+Total Passenger Miles: 94882.64 passenger miles.
 
 Flight: 77
-Flight Path: ABQ, None, None, JFK
+Flight Path: ABQ, ORD, MCI, JFK
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
-Stops: 0
-Stop1: None
-Stop2: None
-Passengers: 130
+Stops: 2
+Stop1: ORD
+Stop1 Coordinates: 41.9786,-87.9048
+Stop2: MCI
+Stop 2 Coordinates: 39.2978,-94.7139
+Passengers: 151
 Distance (Nautical Miles): 1587.26
-Flight Time (Hours): 3.27
-Operating Cost: $18840.94
-Layover Time (Hours): 0.00
-Maintenance Cost: $18840.94
-Income of Flight: $4502745.00
-Net Profit of the Flight: $4465063.13
-Total Passenger Miles: 206343.76 passenger miles.
+Flight Time (Hours): 12.22
+Operating Cost: $70365.03
+Layover Time (Hours): 1.86
+Maintenance Cost: $70477.03
+Income of Flight: $5230111.50
+Net Profit of the Flight: $5089269.44
+Total Passenger Miles: 239676.21 passenger miles.
 
 Flight: 78
-Flight Path: ABQ, MIA, None, MIA
+Flight Path: ABQ, None, None, MIA
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: MIA
 Destination Coordinates: 25.7617, -80.1918
-Stops: 1
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 123
+Passengers: 34
 Distance (Nautical Miles): 1475.86
-Flight Time (Hours): 3.04
-Operating Cost: $17518.61
-Layover Time (Hours): 1.67
-Maintenance Cost: $17764.04
-Income of Flight: $4260289.50
-Net Profit of the Flight: $4225006.85
-Total Passenger Miles: 181530.81 passenger miles.
+Flight Time (Hours): 12.94
+Operating Cost: $74474.43
+Layover Time (Hours): 0.00
+Maintenance Cost: $74474.43
+Income of Flight: $1177641.00
+Net Profit of the Flight: $1028692.14
+Total Passenger Miles: 50179.25 passenger miles.
 
 Flight: 79
-Flight Path: ABQ, ORD, None, SEA
+Flight Path: ABQ, None, None, SEA
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
-Stops: 1
-Stop1: ORD
-Stop1 Coordinates: 41.9786,-87.9048
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 52
+Passengers: 51
 Distance (Nautical Miles): 1028.61
-Flight Time (Hours): 2.12
-Operating Cost: $12209.76
-Layover Time (Hours): 1.38
-Maintenance Cost: $12382.26
-Income of Flight: $1801098.00
-Net Profit of the Flight: $1776505.98
-Total Passenger Miles: 53487.96 passenger miles.
+Flight Time (Hours): 11.68
+Operating Cost: $67260.68
+Layover Time (Hours): 0.00
+Maintenance Cost: $67260.68
+Income of Flight: $1766461.50
+Net Profit of the Flight: $1631940.14
+Total Passenger Miles: 52459.34 passenger miles.
 
 Flight: 80
-Flight Path: ABQ, MIA, MCI, ORD
+Flight Path: ABQ, DEN, None, ORD
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: ORD
 Destination Coordinates: 41.9786, -87.9048
-Stops: 2
-Stop1: MIA
-Stop1 Coordinates: 25.7617,-80.1918
-Stop2: MCI
-Stop 2 Coordinates: 39.2978,-94.7139
-Passengers: 58
+Stops: 1
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: None
+Passengers: 164
 Distance (Nautical Miles): 971.72
-Flight Time (Hours): 2.00
-Operating Cost: $11534.44
-Layover Time (Hours): 1.59
-Maintenance Cost: $11762.30
-Income of Flight: $2008917.00
-Net Profit of the Flight: $1985620.27
-Total Passenger Miles: 56359.85 passenger miles.
+Flight Time (Hours): 12.13
+Operating Cost: $69823.58
+Layover Time (Hours): 1.46
+Maintenance Cost: $70035.39
+Income of Flight: $5680386.00
+Net Profit of the Flight: $5540527.03
+Total Passenger Miles: 159362.35 passenger miles.
 
 Flight: 81
-Flight Path: ABQ, ORD, MIA, MCI
+Flight Path: ABQ, DEN, SEA, MCI
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: MCI
 Destination Coordinates: 39.2978, -94.7139
 Stops: 2
-Stop1: ORD
-Stop1 Coordinates: 41.9786,-87.9048
-Stop2: MIA
-Stop 2 Coordinates: 25.7617,-80.1918
-Passengers: 49
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: SEA
+Stop 2 Coordinates: 47.6062,-122.3321
+Passengers: 174
 Distance (Nautical Miles): 624.81
-Flight Time (Hours): 1.29
-Operating Cost: $7416.62
-Layover Time (Hours): 1.59
-Maintenance Cost: $7514.11
-Income of Flight: $1697188.50
-Net Profit of the Flight: $1682257.78
-Total Passenger Miles: 30615.92 passenger miles.
+Flight Time (Hours): 12.31
+Operating Cost: $70881.63
+Layover Time (Hours): 1.51
+Maintenance Cost: $70956.48
+Income of Flight: $6026751.00
+Net Profit of the Flight: $5884912.89
+Total Passenger Miles: 108717.76 passenger miles.
 
 Flight: 82
-Flight Path: MCI, DFW, ABQ, LAX
+Flight Path: MCI, DEN, None, LAX
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: LAX
 Destination Coordinates: 34.0522, -118.2437
-Stops: 2
-Stop1: DFW
-Stop1 Coordinates: 32.8975,-97.0404
-Stop2: ABQ
-Stop 2 Coordinates: 35.0844,-106.6504
-Passengers: 55
+Stops: 1
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: None
+Passengers: 56
 Distance (Nautical Miles): 1174.59
-Flight Time (Hours): 2.42
-Operating Cost: $13942.53
-Layover Time (Hours): 1.96
-Maintenance Cost: $14068.41
-Income of Flight: $1905007.50
-Net Profit of the Flight: $1876996.56
-Total Passenger Miles: 64602.57 passenger miles.
+Flight Time (Hours): 11.50
+Operating Cost: $66198.03
+Layover Time (Hours): 1.99
+Maintenance Cost: $66347.05
+Income of Flight: $1939644.00
+Net Profit of the Flight: $1807098.92
+Total Passenger Miles: 65777.16 passenger miles.
 
 Flight: 83
-Flight Path: MCI, LAX, None, PHX
+Flight Path: MCI, DEN, ABQ, PHX
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: PHX
 Destination Coordinates: 33.4484, -112.074
-Stops: 1
-Stop1: LAX
-Stop1 Coordinates: 34.0522,-118.2437
-Stop2: None
-Passengers: 36
+Stops: 2
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: ABQ
+Stop 2 Coordinates: 35.0844,-106.6504
+Passengers: 74
 Distance (Nautical Miles): 909.32
-Flight Time (Hours): 1.87
-Operating Cost: $10793.76
-Layover Time (Hours): 1.98
-Maintenance Cost: $10974.94
-Income of Flight: $1246914.00
-Net Profit of the Flight: $1225145.30
-Total Passenger Miles: 32735.63 passenger miles.
+Flight Time (Hours): 11.52
+Operating Cost: $66322.01
+Layover Time (Hours): 1.48
+Maintenance Cost: $66426.51
+Income of Flight: $2563101.00
+Net Profit of the Flight: $2430352.47
+Total Passenger Miles: 67289.90 passenger miles.
 
 Flight: 84
-Flight Path: MCI, MCI, None, DEN
+Flight Path: MCI, None, None, DEN
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: DEN
 Destination Coordinates: 39.7392, -104.9903
-Stops: 1
-Stop1: MCI
-Stop1 Coordinates: 39.2978,-94.7139
+Stops: 0
+Stop1: None
 Stop2: None
-Passengers: 168
+Passengers: 113
 Distance (Nautical Miles): 477.62
-Flight Time (Hours): 0.98
-Operating Cost: $5669.35
-Layover Time (Hours): 1.45
-Maintenance Cost: $5747.16
-Income of Flight: $5818932.00
-Net Profit of the Flight: $5807515.49
-Total Passenger Miles: 80239.54 passenger miles.
+Flight Time (Hours): 11.25
+Operating Cost: $64777.51
+Layover Time (Hours): 0.00
+Maintenance Cost: $64777.51
+Income of Flight: $3913924.50
+Net Profit of the Flight: $3784369.48
+Total Passenger Miles: 53970.64 passenger miles.
 
 Flight: 85
 Flight Path: MCI, None, None, DFW
@@ -1697,37 +1691,38 @@ Destination Coordinates: 32.8975, -97.0404
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 150
+Passengers: 20
 Distance (Nautical Miles): 399.76
-Flight Time (Hours): 0.82
-Operating Cost: $4745.23
+Flight Time (Hours): 11.54
+Operating Cost: $66430.69
 Layover Time (Hours): 0.00
-Maintenance Cost: $4745.23
-Income of Flight: $5195475.00
-Net Profit of the Flight: $5185984.54
-Total Passenger Miles: 59964.47 passenger miles.
+Maintenance Cost: $66430.69
+Income of Flight: $692730.00
+Net Profit of the Flight: $559868.62
+Total Passenger Miles: 7995.26 passenger miles.
 
 Flight: 86
-Flight Path: MCI, None, None, JFK
+Flight Path: MCI, ORD, None, JFK
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: JFK
 Destination Coordinates: 40.6413, -73.7781
-Stops: 0
-Stop1: None
+Stops: 1
+Stop1: ORD
+Stop1 Coordinates: 41.9786,-87.9048
 Stop2: None
-Passengers: 96
+Passengers: 52
 Distance (Nautical Miles): 966.82
-Flight Time (Hours): 1.99
-Operating Cost: $11476.21
-Layover Time (Hours): 0.00
-Maintenance Cost: $11476.21
-Income of Flight: $3325104.00
-Net Profit of the Flight: $3302151.58
-Total Passenger Miles: 92814.37 passenger miles.
+Flight Time (Hours): 11.21
+Operating Cost: $64510.01
+Layover Time (Hours): 1.28
+Maintenance Cost: $64575.48
+Income of Flight: $1801098.00
+Net Profit of the Flight: $1672012.51
+Total Passenger Miles: 50274.45 passenger miles.
 
 Flight: 87
-Flight Path: MCI, PHX, LAX, MIA
+Flight Path: MCI, PHX, DFW, MIA
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: MIA
@@ -1735,37 +1730,37 @@ Destination Coordinates: 25.7617, -80.1918
 Stops: 2
 Stop1: PHX
 Stop1 Coordinates: 33.4484,-112.074
-Stop2: LAX
-Stop 2 Coordinates: 34.0522,-118.2437
-Passengers: 143
+Stop2: DFW
+Stop 2 Coordinates: 32.8975,-97.0404
+Passengers: 42
 Distance (Nautical Miles): 1092.33
-Flight Time (Hours): 2.25
-Operating Cost: $12966.03
-Layover Time (Hours): 1.04
-Maintenance Cost: $13044.65
-Income of Flight: $4953019.50
-Net Profit of the Flight: $4927008.82
-Total Passenger Miles: 156202.72 passenger miles.
+Flight Time (Hours): 11.72
+Operating Cost: $67464.72
+Layover Time (Hours): 1.34
+Maintenance Cost: $67587.51
+Income of Flight: $1454733.00
+Net Profit of the Flight: $1319680.78
+Total Passenger Miles: 45877.72 passenger miles.
 
 Flight: 88
-Flight Path: MCI, ABQ, None, SEA
+Flight Path: MCI, DFW, None, SEA
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: SEA
 Destination Coordinates: 47.6062, -122.3321
 Stops: 1
-Stop1: ABQ
-Stop1 Coordinates: 35.0844,-106.6504
+Stop1: DFW
+Stop1 Coordinates: 32.8975,-97.0404
 Stop2: None
-Passengers: 132
+Passengers: 131
 Distance (Nautical Miles): 1297.10
-Flight Time (Hours): 2.67
-Operating Cost: $15396.71
-Layover Time (Hours): 1.61
-Maintenance Cost: $15584.47
-Income of Flight: $4572018.00
-Net Profit of the Flight: $4541036.83
-Total Passenger Miles: 171217.14 passenger miles.
+Flight Time (Hours): 10.78
+Operating Cost: $62060.59
+Layover Time (Hours): 1.60
+Maintenance Cost: $62267.80
+Income of Flight: $4537381.50
+Net Profit of the Flight: $4413053.11
+Total Passenger Miles: 169920.04 passenger miles.
 
 Flight: 89
 Flight Path: MCI, None, None, ORD
@@ -1776,34 +1771,34 @@ Destination Coordinates: 41.9786, -87.9048
 Stops: 0
 Stop1: None
 Stop2: None
-Passengers: 86
+Passengers: 42
 Distance (Nautical Miles): 349.95
-Flight Time (Hours): 0.72
-Operating Cost: $4153.95
+Flight Time (Hours): 11.13
+Operating Cost: $64092.26
 Layover Time (Hours): 0.00
-Maintenance Cost: $4153.95
-Income of Flight: $2978739.00
-Net Profit of the Flight: $2970431.10
-Total Passenger Miles: 30095.76 passenger miles.
+Maintenance Cost: $64092.26
+Income of Flight: $1454733.00
+Net Profit of the Flight: $1326548.48
+Total Passenger Miles: 14697.93 passenger miles.
 
 Flight: 90
-Flight Path: MCI, ORD, PHX, ABQ
+Flight Path: MCI, DEN, ORD, ABQ
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: ABQ
 Destination Coordinates: 35.0844, -106.6504
 Stops: 2
-Stop1: ORD
-Stop1 Coordinates: 41.9786,-87.9048
-Stop2: PHX
-Stop 2 Coordinates: 33.4484,-112.074
-Passengers: 116
+Stop1: DEN
+Stop1 Coordinates: 39.7392,-104.9903
+Stop2: ORD
+Stop 2 Coordinates: 41.9786,-87.9048
+Passengers: 197
 Distance (Nautical Miles): 624.81
-Flight Time (Hours): 1.29
-Operating Cost: $7416.62
-Layover Time (Hours): 1.91
-Maintenance Cost: $7559.54
-Income of Flight: $4017834.00
-Net Profit of the Flight: $4002857.84
-Total Passenger Miles: 72478.51 passenger miles.
+Flight Time (Hours): 11.46
+Operating Cost: $65974.21
+Layover Time (Hours): 1.58
+Maintenance Cost: $66088.64
+Income of Flight: $6823390.50
+Net Profit of the Flight: $6691327.65
+Total Passenger Miles: 123088.50 passenger miles.
 
