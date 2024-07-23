@@ -86,7 +86,7 @@ class FlightSimulation:
                 ax.set_title(f'Flight {flight_idx + 1}: {flight_path_str} - Frame {frame}', fontsize=16)
 
         total_frames = len(flight_data) * 3
-        ani = FuncAnimation(fig, update, frames=range(total_frames), interval= 750, repeat=False)
+        ani = FuncAnimation(fig, update, frames=range(total_frames), interval= 5, repeat=False)
         plt.show()
 
 def main():
