@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 import random
 from geopy.distance import geodesic
@@ -19,7 +19,7 @@ airports = {
 
 def calculate_flight_time(lon1, lat1, lon2, lat2):
     """Calculate flight time and maintenance flight hour."""
-    distance_nm = geodesic((lat1, lon1), (lat2, lat2)).nautical
+    distance_nm = geodesic((lat1, lon1), (lat2, lon2)).nautical
     speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
     flight_time = distance_nm / speed_knots
     operational_cost = 5757 * flight_time
@@ -36,6 +36,20 @@ def simulate_layover(stops, flight_time, operational_cost):
         maintenance_cost = (layover_time * maintenance_cost_per_hour) + operational_cost
     
     return layover_time, maintenance_cost
+
+def order_stops_by_distance(origin_code, stop_codes):
+    """Order stop codes by their distance from the origin."""
+    origin_data = airports[origin_code]
+    origin_coords = (origin_data['lat'], origin_data['lon'])
+    
+    distances = {}
+    for stop_code in stop_codes:
+        stop_data = airports[stop_code]
+        stop_coords = (stop_data['lat'], stop_data['lon'])
+        distances[stop_code] = geodesic(origin_coords, stop_coords).nautical
+    
+    sorted_stops = sorted(distances.keys(), key=lambda x: distances[x])
+    return sorted_stops
 
 # Generate all possible routes
 routes = []
@@ -54,8 +68,12 @@ for origin_code, origin_data in airports.items():
                 possible_stops = [code for code in airports.keys() if code not in [origin_code, dest_code]]
                 stops = random.randint(0, min(2, len(possible_stops)))
                 stop_cities = random.sample(possible_stops, stops)
-                stop1 = stop_cities[0] if stops >= 1 else 'None'
-                stop2 = stop_cities[1] if stops >= 2 else 'None'
+                
+                # Order stops by distance from origin
+                ordered_stops = order_stops_by_distance(origin_code, stop_cities)
+                stop1 = ordered_stops[0] if stops >= 1 else 'None'
+                stop2 = ordered_stops[1] if stops >= 2 else 'None'
+                
                 stop1_data = airports.get(stop1, {'lat': None, 'lon': None})
                 stop2_data = airports.get(stop2, {'lat': None, 'lon': None})
             else:
@@ -115,7 +133,7 @@ for origin_code, origin_data in airports.items():
             route_id += 1
 
 # Write data to a text file
-with open('flights.txt', 'w') as file:
+with open('sorted_flights.txt', 'w') as file:
     for route in routes:
         file.write(f"Flight: {route['Route']}\n")
         file.write(f"Flight Path: {route['Origin']}, {route['Stop1']}, {route['Stop2']}, {route['Destination']}\n")
@@ -146,4 +164,3 @@ with open('flights.txt', 'w') as file:
         file.write("\n")
 
 print("All possible flight routes data generated and saved to flights.txt")
-
