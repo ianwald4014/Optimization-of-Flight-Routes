@@ -133,7 +133,7 @@ for origin_code, origin_data in airports.items():
             route_id += 1
 
 # Write data to a text file
-with open('sorted_flights.txt', 'w') as file:
+with open('flights.txt', 'w') as file:
     for route in routes:
         file.write(f"Flight: {route['Route']}\n")
         file.write(f"Flight Path: {route['Origin']}, {route['Stop1']}, {route['Stop2']}, {route['Destination']}\n")
