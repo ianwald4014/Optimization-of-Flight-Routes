@@ -123,10 +123,14 @@ def reorder_stops(flight_data):
 
 def write_sorted_flights(flight_data):
     with open('sorted_flights.txt', 'w') as file:
+        # Write the header line
+        file.write("Revisment of Flight Routes\n\n")
+        
+        # Write the rest of the flight data
         for flight_number, data in flight_data.items():
             for line in data.get('lines', []):
                 if line.startswith("Flight Path:"):
-                    file.write(f"Revised Flight Path: {data.get('revised_flight_path', '')}\n")
+                    file.write(f"Flight Path: {data.get('revised_flight_path', '')}\n")
                 elif line.startswith("Stop1:"):
                     file.write(f"Stop1: {data.get('stop1_revised', 'None')}\n")
                 elif line.startswith("Stop2:"):
