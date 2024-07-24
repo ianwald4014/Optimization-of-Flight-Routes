@@ -86,19 +86,31 @@ def calculate_distances(data):
     stop2_iata = data.get('stop2', 'None')
     destination_iata = data['destination']
 
-    # Calculate distances
-    distances = {
-        'from_origin_to_stop1': haversine(origin_coords, stop1_coords) if 'stop1_coordinates' in data else float('inf'),
-        'from_origin_to_stop2': haversine(origin_coords, stop2_coords) if 'stop2_coordinates' in data else float('inf'),
-        'from_origin_to_destination': haversine(origin_coords, destination_coords)
-    }
+    # Initialize distances dictionary based on the number of stops
+    distances = {}
+    num_stops = data['stops']
+    
+    if num_stops == 0:
+        distances['from_origin_to_destination'] = haversine(origin_coords, destination_coords)
+    elif num_stops == 1:
+        if stop1_iata != 'None':
+            distances['from_origin_to_stop1'] = haversine(origin_coords, stop1_coords)
+            distances['from_origin_to_destination'] = haversine(stop1_coords, destination_coords)
+    elif num_stops == 2:
+        if stop1_iata != 'None':
+            distances['from_origin_to_stop1'] = haversine(origin_coords, stop1_coords)
+        if stop2_iata != 'None':
+            distances['from_origin_to_stop2'] = haversine(stop1_coords, stop2_coords)
+        distances['from_origin_to_destination'] = haversine(stop2_coords, destination_coords)
 
-    # Create a list of tuples (distance, IATA code)
-    distances_list = [
-        (distances['from_origin_to_stop1'], stop1_iata),
-        (distances['from_origin_to_stop2'], stop2_iata),
-        (distances['from_origin_to_destination'], destination_iata)
-    ]
+    # Create a list of tuples (distance, IATA code), only including existing keys
+    distances_list = []
+    if 'from_origin_to_stop1' in distances:
+        distances_list.append((distances['from_origin_to_stop1'], stop1_iata))
+    if 'from_origin_to_stop2' in distances:
+        distances_list.append((distances['from_origin_to_stop2'], stop2_iata))
+    if 'from_origin_to_destination' in distances:
+        distances_list.append((distances['from_origin_to_destination'], destination_iata))
 
     # Sort the list by distance (first element of each tuple)
     distances_list.sort(key=lambda x: x[0])
@@ -113,20 +125,31 @@ def reorder_stops(flight_data):
         # Extract sorted labels
         sorted_iatas = [iata for _, iata in sorted_distances if iata != 'None']
 
-        # Update revised stops and destination
-        data['stop1_revised'] = sorted_iatas[0] if len(sorted_iatas) > 0 else 'None'
-        data['stop2_revised'] = sorted_iatas[1] if len(sorted_iatas) > 1 else 'None'
-        data['destination_revised'] = sorted_iatas[-1] if len(sorted_iatas) > 0 else data.get('destination', 'None')
+        # Handle different cases based on the number of stops
+        if len(sorted_iatas) == 1:
+            stop1_revised = 'None'
+            stop2_revised = 'None'
+            destination_revised = sorted_iatas[0]
+        elif len(sorted_iatas) == 2:
+            stop1_revised = sorted_iatas[0]
+            stop2_revised = 'None'
+            destination_revised = sorted_iatas[1]
+        else:
+            stop1_revised = sorted_iatas[0]
+            stop2_revised = sorted_iatas[1]
+            destination_revised = sorted_iatas[2]
+
+        # Update the data dictionary with the revised stops and destination
+        data['stop1_revised'] = stop1_revised
+        data['stop2_revised'] = stop2_revised
+        data['destination_revised'] = destination_revised
 
         # Construct the revised flight path
-        data['revised_flight_path'] = f"{data['origin']}, {data['stop1_revised']}, {data['stop2_revised']}, {data['destination_revised']}"
+        data['revised_flight_path'] = f"{data['origin']}, {stop1_revised}, {stop2_revised}, {destination_revised}"
 
 def write_sorted_flights(flight_data):
     with open('sorted_flights.txt', 'w') as file:
-        # Write the header line
-        file.write("Revisment of Flight Routes\n\n")
-        
-        # Write the rest of the flight data
+        file.write("Revising of Flight Routes\n\n")
         for flight_number, data in flight_data.items():
             for line in data.get('lines', []):
                 if line.startswith("Flight Path:"):
