@@ -1,5 +1,7 @@
+Revisment of Flight Routes
+
 Flight: 1
-Revised Flight Path: LAX, PHX, None, PHX
+Flight Path: LAX, PHX, None, PHX
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: PHX
@@ -18,7 +20,7 @@ Net Profit of the Flight: $1828357.76
 Total Passenger Miles: 16468.57 passenger miles.
 
 Flight: 2
-Revised Flight Path: LAX, DEN, DFW, DFW
+Flight Path: LAX, DEN, DFW, DFW
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: DFW
@@ -38,7 +40,7 @@ Net Profit of the Flight: $917874.31
 Total Passenger Miles: 19496.89 passenger miles.
 
 Flight: 3
-Revised Flight Path: LAX, ABQ, DFW, JFK
+Flight Path: LAX, ABQ, DFW, JFK
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: JFK
@@ -59,7 +61,7 @@ Net Profit of the Flight: $2537610.63
 Total Passenger Miles: 78773.58 passenger miles.
 
 Flight: 4
-Revised Flight Path: LAX, JFK, None, JFK
+Flight Path: LAX, JFK, None, JFK
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: JFK
@@ -78,7 +80,7 @@ Net Profit of the Flight: $3482107.43
 Total Passenger Miles: 218329.53 passenger miles.
 
 Flight: 5
-Revised Flight Path: LAX, PHX, MIA, DFW
+Flight Path: LAX, PHX, MIA, DFW
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: DFW
@@ -99,7 +101,7 @@ Net Profit of the Flight: $3657790.25
 Total Passenger Miles: 217522.88 passenger miles.
 
 Flight: 6
-Revised Flight Path: LAX, DEN, SEA, SEA
+Flight Path: LAX, DEN, SEA, SEA
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: SEA
@@ -119,7 +121,7 @@ Net Profit of the Flight: $6353136.36
 Total Passenger Miles: 153359.91 passenger miles.
 
 Flight: 7
-Revised Flight Path: LAX, DFW, ORD, MIA
+Flight Path: LAX, DFW, ORD, MIA
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: MIA
@@ -140,7 +142,7 @@ Net Profit of the Flight: $2665794.31
 Total Passenger Miles: 117443.88 passenger miles.
 
 Flight: 8
-Revised Flight Path: LAX, ABQ, DEN, DEN
+Flight Path: LAX, ABQ, DEN, DEN
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: DEN
@@ -160,7 +162,7 @@ Net Profit of the Flight: $5562563.91
 Total Passenger Miles: 92965.03 passenger miles.
 
 Flight: 9
-Revised Flight Path: LAX, MCI, MIA, MIA
+Flight Path: LAX, MCI, MIA, MIA
 Origin: LAX
 Origin Coordinates: 34.0522, -118.2437
 Destination: MIA
@@ -180,7 +182,7 @@ Net Profit of the Flight: $5686986.54
 Total Passenger Miles: 193807.70 passenger miles.
 
 Flight: 10
-Revised Flight Path: PHX, LAX, None, LAX
+Flight Path: PHX, LAX, None, LAX
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: LAX
@@ -199,7 +201,7 @@ Net Profit of the Flight: $3560182.76
 Total Passenger Miles: 32004.95 passenger miles.
 
 Flight: 11
-Revised Flight Path: PHX, DEN, None, DEN
+Flight Path: PHX, DEN, None, DEN
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: DEN
@@ -218,7 +220,7 @@ Net Profit of the Flight: $1927565.36
 Total Passenger Miles: 28491.91 passenger miles.
 
 Flight: 12
-Revised Flight Path: PHX, DEN, DFW, MIA
+Flight Path: PHX, DEN, DFW, MIA
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: MIA
@@ -239,7 +241,7 @@ Net Profit of the Flight: $6251006.71
 Total Passenger Miles: 137049.87 passenger miles.
 
 Flight: 13
-Revised Flight Path: PHX, JFK, None, JFK
+Flight Path: PHX, JFK, None, JFK
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: JFK
@@ -258,7 +260,7 @@ Net Profit of the Flight: $5635904.31
 Total Passenger Miles: 307284.48 passenger miles.
 
 Flight: 14
-Revised Flight Path: PHX, DEN, MIA, SEA
+Flight Path: PHX, DEN, MIA, SEA
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: SEA
@@ -279,7 +281,7 @@ Net Profit of the Flight: $6817005.48
 Total Passenger Miles: 341010.94 passenger miles.
 
 Flight: 15
-Revised Flight Path: PHX, SEA, None, SEA
+Flight Path: PHX, SEA, None, SEA
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: SEA
@@ -298,7 +300,7 @@ Net Profit of the Flight: $1847390.06
 Total Passenger Miles: 52272.96 passenger miles.
 
 Flight: 16
-Revised Flight Path: PHX, ABQ, ORD, DEN
+Flight Path: PHX, ABQ, ORD, DEN
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: DEN
@@ -319,7 +321,7 @@ Net Profit of the Flight: $939886.65
 Total Passenger Miles: 35096.83 passenger miles.
 
 Flight: 17
-Revised Flight Path: PHX, ABQ, None, ABQ
+Flight Path: PHX, ABQ, None, ABQ
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: ABQ
@@ -338,7 +340,7 @@ Net Profit of the Flight: $859101.41
 Total Passenger Miles: 7172.53 passenger miles.
 
 Flight: 18
-Revised Flight Path: PHX, DEN, MCI, SEA
+Flight Path: PHX, DEN, MCI, SEA
 Origin: PHX
 Origin Coordinates: 33.4484, -112.074
 Destination: SEA
@@ -359,7 +361,7 @@ Net Profit of the Flight: $5485519.12
 Total Passenger Miles: 144582.35 passenger miles.
 
 Flight: 19
-Revised Flight Path: DEN, PHX, LAX, LAX
+Flight Path: DEN, PHX, LAX, LAX
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: LAX
@@ -379,7 +381,7 @@ Net Profit of the Flight: $6252004.15
 Total Passenger Miles: 130701.36 passenger miles.
 
 Flight: 20
-Revised Flight Path: DEN, PHX, SEA, JFK
+Flight Path: DEN, PHX, SEA, JFK
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: JFK
@@ -400,7 +402,7 @@ Net Profit of the Flight: $2758604.65
 Total Passenger Miles: 40702.73 passenger miles.
 
 Flight: 21
-Revised Flight Path: DEN, DFW, None, DFW
+Flight Path: DEN, DFW, None, DFW
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: DFW
@@ -419,7 +421,7 @@ Net Profit of the Flight: $1787750.87
 Total Passenger Miles: 29235.24 passenger miles.
 
 Flight: 22
-Revised Flight Path: DEN, ABQ, JFK, PHX
+Flight Path: DEN, ABQ, JFK, PHX
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: PHX
@@ -440,7 +442,7 @@ Net Profit of the Flight: $5265362.80
 Total Passenger Miles: 218580.39 passenger miles.
 
 Flight: 23
-Revised Flight Path: DEN, ORD, MIA, JFK
+Flight Path: DEN, ORD, MIA, JFK
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: JFK
@@ -461,7 +463,7 @@ Net Profit of the Flight: $2111745.23
 Total Passenger Miles: 93007.59 passenger miles.
 
 Flight: 24
-Revised Flight Path: DEN, DFW, SEA, JFK
+Flight Path: DEN, DFW, SEA, JFK
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: JFK
@@ -482,7 +484,7 @@ Net Profit of the Flight: $4100617.15
 Total Passenger Miles: 105606.46 passenger miles.
 
 Flight: 25
-Revised Flight Path: DEN, DFW, ORD, LAX
+Flight Path: DEN, DFW, ORD, LAX
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: LAX
@@ -503,7 +505,7 @@ Net Profit of the Flight: $2855921.00
 Total Passenger Miles: 65400.85 passenger miles.
 
 Flight: 26
-Revised Flight Path: DEN, ABQ, None, ABQ
+Flight Path: DEN, ABQ, None, ABQ
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: ABQ
@@ -522,7 +524,7 @@ Net Profit of the Flight: $2764035.31
 Total Passenger Miles: 23200.11 passenger miles.
 
 Flight: 27
-Revised Flight Path: DEN, MCI, PHX, LAX
+Flight Path: DEN, MCI, PHX, LAX
 Origin: DEN
 Origin Coordinates: 39.7392, -104.9903
 Destination: LAX
@@ -543,7 +545,7 @@ Net Profit of the Flight: $5599566.16
 Total Passenger Miles: 77373.84 passenger miles.
 
 Flight: 28
-Revised Flight Path: DFW, MIA, LAX, SEA
+Flight Path: DFW, MIA, LAX, SEA
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: SEA
@@ -564,7 +566,7 @@ Net Profit of the Flight: $5793592.02
 Total Passenger Miles: 178837.31 passenger miles.
 
 Flight: 29
-Revised Flight Path: DFW, PHX, LAX, JFK
+Flight Path: DFW, PHX, LAX, JFK
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: JFK
@@ -585,7 +587,7 @@ Net Profit of the Flight: $1817645.14
 Total Passenger Miles: 40130.62 passenger miles.
 
 Flight: 30
-Revised Flight Path: DFW, DEN, ORD, SEA
+Flight Path: DFW, DEN, ORD, SEA
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: SEA
@@ -606,7 +608,7 @@ Net Profit of the Flight: $4004389.22
 Total Passenger Miles: 65217.07 passenger miles.
 
 Flight: 31
-Revised Flight Path: DFW, MCI, JFK, SEA
+Flight Path: DFW, MCI, JFK, SEA
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: SEA
@@ -627,7 +629,7 @@ Net Profit of the Flight: $5582230.65
 Total Passenger Miles: 195845.29 passenger miles.
 
 Flight: 32
-Revised Flight Path: DFW, MIA, None, MIA
+Flight Path: DFW, MIA, None, MIA
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: MIA
@@ -646,7 +648,7 @@ Net Profit of the Flight: $3856029.13
 Total Passenger Miles: 109729.19 passenger miles.
 
 Flight: 33
-Revised Flight Path: DFW, SEA, None, SEA
+Flight Path: DFW, SEA, None, SEA
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: SEA
@@ -665,7 +667,7 @@ Net Profit of the Flight: $3360015.35
 Total Passenger Miles: 141845.50 passenger miles.
 
 Flight: 34
-Revised Flight Path: DFW, ORD, JFK, JFK
+Flight Path: DFW, ORD, JFK, JFK
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: JFK
@@ -685,7 +687,7 @@ Net Profit of the Flight: $1888380.17
 Total Passenger Miles: 38322.29 passenger miles.
 
 Flight: 35
-Revised Flight Path: DFW, MCI, ABQ, ORD
+Flight Path: DFW, MCI, ABQ, ORD
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: ORD
@@ -706,7 +708,7 @@ Net Profit of the Flight: $1408197.28
 Total Passenger Miles: 20367.48 passenger miles.
 
 Flight: 36
-Revised Flight Path: DFW, MCI, None, MCI
+Flight Path: DFW, MCI, None, MCI
 Origin: DFW
 Origin Coordinates: 32.8975, -97.0404
 Destination: MCI
@@ -725,7 +727,7 @@ Net Profit of the Flight: $856422.04
 Total Passenger Miles: 9994.08 passenger miles.
 
 Flight: 37
-Revised Flight Path: JFK, PHX, LAX, LAX
+Flight Path: JFK, PHX, LAX, LAX
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: LAX
@@ -745,7 +747,7 @@ Net Profit of the Flight: $1854081.71
 Total Passenger Miles: 117726.71 passenger miles.
 
 Flight: 38
-Revised Flight Path: JFK, PHX, None, PHX
+Flight Path: JFK, PHX, None, PHX
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: PHX
@@ -764,7 +766,7 @@ Net Profit of the Flight: $2934257.31
 Total Passenger Miles: 161136.98 passenger miles.
 
 Flight: 39
-Revised Flight Path: JFK, DEN, ABQ, ABQ
+Flight Path: JFK, DEN, ABQ, ABQ
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: ABQ
@@ -784,7 +786,7 @@ Net Profit of the Flight: $5888841.21
 Total Passenger Miles: 244295.73 passenger miles.
 
 Flight: 40
-Revised Flight Path: JFK, DFW, None, DFW
+Flight Path: JFK, DFW, None, DFW
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: DFW
@@ -803,7 +805,7 @@ Net Profit of the Flight: $4924319.45
 Total Passenger Miles: 172875.78 passenger miles.
 
 Flight: 41
-Revised Flight Path: JFK, MIA, None, MIA
+Flight Path: JFK, MIA, None, MIA
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: MIA
@@ -822,7 +824,7 @@ Net Profit of the Flight: $6558451.43
 Total Passenger Miles: 179942.75 passenger miles.
 
 Flight: 42
-Revised Flight Path: JFK, ABQ, SEA, LAX
+Flight Path: JFK, ABQ, SEA, LAX
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: LAX
@@ -843,7 +845,7 @@ Net Profit of the Flight: $746580.96
 Total Passenger Miles: 48388.83 passenger miles.
 
 Flight: 43
-Revised Flight Path: JFK, ORD, MIA, MCI
+Flight Path: JFK, ORD, MIA, MCI
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: MCI
@@ -864,7 +866,7 @@ Net Profit of the Flight: $6877307.00
 Total Passenger Miles: 127960.21 passenger miles.
 
 Flight: 44
-Revised Flight Path: JFK, ABQ, None, ABQ
+Flight Path: JFK, ABQ, None, ABQ
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: ABQ
@@ -883,7 +885,7 @@ Net Profit of the Flight: $3183512.63
 Total Passenger Miles: 147615.15 passenger miles.
 
 Flight: 45
-Revised Flight Path: JFK, MCI, LAX, LAX
+Flight Path: JFK, MCI, LAX, LAX
 Origin: JFK
 Origin Coordinates: 40.6413, -73.7781
 Destination: LAX
@@ -903,7 +905,7 @@ Net Profit of the Flight: $4306535.29
 Total Passenger Miles: 120852.05 passenger miles.
 
 Flight: 46
-Revised Flight Path: MIA, DFW, LAX, MCI
+Flight Path: MIA, DFW, LAX, MCI
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: MCI
@@ -924,7 +926,7 @@ Net Profit of the Flight: $2757202.18
 Total Passenger Miles: 164666.85 passenger miles.
 
 Flight: 47
-Revised Flight Path: MIA, JFK, PHX, PHX
+Flight Path: MIA, JFK, PHX, PHX
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: PHX
@@ -944,7 +946,7 @@ Net Profit of the Flight: $2729926.54
 Total Passenger Miles: 137782.20 passenger miles.
 
 Flight: 48
-Revised Flight Path: MIA, DEN, None, DEN
+Flight Path: MIA, DEN, None, DEN
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: DEN
@@ -963,7 +965,7 @@ Net Profit of the Flight: $3185581.29
 Total Passenger Miles: 139511.38 passenger miles.
 
 Flight: 49
-Revised Flight Path: MIA, DFW, None, DFW
+Flight Path: MIA, DFW, None, DFW
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: DFW
@@ -982,7 +984,7 @@ Net Profit of the Flight: $6904041.13
 Total Passenger Miles: 195944.99 passenger miles.
 
 Flight: 50
-Revised Flight Path: MIA, JFK, ORD, ORD
+Flight Path: MIA, JFK, ORD, ORD
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: ORD
@@ -1002,7 +1004,7 @@ Net Profit of the Flight: $5241992.74
 Total Passenger Miles: 143954.20 passenger miles.
 
 Flight: 51
-Revised Flight Path: MIA, SEA, None, SEA
+Flight Path: MIA, SEA, None, SEA
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: SEA
@@ -1021,7 +1023,7 @@ Net Profit of the Flight: $4377063.69
 Total Passenger Miles: 304136.53 passenger miles.
 
 Flight: 52
-Revised Flight Path: MIA, ORD, None, ORD
+Flight Path: MIA, ORD, None, ORD
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: ORD
@@ -1040,7 +1042,7 @@ Net Profit of the Flight: $3681325.99
 Total Passenger Miles: 111684.27 passenger miles.
 
 Flight: 53
-Revised Flight Path: MIA, DFW, ABQ, ABQ
+Flight Path: MIA, DFW, ABQ, ABQ
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: ABQ
@@ -1060,7 +1062,7 @@ Net Profit of the Flight: $4640758.88
 Total Passenger Miles: 199241.13 passenger miles.
 
 Flight: 54
-Revised Flight Path: MIA, DFW, MCI, PHX
+Flight Path: MIA, DFW, MCI, PHX
 Origin: MIA
 Origin Coordinates: 25.7617, -80.1918
 Destination: PHX
@@ -1081,7 +1083,7 @@ Net Profit of the Flight: $5896844.00
 Total Passenger Miles: 186787.87 passenger miles.
 
 Flight: 55
-Revised Flight Path: SEA, LAX, PHX, DFW
+Flight Path: SEA, LAX, PHX, DFW
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: DFW
@@ -1102,7 +1104,7 @@ Net Profit of the Flight: $3790145.47
 Total Passenger Miles: 91682.55 passenger miles.
 
 Flight: 56
-Revised Flight Path: SEA, PHX, None, PHX
+Flight Path: SEA, PHX, None, PHX
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: PHX
@@ -1121,7 +1123,7 @@ Net Profit of the Flight: $1639571.06
 Total Passenger Miles: 46464.85 passenger miles.
 
 Flight: 57
-Revised Flight Path: SEA, DEN, PHX, ORD
+Flight Path: SEA, DEN, PHX, ORD
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: ORD
@@ -1142,7 +1144,7 @@ Net Profit of the Flight: $3615643.52
 Total Passenger Miles: 93182.17 passenger miles.
 
 Flight: 58
-Revised Flight Path: SEA, DFW, JFK, JFK
+Flight Path: SEA, DFW, JFK, JFK
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: JFK
@@ -1162,7 +1164,7 @@ Net Profit of the Flight: $2355489.80
 Total Passenger Miles: 99870.81 passenger miles.
 
 Flight: 59
-Revised Flight Path: SEA, JFK, None, JFK
+Flight Path: SEA, JFK, None, JFK
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: JFK
@@ -1181,7 +1183,7 @@ Net Profit of the Flight: $5838258.87
 Total Passenger Miles: 357656.61 passenger miles.
 
 Flight: 60
-Revised Flight Path: SEA, PHX, MIA, DFW
+Flight Path: SEA, PHX, MIA, DFW
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: DFW
@@ -1202,7 +1204,7 @@ Net Profit of the Flight: $2402682.38
 Total Passenger Miles: 168700.73 passenger miles.
 
 Flight: 61
-Revised Flight Path: SEA, ABQ, ORD, ORD
+Flight Path: SEA, ABQ, ORD, ORD
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: ORD
@@ -1222,7 +1224,7 @@ Net Profit of the Flight: $4605632.52
 Total Passenger Miles: 200474.11 passenger miles.
 
 Flight: 62
-Revised Flight Path: SEA, PHX, ABQ, DFW
+Flight Path: SEA, PHX, ABQ, DFW
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: DFW
@@ -1243,7 +1245,7 @@ Net Profit of the Flight: $1118374.96
 Total Passenger Miles: 33944.28 passenger miles.
 
 Flight: 63
-Revised Flight Path: SEA, LAX, MCI, ORD
+Flight Path: SEA, LAX, MCI, ORD
 Origin: SEA
 Origin Coordinates: 47.6062, -122.3321
 Destination: ORD
@@ -1264,7 +1266,7 @@ Net Profit of the Flight: $1908743.76
 Total Passenger Miles: 72637.57 passenger miles.
 
 Flight: 64
-Revised Flight Path: ORD, LAX, None, LAX
+Flight Path: ORD, LAX, None, LAX
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: LAX
@@ -1283,7 +1285,7 @@ Net Profit of the Flight: $1696079.59
 Total Passenger Miles: 75284.54 passenger miles.
 
 Flight: 65
-Revised Flight Path: ORD, JFK, PHX, LAX
+Flight Path: ORD, JFK, PHX, LAX
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: LAX
@@ -1304,7 +1306,7 @@ Net Profit of the Flight: $6724178.47
 Total Passenger Miles: 244424.32 passenger miles.
 
 Flight: 66
-Revised Flight Path: ORD, DEN, PHX, PHX
+Flight Path: ORD, DEN, PHX, PHX
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: PHX
@@ -1324,7 +1326,7 @@ Net Profit of the Flight: $1505145.42
 Total Passenger Miles: 34670.33 passenger miles.
 
 Flight: 67
-Revised Flight Path: ORD, DFW, PHX, PHX
+Flight Path: ORD, DFW, PHX, PHX
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: PHX
@@ -1344,7 +1346,7 @@ Net Profit of the Flight: $5247952.92
 Total Passenger Miles: 105908.88 passenger miles.
 
 Flight: 68
-Revised Flight Path: ORD, JFK, None, JFK
+Flight Path: ORD, JFK, None, JFK
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: JFK
@@ -1363,7 +1365,7 @@ Net Profit of the Flight: $2859564.16
 Total Passenger Miles: 53370.34 passenger miles.
 
 Flight: 69
-Revised Flight Path: ORD, JFK, MIA, SEA
+Flight Path: ORD, JFK, MIA, SEA
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: SEA
@@ -1384,7 +1386,7 @@ Net Profit of the Flight: $6036492.29
 Total Passenger Miles: 182661.19 passenger miles.
 
 Flight: 70
-Revised Flight Path: ORD, MIA, SEA, SEA
+Flight Path: ORD, MIA, SEA, SEA
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: SEA
@@ -1404,7 +1406,7 @@ Net Profit of the Flight: $3982076.30
 Total Passenger Miles: 173544.75 passenger miles.
 
 Flight: 71
-Revised Flight Path: ORD, ABQ, MIA, PHX
+Flight Path: ORD, ABQ, MIA, PHX
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: PHX
@@ -1425,7 +1427,7 @@ Net Profit of the Flight: $4340964.88
 Total Passenger Miles: 122436.93 passenger miles.
 
 Flight: 72
-Revised Flight Path: ORD, MCI, None, MCI
+Flight Path: ORD, MCI, None, MCI
 Origin: ORD
 Origin Coordinates: 41.9786, -87.9048
 Destination: MCI
@@ -1444,7 +1446,7 @@ Net Profit of the Flight: $6156989.10
 Total Passenger Miles: 62291.22 passenger miles.
 
 Flight: 73
-Revised Flight Path: ABQ, DEN, LAX, JFK
+Flight Path: ABQ, DEN, LAX, JFK
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: JFK
@@ -1465,7 +1467,7 @@ Net Profit of the Flight: $6705575.53
 Total Passenger Miles: 112019.98 passenger miles.
 
 Flight: 74
-Revised Flight Path: ABQ, PHX, None, PHX
+Flight Path: ABQ, PHX, None, PHX
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: PHX
@@ -1484,7 +1486,7 @@ Net Profit of the Flight: $928374.41
 Total Passenger Miles: 7746.33 passenger miles.
 
 Flight: 75
-Revised Flight Path: ABQ, DEN, None, DEN
+Flight Path: ABQ, DEN, None, DEN
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: DEN
@@ -1503,7 +1505,7 @@ Net Profit of the Flight: $6920415.31
 Total Passenger Miles: 58000.28 passenger miles.
 
 Flight: 76
-Revised Flight Path: ABQ, DFW, None, DFW
+Flight Path: ABQ, DFW, None, DFW
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: DFW
@@ -1522,7 +1524,7 @@ Net Profit of the Flight: $923392.13
 Total Passenger Miles: 13412.73 passenger miles.
 
 Flight: 77
-Revised Flight Path: ABQ, JFK, None, JFK
+Flight Path: ABQ, JFK, None, JFK
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: JFK
@@ -1541,7 +1543,7 @@ Net Profit of the Flight: $6023705.63
 Total Passenger Miles: 277770.45 passenger miles.
 
 Flight: 78
-Revised Flight Path: ABQ, SEA, MIA, MIA
+Flight Path: ABQ, SEA, MIA, MIA
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: MIA
@@ -1561,7 +1563,7 @@ Net Profit of the Flight: $4502259.89
 Total Passenger Miles: 193337.69 passenger miles.
 
 Flight: 79
-Revised Flight Path: ABQ, SEA, None, SEA
+Flight Path: ABQ, SEA, None, SEA
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: SEA
@@ -1580,7 +1582,7 @@ Net Profit of the Flight: $5378874.48
 Total Passenger Miles: 160463.88 passenger miles.
 
 Flight: 80
-Revised Flight Path: ABQ, ORD, SEA, SEA
+Flight Path: ABQ, ORD, SEA, SEA
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: SEA
@@ -1600,7 +1602,7 @@ Net Profit of the Flight: $4306358.40
 Total Passenger Miles: 121465.20 passenger miles.
 
 Flight: 81
-Revised Flight Path: ABQ, MCI, None, MCI
+Flight Path: ABQ, MCI, None, MCI
 Origin: ABQ
 Origin Coordinates: 35.0844, -106.6504
 Destination: MCI
@@ -1619,7 +1621,7 @@ Net Profit of the Flight: $989625.27
 Total Passenger Miles: 18119.63 passenger miles.
 
 Flight: 82
-Revised Flight Path: MCI, DEN, LAX, ABQ
+Flight Path: MCI, DEN, LAX, ABQ
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: ABQ
@@ -1640,7 +1642,7 @@ Net Profit of the Flight: $803330.37
 Total Passenger Miles: 28190.21 passenger miles.
 
 Flight: 83
-Revised Flight Path: MCI, DFW, PHX, JFK
+Flight Path: MCI, DFW, PHX, JFK
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: JFK
@@ -1661,7 +1663,7 @@ Net Profit of the Flight: $4030663.16
 Total Passenger Miles: 106390.79 passenger miles.
 
 Flight: 84
-Revised Flight Path: MCI, DEN, PHX, MIA
+Flight Path: MCI, DEN, PHX, MIA
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: MIA
@@ -1682,7 +1684,7 @@ Net Profit of the Flight: $6604037.03
 Total Passenger Miles: 91224.72 passenger miles.
 
 Flight: 85
-Revised Flight Path: MCI, DFW, None, DFW
+Flight Path: MCI, DFW, None, DFW
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: DFW
@@ -1701,7 +1703,7 @@ Net Profit of the Flight: $5151348.04
 Total Passenger Miles: 59564.71 passenger miles.
 
 Flight: 86
-Revised Flight Path: MCI, JFK, MIA, SEA
+Flight Path: MCI, JFK, MIA, SEA
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: SEA
@@ -1722,7 +1724,7 @@ Net Profit of the Flight: $3302007.51
 Total Passenger Miles: 92814.37 passenger miles.
 
 Flight: 87
-Revised Flight Path: MCI, ORD, MIA, PHX
+Flight Path: MCI, ORD, MIA, PHX
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: PHX
@@ -1743,7 +1745,7 @@ Net Profit of the Flight: $2121379.88
 Total Passenger Miles: 67724.26 passenger miles.
 
 Flight: 88
-Revised Flight Path: MCI, DEN, SEA, JFK
+Flight Path: MCI, DEN, SEA, JFK
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: JFK
@@ -1764,7 +1766,7 @@ Net Profit of the Flight: $2324415.61
 Total Passenger Miles: 88202.77 passenger miles.
 
 Flight: 89
-Revised Flight Path: MCI, ORD, None, ORD
+Flight Path: MCI, ORD, None, ORD
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: ORD
@@ -1783,7 +1785,7 @@ Net Profit of the Flight: $2139155.10
 Total Passenger Miles: 21696.94 passenger miles.
 
 Flight: 90
-Revised Flight Path: MCI, ABQ, JFK, JFK
+Flight Path: MCI, ABQ, JFK, JFK
 Origin: MCI
 Origin Coordinates: 39.2978, -94.7139
 Destination: JFK
