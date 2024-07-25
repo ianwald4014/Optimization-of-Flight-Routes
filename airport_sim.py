@@ -95,8 +95,8 @@ def main():
     airports = sim.read_airports(airports_filename)
 
     # Choose the file you want to visualize
-    # flights_filename = 'flights.txt'    
-    flights_filename = 'sorted_flights.txt'
+    flights_filename = 'flights.txt'    
+    # flights_filename = 'sorted_flights.txt'
     flight_data = sim.read_flights(flights_filename)
     
     fig, ax = sim.create_map(airports)
