@@ -149,7 +149,7 @@ with open('flights.txt', 'w') as file:
             file.write(f"Stop1: {route['Stop1']}\n")
         if route['Stop2'] != 'None':
             file.write(f"Stop2: {route['Stop2']}\n")
-            file.write(f"Stop 2 Coordinates: {route['Stop2_Latitude']},{route['Stop2_Longitude']}\n")
+            file.write(f"Stop2 Coordinates: {route['Stop2_Latitude']},{route['Stop2_Longitude']}\n")
         else:
             file.write(f"Stop2: {route['Stop2']}\n")
         file.write(f"Passengers: {route['Passengers']}\n")
