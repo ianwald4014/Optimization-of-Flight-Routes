@@ -42,12 +42,12 @@ You can install these modules using pip:
 
 1. **Prepare Data Files**: Ensure that `airports.txt` and `flights.txt` are available in the same directory as the script.
 
-2. **Generate Flight Data**: Run ```python3 flight_generator.py`` in a terminal and view `flights.txt` in your preferred editor and/or running either a ```cat flights.txt``` or ```less flights.txt```.
+2. **Generate Flight Data**: Run ```python3 flight_generator.py``` in a terminal and view `flights.txt` in your preferred editor and/or running either a ```cat flights.txt``` or ```less flights.txt```.
 
 3. **Optional: Run the Visualization**: Execute ```python3 airport_sim.py``` in a terminal to generate and visualize the flight paths on the map.
 
 4. **Optimize the Flight Routes:** Once the flights have been generated in `flights.txt`, run `python3 flight_sorting_optimization.py` in the terminal and saves the output into `sorted_flights.txt`. You can view `sorted_flights.txt` via an editor or executing  a ```cat flights.txt``` or ```less flights.txt``` command.
 
-5. **Optional: Run the Visualization**: Open `airport_sim.py` in your preferable editor, change line 98 to ```# flights_filename = 'flights.txt'``` and change line 99 to ```flights_filename = 'sorted_flights.txt'```, saving the file. There you run a ```python3 airport_sim.py``` to generate `sorted_flights.txt` and visualize the flight paths on the map.
+5. **Optional: Run the Visualization**: Open `airport_sim.py` in your preferable editor, change line 98 to ```# flights_filename = 'flights.txt'``` and change line 99 to ```flights_filename = 'sorted_flights.txt'```, saving the file. TProceed to run a ```python3 airport_sim.py``` to generate `sorted_flights.txt` and visualize the flight paths on the map.
 
 6. The second optimization program is currently a work in progress and will be updated to include functionality for route optimization.
