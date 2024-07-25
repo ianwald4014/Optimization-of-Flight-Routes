@@ -77,40 +77,35 @@ def haversine(coord1, coord2):
 
 def calculate_distances(data):
     origin_coords = data['origin_coordinates']
-    stop1_coords = data.get('stop1_coordinates', origin_coords)
-    stop2_coords = data.get('stop2_coordinates', origin_coords)
+    stop1_coords = data.get('stop1_coordinates', None)
+    stop2_coords = data.get('stop2_coordinates', None)
     destination_coords = data['destination_coordinates']
 
     # Extract IATA codes
+    origin_iata = data['origin']
     stop1_iata = data.get('stop1', 'None')
     stop2_iata = data.get('stop2', 'None')
     destination_iata = data['destination']
 
-    # Initialize distances dictionary based on the number of stops
+    # Initialize distances based on the number of stops
     distances = {}
     num_stops = data['stops']
     
-    if num_stops == 0:
-        distances['from_origin_to_destination'] = haversine(origin_coords, destination_coords)
-    elif num_stops == 1:
-        if stop1_iata != 'None':
-            distances['from_origin_to_stop1'] = haversine(origin_coords, stop1_coords)
-            distances['from_origin_to_destination'] = haversine(stop1_coords, destination_coords)
-    elif num_stops == 2:
-        if stop1_iata != 'None':
-            distances['from_origin_to_stop1'] = haversine(origin_coords, stop1_coords)
-        if stop2_iata != 'None':
-            distances['from_origin_to_stop2'] = haversine(stop1_coords, stop2_coords)
-        distances['from_origin_to_destination'] = haversine(stop2_coords, destination_coords)
+    # Calculate distances from the origin to each stop and the destination
+    if stop1_coords:
+        distances['origin_to_stop1'] = haversine(origin_coords, stop1_coords)
+    if stop2_coords:
+        distances['origin_to_stop2'] = haversine(origin_coords, stop2_coords)
+    distances['origin_to_destination'] = haversine(origin_coords, destination_coords)
 
     # Create a list of tuples (distance, IATA code), only including existing keys
     distances_list = []
-    if 'from_origin_to_stop1' in distances:
-        distances_list.append((distances['from_origin_to_stop1'], stop1_iata))
-    if 'from_origin_to_stop2' in distances:
-        distances_list.append((distances['from_origin_to_stop2'], stop2_iata))
-    if 'from_origin_to_destination' in distances:
-        distances_list.append((distances['from_origin_to_destination'], destination_iata))
+    if 'origin_to_stop1' in distances:
+        distances_list.append((distances['origin_to_stop1'], stop1_iata))
+    if 'origin_to_stop2' in distances:
+        distances_list.append((distances['origin_to_stop2'], stop2_iata))
+    if 'origin_to_destination' in distances:
+        distances_list.append((distances['origin_to_destination'], destination_iata))
 
     # Sort the list by distance (first element of each tuple)
     distances_list.sort(key=lambda x: x[0])
@@ -139,7 +134,7 @@ def reorder_stops(flight_data):
             stop2_revised = sorted_iatas[1]
             destination_revised = sorted_iatas[2]
 
-        # Update the data dictionary with the revised stops and destination
+        # Update the data with the revised stops and destination
         data['stop1_revised'] = stop1_revised
         data['stop2_revised'] = stop2_revised
         data['destination_revised'] = destination_revised
