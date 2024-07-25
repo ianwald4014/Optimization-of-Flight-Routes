@@ -14,7 +14,7 @@ Before running the scripts, make sure you have the following Python modules inst
 
 You can install these modules using pip:
 
-```pip install geopy
+```pip install geopy cartopy matplotlib```
 
 ## Features
 
