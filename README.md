@@ -2,27 +2,41 @@
 
 ## Overview
 
-This project simulates imaginary flight routes and visualizes these routes on a map of the continental United States. The simulation generates various flight paths, including routes with one or two stops, and calculates various metrics for each route, such as flight time, operational cost, maintenance cost, and net profit. The goal is to optimize flight routes by identifying and replacing "bad" routes and adjusting other routes as needed.
+This project simulates imaginary flight routes and visualizes these routes on a map of the continental United States. The simulation generates various flight paths, including routes with one or two stops, and calculates metrics such as flight time, operational cost, maintenance cost, and net profit. The goal is to optimize flight routes by identifying and replacing "bad" routes and adjusting others as needed.
+
+## Prerequisites
+
+Before running the scripts, make sure you have the following Python modules installed:
+
+- **geopy**: Used for geocoding and distance calculations.
+- **cartopy**: Used for map visualization.
+- **matplotlib**: Required for plotting.
+
+You can install these modules using pip:
+
+```pip install geopy
 
 ## Features
 
-- **Flight Data Generation**: Generates simulated flight routes with varying numbers of stops between airports in the United States. Each flight includes details such as the origin, destination, stops, number of passengers, distance, flight time, and costs. This data is saved to `flights.txt`.
+- **Flight Data Generation**: Creates simulated flight routes with details such as origin, destination, stops, passengers, distance, flight time, and costs. Data is saved to `flights.txt`.
 
-- **Flight Path Visualization**: Visualizes the flight routes on a map using Matplotlib and Cartopy. The map displays airport locations and flight paths, with an animation that shows each route and updates in real-time. This functionality is implemented in `airport_sim.py`.
+- **Flight Path Visualization**: Uses Matplotlib and Cartopy to display flight routes and airport locations on a map, with real-time updates. Implemented in `airport_sim.py`.
 
-- **Optimization**: Evaluates and optimizes flight routes by calculating total costs and adjusting routes based on various criteria, such as operational costs and layover times. [Optimization Program WIP]
+- **Optimization**: Evaluates and optimizes flight routes based on criteria like cost and layovers. [Work in Progress]
 
 ## Files
 
-- **`flights.txt`**: Contains simulated flight route data, including origin, destination, stops, and various metrics for each route.
+- **`flights.txt`**: Contains simulated flight route data.
 
-- **`airports.txt`**: Contains information about airports, including IATA codes, names, populations, longitudes, and latitudes.
+- **`airports.txt`**: Contains airport information.
 
-- **`flight_generator`**: Produces the imaginary flights and saves them into `flights.txt`.
+- **`flight_generator`**: Generates flight data and saves it to `flights.txt`.
 
-- **`airport_sim.py`**: Contains the visualization and plotting of these imaginary flights.
+- **`airport_sim.py`**: Visualizes flight routes on a map.
 
-- **[Optimization Program WIP]**: Work in progress for optimizing flight routes.
+- **`flight_sorting_optimization.py`**: Optimizes flight routes from `flights.txt` using the haversine formula and saves to `sorted_flights.txt`.
+
+- **`flight_optimization.py`**: In development for further route optimization.
 
 ## Instructions
 
@@ -30,6 +44,10 @@ This project simulates imaginary flight routes and visualizes these routes on a 
 
 2. **Generate Flight Data**: Use the `flight_generator` to create the flight routes and save them to `flights.txt`.
 
-3. **Run the Visualization**: Execute `airport_sim.py` to generate and visualize the flight paths on the map.
+3. **Optional: Run the Visualization**: Execute `airport_sim.py` to generate and visualize the flight paths on the map.
 
-4. **Optimization**: The optimization program is currently a work in progress and will be updated to include functionality for route optimization.
+4. Optimize the Flight Routes: Once the flights have been generated in `flights.txt`, run `flight_sorting_optimization.py` and saves the first optimization into `sorted_flights.txt`.
+
+5. **Optional: Run the Visualization**: Adjust the Lines 99-100 of `airport_sim.py` to generate `sorted_flights.txt` and visualize the flight paths on the map.
+
+6. The second optimization program is currently a work in progress and will be updated to include functionality for route optimization.
