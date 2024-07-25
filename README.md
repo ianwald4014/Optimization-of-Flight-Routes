@@ -46,7 +46,7 @@ You can install these modules using pip:
 
 3. **Optional: Run the Visualization**: Execute `airport_sim.py` to generate and visualize the flight paths on the map.
 
-4. Optimize the Flight Routes: Once the flights have been generated in `flights.txt`, run `flight_sorting_optimization.py` and saves the first optimization into `sorted_flights.txt`.
+4. **Optimize the Flight Routes:** Once the flights have been generated in `flights.txt`, run `flight_sorting_optimization.py` and saves the first optimization into `sorted_flights.txt`.
 
 5. **Optional: Run the Visualization**: Adjust the Lines 99-100 of `airport_sim.py` to generate `sorted_flights.txt` and visualize the flight paths on the map.
 
