@@ -54,4 +54,4 @@ You can install these modules using pip:
 
 6. **Optional: Run the Visualization [Continued]**: Proceed to run a ```python3 airport_sim.py``` to generate `sorted_flights.txt` and visualize the flight paths on the map.
 
-6. The second optimization program is currently a work in progress and will be updated to include functionality for route optimization.
+7. The second optimization program is currently a work in progress and will be updated to include functionality for route optimization.
