@@ -50,7 +50,7 @@ You can install these modules using pip:
 
 5. **Optimize the Flight Routes [Continued]:** Run `python3 flight_sorting_optimization.py` in the terminal and saves the output into `sorted_flights.txt`. You can view `sorted_flights.txt` via an editor or executing in the terminal ```cat flights.txt``` or ```less flights.txt```.
 
-5. **Optional: Run the Visualization**: Open `airport_sim.py` in your preferable editor, change line 98 to ```# flights_filename = 'flights.txt'``` and change line 99 to ```flights_filename = 'sorted_flights.txt'```, saving the file. T
+5. **Optional: Run the Visualization**: Open `airport_sim.py` in your preferable editor, change line 98 to ```# flights_filename = 'flights.txt'``` and change line 99 to ```flights_filename = 'sorted_flights.txt'```, saving the file. cd
 
 6. **Optional: Run the Visualization [Continued]**: Proceed to run a ```python3 airport_sim.py``` to generate `sorted_flights.txt` and visualize the flight paths on the map.
 
