@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import re
+from geopy.distance import geodesic
 from math import radians, sin, cos, sqrt, atan2
 
 def parse_flight_data(lines):
@@ -52,6 +53,18 @@ def parse_flight_data(lines):
         elif line.startswith("Stop2 Coordinates:"):
             coords = line.split(":")[1].strip().split(",")
             flight_data[flight_number]['stop2_coordinates'] = (float(coords[0]), float(coords[1]))
+            current_lines.append(line)
+        elif line.startswith("Passengers:"):
+            flight_data[flight_number]['passengers'] = int(line.split(":")[1].strip())
+            current_lines.append(line)
+        elif line.startswith("Layover Time (Hours):"):
+            flight_data[flight_number]['layover_time'] = float(line.split(":")[1].strip())
+            current_lines.append(line)
+        elif line.startswith("Maintenance Cost:"):
+            flight_data[flight_number]['maintenance_cost'] = float(line.split(": $")[1].strip())
+            current_lines.append(line)
+        elif line.startswith("Income of Flight:"): 
+            flight_data[flight_number]['flight_income'] = float(line.split(": $")[1].strip())
             current_lines.append(line)
         else:
             current_lines.append(line)
@@ -112,6 +125,13 @@ def calculate_distances(data):
 
     return distances_list
 
+def calculate_flight_time(lon1, lat1, lon2, lat2):
+    distance_nm = geodesic((lat1, lon1), (lat2, lon2)).nautical
+    speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
+    flight_time = distance_nm / speed_knots
+    operational_cost = 5757 * flight_time
+    return flight_time, operational_cost, distance_nm
+
 def reorder_stops(flight_data):
     for flight_number, data in flight_data.items():
         # Get sorted distances
@@ -142,6 +162,65 @@ def reorder_stops(flight_data):
         # Construct the revised flight path
         data['revised_flight_path'] = f"{data['origin']}, {stop1_revised}, {stop2_revised}, {destination_revised}"
 
+        # Calculate flight time and operational cost for each leg of the trip
+        origin_coords = data['origin_coordinates']
+        destination_coords = data['destination_coordinates']
+
+        # Calculate total distance and other variables
+        total_distance_nm = 0
+        total_flight_time = 0
+        total_operational_cost = 0
+
+        # Calculate for origin to stop1
+        if stop1_revised != 'None':
+            stop1_coords = data['stop1_coordinates']
+            flight_time, operational_cost, distance_nm = calculate_flight_time(
+                origin_coords[1], origin_coords[0], stop1_coords[1], stop1_coords[0]
+            )
+            total_distance_nm += distance_nm
+            total_flight_time += flight_time
+            total_operational_cost += operational_cost
+            origin_coords = stop1_coords  # Move origin to the last stop
+
+        # Calculate for origin/stop1 to stop2
+        if stop2_revised != 'None':
+            stop2_coords = data['stop2_coordinates']
+            flight_time, operational_cost, distance_nm = calculate_flight_time(
+                origin_coords[1], origin_coords[0], stop2_coords[1], stop2_coords[0]
+            )
+            total_distance_nm += distance_nm
+            total_flight_time += flight_time
+            total_operational_cost += operational_cost
+            origin_coords = stop2_coords  # Move origin to the last stop
+
+        # Calculate for the last stop to destination
+        flight_time, operational_cost, distance_nm = calculate_flight_time(
+            origin_coords[1], origin_coords[0], destination_coords[1], destination_coords[0]
+        )
+        total_distance_nm += distance_nm
+        total_flight_time += flight_time
+        total_operational_cost += operational_cost
+
+        data['flight_time'] = total_flight_time
+        data['operating_cost'] = total_operational_cost
+        data['distance_nm'] = total_distance_nm
+
+        # Fetch layover time and passengers from the flight data
+        layover_time = data['layover_time']
+        passengers = data['passengers']
+
+        # Fetch maintenance cost and flight income from the data
+        maintenance_cost = data['maintenance_cost']
+        flight_income = data['flight_income']
+
+        # Calculate the net profit
+        net_profit = flight_income - (maintenance_cost + total_operational_cost)
+        data['net_profit'] = net_profit
+
+        # Calculate total passenger miles
+        passenger_miles = passengers * total_distance_nm
+        data['total_passenger_miles'] = passenger_miles
+
 def write_sorted_flights(flight_data):
     with open('sorted_flights.txt', 'w') as file:
         file.write("Revising of Flight Routes\n\n")
@@ -155,6 +234,22 @@ def write_sorted_flights(flight_data):
                     file.write(f"Stop2: {data.get('stop2_revised', 'None')}\n")
                 elif line.startswith("Destination:"):
                     file.write(f"Destination: {data.get('destination_revised', 'None')}\n")
+                elif line.startswith("Distance (Nautical Miles):"):
+                    file.write(f"Distance (Nautical Miles): {data.get('distance_nm', 0):.2f}\n")
+                elif line.startswith("Flight Time (Hours):"):
+                    file.write(f"Flight Time (Hours): {data.get('flight_time', 0):.2f}\n")
+                elif line.startswith("Operating Cost:"):
+                    file.write(f"Operating Cost: ${data.get('operating_cost', 0):.2f}\n")
+                elif line.startswith("Layover Time (Hours):"):
+                    file.write(f"Layover Time (Hours): {data.get('layover_time', 0):.2f}\n")
+                elif line.startswith("Maintenance Cost:"):
+                    file.write(f"Maintenance Cost: ${data.get('maintenance_cost', 0):.2f}\n")
+                elif line.startswith("Income of Flight:"):
+                    file.write(f"Income of Flight: ${data.get('flight_income', 0):.2f}\n")
+                elif line.startswith("Net Profit of the Flight:"):
+                    file.write(f"Net Profit of the Flight: ${data.get('net_profit', 0):.2f}\n")
+                elif line.startswith("Total Passenger Miles:"):
+                    file.write(f"Total Passenger Miles: {data.get('total_passenger_miles', 0):.2f} passenger miles.\n")
                 else:
                     file.write(line)
 
