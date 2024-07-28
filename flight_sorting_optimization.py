@@ -134,13 +134,27 @@ def calculate_flight_time(lon1, lat1, lon2, lat2):
 
 def reorder_stops(flight_data):
     for flight_number, data in flight_data.items():
+        # Store initial coordinates mapping
+        iata_to_coords = {}
+        if 'origin' in data and 'origin_coordinates' in data:
+            iata_to_coords[data['origin']] = data['origin_coordinates']
+        if 'stop1' in data and data['stop1'] != 'None' and 'stop1_coordinates' in data:
+            iata_to_coords[data['stop1']] = data['stop1_coordinates']
+        if 'stop2' in data and data['stop2'] != 'None' and 'stop2_coordinates' in data:
+            iata_to_coords[data['stop2']] = data['stop2_coordinates']
+        if 'destination' in data and 'destination_coordinates' in data:
+            iata_to_coords[data['destination']] = data['destination_coordinates']
+
         # Get sorted distances
         sorted_distances = calculate_distances(data)
 
-        # Extract sorted labels
+        # Extract sorted IATA codes
         sorted_iatas = [iata for _, iata in sorted_distances if iata != 'None']
 
-        # Handle different cases based on the number of stops
+        # Reassign coordinates based on sorted IATA codes
+        sorted_coords = [iata_to_coords.get(iata, 'None') for iata in sorted_iatas]
+
+        # Update stops and destination
         if len(sorted_iatas) == 1:
             stop1_revised = 'None'
             stop2_revised = 'None'
@@ -159,12 +173,20 @@ def reorder_stops(flight_data):
         data['stop2_revised'] = stop2_revised
         data['destination_revised'] = destination_revised
 
+        # Update the coordinates based on the revised stops
+        data['stop1_coordinates'] = iata_to_coords.get(stop1_revised, 'None')
+        data['stop2_coordinates'] = iata_to_coords.get(stop2_revised, 'None')
+        data['destination_coordinates'] = iata_to_coords.get(destination_revised, 'None')
+        
+        # Ensure the origin coordinates remain the same
+        data['origin_coordinates'] = iata_to_coords.get(data['origin'], 'None')
+
         # Construct the revised flight path
         data['revised_flight_path'] = f"{data['origin']}, {stop1_revised}, {stop2_revised}, {destination_revised}"
 
         # Calculate flight time and operational cost for each leg of the trip
         origin_coords = data['origin_coordinates']
-        destination_coords = data['destination_coordinates']
+        destination_coords = iata_to_coords.get(destination_revised, (None, None))
 
         # Calculate total distance and other variables
         total_distance_nm = 0
@@ -173,33 +195,36 @@ def reorder_stops(flight_data):
 
         # Calculate for origin to stop1
         if stop1_revised != 'None':
-            stop1_coords = data['stop1_coordinates']
-            flight_time, operational_cost, distance_nm = calculate_flight_time(
-                origin_coords[1], origin_coords[0], stop1_coords[1], stop1_coords[0]
-            )
-            total_distance_nm += distance_nm
-            total_flight_time += flight_time
-            total_operational_cost += operational_cost
-            origin_coords = stop1_coords  # Move origin to the last stop
+            stop1_coords = iata_to_coords.get(stop1_revised, (None, None))
+            if stop1_coords != (None, None):
+                flight_time, operational_cost, distance_nm = calculate_flight_time(
+                    origin_coords[1], origin_coords[0], stop1_coords[1], stop1_coords[0]
+                )
+                total_distance_nm += distance_nm
+                total_flight_time += flight_time
+                total_operational_cost += operational_cost
+                origin_coords = stop1_coords  # Move origin to the last stop
 
         # Calculate for origin/stop1 to stop2
         if stop2_revised != 'None':
-            stop2_coords = data['stop2_coordinates']
+            stop2_coords = iata_to_coords.get(stop2_revised, (None, None))
+            if stop2_coords != (None, None):
+                flight_time, operational_cost, distance_nm = calculate_flight_time(
+                    origin_coords[1], origin_coords[0], stop2_coords[1], stop2_coords[0]
+                )
+                total_distance_nm += distance_nm
+                total_flight_time += flight_time
+                total_operational_cost += operational_cost
+                origin_coords = stop2_coords  # Move origin to the last stop
+
+        # Calculate for the last stop to destination
+        if destination_coords != (None, None):
             flight_time, operational_cost, distance_nm = calculate_flight_time(
-                origin_coords[1], origin_coords[0], stop2_coords[1], stop2_coords[0]
+                origin_coords[1], origin_coords[0], destination_coords[1], destination_coords[0]
             )
             total_distance_nm += distance_nm
             total_flight_time += flight_time
             total_operational_cost += operational_cost
-            origin_coords = stop2_coords  # Move origin to the last stop
-
-        # Calculate for the last stop to destination
-        flight_time, operational_cost, distance_nm = calculate_flight_time(
-            origin_coords[1], origin_coords[0], destination_coords[1], destination_coords[0]
-        )
-        total_distance_nm += distance_nm
-        total_flight_time += flight_time
-        total_operational_cost += operational_cost
 
         data['flight_time'] = total_flight_time
         data['operating_cost'] = total_operational_cost
@@ -221,37 +246,43 @@ def reorder_stops(flight_data):
         passenger_miles = passengers * total_distance_nm
         data['total_passenger_miles'] = passenger_miles
 
-def write_sorted_flights(flight_data):
+def write_sorted_flights(flight_data):  # needs to update coordinates
     with open('sorted_flights.txt', 'w') as file:
         file.write("Revising of Flight Routes\n\n")
         for flight_number, data in flight_data.items():
-            for line in data.get('lines', []):
-                if line.startswith("Flight Path:"):
-                    file.write(f"Flight Path: {data.get('revised_flight_path', '')}\n")
-                elif line.startswith("Stop1:"):
-                    file.write(f"Stop1: {data.get('stop1_revised', 'None')}\n")
-                elif line.startswith("Stop2:"):
-                    file.write(f"Stop2: {data.get('stop2_revised', 'None')}\n")
-                elif line.startswith("Destination:"):
-                    file.write(f"Destination: {data.get('destination_revised', 'None')}\n")
-                elif line.startswith("Distance (Nautical Miles):"):
-                    file.write(f"Distance (Nautical Miles): {data.get('distance_nm', 0):.2f}\n")
-                elif line.startswith("Flight Time (Hours):"):
-                    file.write(f"Flight Time (Hours): {data.get('flight_time', 0):.2f}\n")
-                elif line.startswith("Operating Cost:"):
-                    file.write(f"Operating Cost: ${data.get('operating_cost', 0):.2f}\n")
-                elif line.startswith("Layover Time (Hours):"):
-                    file.write(f"Layover Time (Hours): {data.get('layover_time', 0):.2f}\n")
-                elif line.startswith("Maintenance Cost:"):
-                    file.write(f"Maintenance Cost: ${data.get('maintenance_cost', 0):.2f}\n")
-                elif line.startswith("Income of Flight:"):
-                    file.write(f"Income of Flight: ${data.get('flight_income', 0):.2f}\n")
-                elif line.startswith("Net Profit of the Flight:"):
-                    file.write(f"Net Profit of the Flight: ${data.get('net_profit', 0):.2f}\n")
-                elif line.startswith("Total Passenger Miles:"):
-                    file.write(f"Total Passenger Miles: {data.get('total_passenger_miles', 0):.2f} passenger miles.\n")
-                else:
-                    file.write(line)
+            file.write(f"Flight: {flight_number}\n")
+            file.write(f"Flight Path: {data.get('revised_flight_path', '')}\n")
+            
+            # Write origin and destination
+            file.write(f"Origin: {data.get('origin', '')}\n")
+            file.write(f"Origin Coordinates: {data['origin_coordinates'][0]},{data['origin_coordinates'][1]}\n")
+            file.write(f"Destination: {data.get('destination_revised', 'None')}\n")
+            file.write(f"Destination Coordinates: {data['destination_coordinates'][0]},{data['destination_coordinates'][1]}\n")
+
+            # Handle stops
+            if data.get('stop1_revised', 'None') != 'None':
+                file.write(f"Stop1: {data.get('stop1_revised', 'None')}\n")
+                file.write(f"Stop1 Coordinates: {data['stop1_coordinates'][0]},{data['stop1_coordinates'][1]}\n")
+            else:
+                file.write(f"Stop1: None\n")
+
+            if data.get('stop2_revised', 'None') != 'None':
+                file.write(f"Stop2: {data.get('stop2_revised', 'None')}\n")
+                file.write(f"Stop2 Coordinates: {data['stop2_coordinates'][0]},{data['stop2_coordinates'][1]}\n")
+            else:
+                file.write(f"Stop2: None\n")
+
+            # Write remaining data
+            file.write(f"Passengers: {data.get('passengers', 0)}\n")
+            file.write(f"Distance (Nautical Miles): {data.get('distance_nm', 0):.2f}\n")
+            file.write(f"Flight Time (Hours): {data.get('flight_time', 0):.2f}\n")
+            file.write(f"Operating Cost: ${data.get('operating_cost', 0):.2f}\n")
+            file.write(f"Layover Time (Hours): {data.get('layover_time', 0):.2f}\n")
+            file.write(f"Maintenance Cost: ${data.get('maintenance_cost', 0):.2f}\n")
+            file.write(f"Income of Flight: ${data.get('flight_income', 0):.2f}\n")
+            file.write(f"Net Profit of the Flight: ${data.get('net_profit', 0):.2f}\n")
+            file.write(f"Total Passenger Miles: {data.get('total_passenger_miles', 0):.2f} passenger miles.\n")
+            file.write("\n") 
 
 def main():
     with open('flights.txt', 'r') as file:
