@@ -246,20 +246,17 @@ def reorder_stops(flight_data):
         passenger_miles = passengers * total_distance_nm
         data['total_passenger_miles'] = passenger_miles
 
-def write_sorted_flights(flight_data):  # needs to update coordinates
+def write_sorted_flights(flight_data): 
     with open('sorted_flights.txt', 'w') as file:
         file.write("Revising of Flight Routes\n\n")
         for flight_number, data in flight_data.items():
             file.write(f"Flight: {flight_number}\n")
             file.write(f"Flight Path: {data.get('revised_flight_path', '')}\n")
-            
-            # Write origin and destination
             file.write(f"Origin: {data.get('origin', '')}\n")
             file.write(f"Origin Coordinates: {data['origin_coordinates'][0]},{data['origin_coordinates'][1]}\n")
             file.write(f"Destination: {data.get('destination_revised', 'None')}\n")
             file.write(f"Destination Coordinates: {data['destination_coordinates'][0]},{data['destination_coordinates'][1]}\n")
-
-            # Handle stops
+            file.write(f"Stops: {data['stops']}\n")
             if data.get('stop1_revised', 'None') != 'None':
                 file.write(f"Stop1: {data.get('stop1_revised', 'None')}\n")
                 file.write(f"Stop1 Coordinates: {data['stop1_coordinates'][0]},{data['stop1_coordinates'][1]}\n")
@@ -271,8 +268,6 @@ def write_sorted_flights(flight_data):  # needs to update coordinates
                 file.write(f"Stop2 Coordinates: {data['stop2_coordinates'][0]},{data['stop2_coordinates'][1]}\n")
             else:
                 file.write(f"Stop2: None\n")
-
-            # Write remaining data
             file.write(f"Passengers: {data.get('passengers', 0)}\n")
             file.write(f"Distance (Nautical Miles): {data.get('distance_nm', 0):.2f}\n")
             file.write(f"Flight Time (Hours): {data.get('flight_time', 0):.2f}\n")
