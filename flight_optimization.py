@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import numpy as np
 import scipy.integrate as integrate
 from geopy.distance import geodesic
