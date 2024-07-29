@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 import random
-from geopy.distance import geodesic
+from math import radians, sin, cos, sqrt, atan2
 
 # Airport data with latitude and longitude
 airports = {
@@ -17,9 +17,25 @@ airports = {
     'MCI': {'lat': 39.2978, 'lon': -94.7139},
 }
 
+def haversine_distance_nm(lat1, lon1, lat2, lon2):
+    """Calculate distance in nautical miles using the haversine formula."""
+    R = 3440.065  # Radius of Earth in nautical miles
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+    
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    
+    distance_nm = R * c
+    return distance_nm
+
 def calculate_flight_time(lon1, lat1, lon2, lat2):
-    """Calculate flight time and maintenance flight hour."""
-    distance_nm = geodesic((lat1, lon1), (lat2, lon2)).nautical
+    """Calculate flight time and operational cost."""
+    if None in [lat1, lon1, lat2, lon2]:
+        return 0, 0  # Handle invalid coordinates
+    distance_nm = haversine_distance_nm(lat1, lon1, lat2, lon2)
     speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
     flight_time = distance_nm / speed_knots
     operational_cost = 5757 * flight_time
@@ -37,52 +53,99 @@ def simulate_layover(stops, flight_time, operational_cost):
     
     return layover_time, maintenance_cost
 
-# Generate all possible routes
+# Initialize variables
 routes = []
 route_id = 1
 total_passenger_miles = 0
 
-# Consider all combinations of origin and destination airports
+# Generate all possible routes
 for origin_code, origin_data in airports.items():
     for dest_code, dest_data in airports.items():
         if origin_code != dest_code:  # Ensure origin and destination are different
-            # Calculate distance and flight time
-            distance_nm = geodesic((origin_data['lat'], origin_data['lon']), (dest_data['lat'], dest_data['lon'])).nautical
-            
+
+            # Initialize distance and time
+            total_distance_nm = 0
+            total_flight_time = 0
+            total_operating_cost = 0
+
             # Determine number of stops based on distance
+            distance_nm = haversine_distance_nm(origin_data['lat'], origin_data['lon'], dest_data['lat'], dest_data['lon'])
             if distance_nm > 434.488:  # 500 miles in nautical miles
                 possible_stops = [code for code in airports.keys() if code not in [origin_code, dest_code]]
                 stops = random.randint(0, min(2, len(possible_stops)))
                 stop_cities = random.sample(possible_stops, stops)
+                
                 stop1 = stop_cities[0] if stops >= 1 else 'None'
                 stop2 = stop_cities[1] if stops >= 2 else 'None'
+                
                 stop1_data = airports.get(stop1, {'lat': None, 'lon': None})
                 stop2_data = airports.get(stop2, {'lat': None, 'lon': None})
+
+                if stop1 != 'None' and None not in [stop1_data['lat'], stop1_data['lon']]:
+                    # Calculate distance and time for origin to stop1
+                    distance_leg1 = haversine_distance_nm(origin_data['lat'], origin_data['lon'], stop1_data['lat'], stop1_data['lon'])
+                    flight_time_leg1, operating_cost_leg1 = calculate_flight_time(origin_data['lon'], origin_data['lat'], stop1_data['lon'], stop1_data['lat'])
+                    total_distance_nm += distance_leg1
+                    total_flight_time += flight_time_leg1
+                    total_operating_cost += operating_cost_leg1
+
+                    if stop2 != 'None' and None not in [stop2_data['lat'], stop2_data['lon']]:
+                        # Calculate distance and time for stop1 to stop2
+                        distance_leg2 = haversine_distance_nm(stop1_data['lat'], stop1_data['lon'], stop2_data['lat'], stop2_data['lon'])
+                        flight_time_leg2, operating_cost_leg2 = calculate_flight_time(stop1_data['lon'], stop1_data['lat'], stop2_data['lon'], stop2_data['lat'])
+                        total_distance_nm += distance_leg2
+                        total_flight_time += flight_time_leg2
+                        total_operating_cost += operating_cost_leg2
+
+                        # Calculate distance and time for stop2 to destination
+                        distance_leg3 = haversine_distance_nm(stop2_data['lat'], stop2_data['lon'], dest_data['lat'], dest_data['lon'])
+                        flight_time_leg3, operating_cost_leg3 = calculate_flight_time(stop2_data['lon'], stop2_data['lat'], dest_data['lon'], dest_data['lat'])
+                        total_distance_nm += distance_leg3
+                        total_flight_time += flight_time_leg3
+                        total_operating_cost += operating_cost_leg3
+
+                    else:
+                        # Calculate distance and time for stop1 to destination
+                        distance_leg3 = haversine_distance_nm(stop1_data['lat'], stop1_data['lon'], dest_data['lat'], dest_data['lon'])
+                        flight_time_leg3, operating_cost_leg3 = calculate_flight_time(stop1_data['lon'], stop1_data['lat'], dest_data['lon'], dest_data['lat'])
+                        total_distance_nm += distance_leg3
+                        total_flight_time += flight_time_leg3
+                        total_operating_cost += operating_cost_leg3
+
+                else:
+                    # Calculate distance and time for origin to destination
+                    total_flight_time, total_operating_cost = calculate_flight_time(origin_data['lon'], origin_data['lat'], dest_data['lon'], dest_data['lat'])
+                    total_distance_nm = distance_nm
+
             else:
+                # Direct flight, no stops
                 stops = 0
                 stop1 = 'None'
                 stop2 = 'None'
                 stop1_data = {'lat': None, 'lon': None}
                 stop2_data = {'lat': None, 'lon': None}
-            
-            # Random number of passengers (1 to 204)
+                
+                # Calculate distance and time for direct flight
+                total_flight_time, total_operating_cost = calculate_flight_time(origin_data['lon'], origin_data['lat'], dest_data['lon'], dest_data['lat'])
+                total_distance_nm = distance_nm
+
+            # Simulate layover and calculate maintenance cost
+            layover_time, maintenance_cost = simulate_layover(stops, total_flight_time, total_operating_cost)
+
+            # Random number of passengers (20 to 204)
             passengers = random.randint(20, 204)
-            
-            # Calculate flight time and maintenance cost
-            flight_time, operating_cost = calculate_flight_time(origin_data['lon'], origin_data['lat'], dest_data['lon'], dest_data['lat'])
-            layover_time, maintenance_cost = simulate_layover(stops, flight_time, operating_cost)
-                       
+
             # Calculate income for the flight
             ticket_price = 384.85  # Ticket price from Bureau of Transportation
             flight_income = ticket_price * passengers
 
-            # Calculate the net profit
-            net_profit = flight_income - (maintenance_cost + operating_cost)
-            
+            # Calculate net profit
+            net_profit = flight_income - (maintenance_cost + total_operating_cost)
+
             # Calculate total passenger miles
-            passenger_miles = passengers * distance_nm
+            passenger_miles = passengers * total_distance_nm
             total_passenger_miles += passenger_miles
-            
+
             # Prepare route data
             route_data = {
                 'Route': route_id,
@@ -100,9 +163,9 @@ for origin_code, origin_data in airports.items():
                 'Stop2_Latitude': stop2_data['lat'],
                 'Stop2_Longitude': stop2_data['lon'],
                 'Passengers': passengers,
-                'Distance_Nautical_Miles': distance_nm,
-                'Flight_Time': flight_time,
-                'Operating_Cost': operating_cost,
+                'Distance_Nautical_Miles': total_distance_nm,
+                'Flight_Time': total_flight_time,
+                'Operating_Cost': total_operating_cost,
                 'Layover_Time': layover_time,
                 'Maintenance_Cost': maintenance_cost,
                 'Flight_Income': flight_income,
@@ -113,7 +176,7 @@ for origin_code, origin_data in airports.items():
             # Append route data to routes list
             routes.append(route_data)
             route_id += 1
-
+            
 # Write data to a text file
 with open('flights.txt', 'w') as file:
     for route in routes:
