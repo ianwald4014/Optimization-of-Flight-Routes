@@ -17,7 +17,7 @@ airports = {
     'MCI': {'lat': 39.2978, 'lon': -94.7139},
 }
 
-def haversine_distance_nm(lat1, lon1, lat2, lon2):
+def haversine_distance_nm(lat1, lon1, lat2, lon2): # AOI
     """Calculate distance in nautical miles using the haversine formula."""
     R = 3440.065  # Radius of Earth in nautical miles
     lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
@@ -43,14 +43,16 @@ def calculate_flight_time(lon1, lat1, lon2, lat2):
 
 def simulate_layover(stops, flight_time, operational_cost):
     """Simulate layover time and calculate maintenance cost."""
-    if stops == 0:
-        layover_time = 0
-        maintenance_cost = operational_cost
-    else:
+    layover_time = 0
+    maintenance_cost = 0
+    
+    if stops > 0:
         layover_time = 1.5 * stops  # Layover time in hours
         maintenance_cost_per_hour = 150  # Maintenance cost per hour
         maintenance_cost = (layover_time * maintenance_cost_per_hour) + operational_cost
-    
+    else:
+        maintenance_cost = operational_cost
+
     return layover_time, maintenance_cost
 
 # Initialize variables
@@ -140,7 +142,7 @@ for origin_code, origin_data in airports.items():
             flight_income = ticket_price * passengers
 
             # Calculate net profit
-            net_profit = flight_income - (maintenance_cost + total_operating_cost)
+            net_profit = flight_income - maintenance_cost
 
             # Calculate total passenger miles
             passenger_miles = passengers * total_distance_nm
