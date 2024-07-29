@@ -74,7 +74,8 @@ def parse_flight_data(lines):
 
     return flight_data
 
-def haversine(coord1, coord2):
+def haversine_distance(coord1, coord2):
+    """Calculate the great-circle distance between two points on the Earth's surface."""
     R = 3440.065  # Radius of the Earth in nautical miles
     lat1, lon1 = radians(coord1[0]), radians(coord1[1])
     lat2, lon2 = radians(coord2[0]), radians(coord2[1])
@@ -82,7 +83,7 @@ def haversine(coord1, coord2):
     dlat = lat2 - lat1
     dlon = lon2 - lon1
 
-    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
     distance = R * c
@@ -108,10 +109,10 @@ def calculate_distances(data):
     
         # Calculate distances from the origin to each stop and the destination
         if stop1_coords:
-            distances['origin_to_stop1'] = haversine(origin_coords, stop1_coords)
+            distances['origin_to_stop1'] = haversine_distance(origin_coords, stop1_coords)
         if stop2_coords:
-            distances['origin_to_stop2'] = haversine(origin_coords, stop2_coords)
-        distances['origin_to_destination'] = haversine(origin_coords, destination_coords)
+            distances['origin_to_stop2'] = haversine_distance(origin_coords, stop2_coords)
+        distances['origin_to_destination'] = haversine_distance(origin_coords, destination_coords)
 
         # Create a list of tuples (distance, IATA code), only including existing keys
         if 'origin_to_stop1' in distances:
@@ -144,11 +145,11 @@ def calculate_additional_distances(data):
             stop_coords = data.get(f'stop{i}_coordinates', None)
             stop_iata = data.get(f'stop{i}', 'None')
             if stop_coords:
-                distance = haversine(origin_coords, stop_coords)
+                distance = haversine_distance(origin_coords, stop_coords)
                 distances.append((distance, stop_iata))
         
         # Add distance to the destination
-        distance_to_destination = haversine(origin_coords, destination_coords)
+        distance_to_destination = haversine_distance(origin_coords, destination_coords)
         distances.append((distance_to_destination, destination_iata))
 
         # Sort the list by distance (first element of each tuple)
@@ -157,13 +158,30 @@ def calculate_additional_distances(data):
         return distances
     else:
         return []
-    
+
 def calculate_flight_time(lon1, lat1, lon2, lat2):
-    distance_nm = geodesic((lat1, lon1), (lat2, lon2)).nautical
+    """Calculate flight time and operational cost."""
+    if None in [lat1, lon1, lat2, lon2]:
+        return 0, 0, 0  # Handle invalid coordinates
+    distance_nm = haversine_distance((lat1, lon1), (lat2, lon2))
     speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
     flight_time = distance_nm / speed_knots
     operational_cost = 5757 * flight_time
     return flight_time, operational_cost, distance_nm
+
+def simulate_layover(stops, flight_time, operational_cost):
+    """Simulate layover time and calculate maintenance cost."""
+    layover_time = 0
+    maintenance_cost = 0
+    
+    if stops > 0:
+        layover_time = 1.5 * stops  # Layover time in hours
+        maintenance_cost_per_hour = 150  # Maintenance cost per hour
+        maintenance_cost = (layover_time * maintenance_cost_per_hour) + operational_cost
+    else:
+        maintenance_cost = operational_cost
+
+    return layover_time, maintenance_cost
 
 def reorder_stops(flight_data):
     for flight_number, data in flight_data.items():
@@ -184,7 +202,7 @@ def reorder_stops(flight_data):
         sorted_iatas = [iata for _, iata in sorted_distances if iata != 'None']
 
         # Reassign coordinates based on sorted IATA codes
-        sorted_coords = [iata_to_coords.get(iata, 'None') for iata in sorted_iatas]
+        sorted_coords = [iata_to_coords.get(iata, (None, None)) for iata in sorted_iatas]
 
         # Update stops and destination based on the sorted IATA codes
         for i in range(1, num_stops + 1):
@@ -193,7 +211,7 @@ def reorder_stops(flight_data):
                 data[f'stop{i}_coordinates'] = sorted_coords[i - 1]
             else:
                 data[f'stop{i}_revised'] = 'None'
-                data[f'stop{i}_coordinates'] = 'None'
+                data[f'stop{i}_coordinates'] = (None, None)
 
         # Update the destination
         if len(sorted_iatas) >= num_stops:
@@ -201,13 +219,13 @@ def reorder_stops(flight_data):
             data['destination_coordinates'] = sorted_coords[num_stops]
         else:
             data['destination_revised'] = 'None'
-            data['destination_coordinates'] = 'None'
+            data['destination_coordinates'] = (None, None)
 
         # Ensure the origin coordinates remain the same
-        data['origin_coordinates'] = iata_to_coords.get(data['origin'], 'None')
+        data['origin_coordinates'] = iata_to_coords.get(data['origin'], (None, None))
 
         # Construct the revised flight path
-        stops_revised = ', '.join([data[f'stop{i}_revised'] for i in range(1, num_stops + 1)])
+        stops_revised = ', '.join([data[f'stop{i}_revised'] for i in range(1, num_stops + 1) if data[f'stop{i}_revised'] != 'None'])
         data['revised_flight_path'] = f"{data['origin']}, {stops_revised}, {data['destination_revised']}"
 
         # Calculate flight time and operational cost for each leg of the trip
@@ -243,21 +261,26 @@ def reorder_stops(flight_data):
         data['operating_cost'] = total_operational_cost
         data['distance_nm'] = total_distance_nm
 
-        # Fetch layover time and passengers from the flight data
-        layover_time = data['layover_time']
+        # Fetch passengers from the flight data          
         passengers = data['passengers']
 
-        # Fetch maintenance cost and flight income from the data
-        maintenance_cost = data['maintenance_cost']
+        # Recalculate layover time and maintenance cost
+        layover_time, maintenance_cost = simulate_layover(num_stops, total_flight_time, total_operational_cost)
+        data['layover_time'] = layover_time
+        data['maintenance_cost'] = maintenance_cost
+        
+        # Fetch flight income from the data
         flight_income = data['flight_income']
 
         # Calculate the net profit
-        net_profit = flight_income - (maintenance_cost + total_operational_cost)
+        net_profit = flight_income - maintenance_cost
         data['net_profit'] = net_profit
 
         # Calculate total passenger miles
         passenger_miles = passengers * total_distance_nm
         data['total_passenger_miles'] = passenger_miles
+
+    return flight_data
 
 def write_sorted_flights(flight_data):
     file_name = 'sorted_flights.txt'  # Change this to 'modified_flights_final.txt' if needed
