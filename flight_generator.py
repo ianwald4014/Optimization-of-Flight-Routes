@@ -19,7 +19,7 @@ airports = {
 
 def calculate_flight_time(lon1, lat1, lon2, lat2):
     """Calculate flight time and maintenance flight hour."""
-    distance_nm = geodesic((lat1, lon1), (lat2, lat2)).nautical
+    distance_nm = geodesic((lat1, lon1), (lat2, lon2)).nautical
     speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
     flight_time = distance_nm / speed_knots
     operational_cost = 5757 * flight_time
@@ -31,8 +31,8 @@ def simulate_layover(stops, flight_time, operational_cost):
         layover_time = 0
         maintenance_cost = operational_cost
     else:
-        layover_time = random.uniform(1, 2.0)  # Layover time in hours
-        maintenance_cost_per_hour = random.uniform(32.18, 150)  # Maintenance cost per hour
+        layover_time = 1.5 * stops  # Layover time in hours
+        maintenance_cost_per_hour = 150  # Maintenance cost per hour
         maintenance_cost = (layover_time * maintenance_cost_per_hour) + operational_cost
     
     return layover_time, maintenance_cost
@@ -74,7 +74,7 @@ for origin_code, origin_data in airports.items():
                        
             # Calculate income for the flight
             ticket_price = 384.85  # Ticket price from Bureau of Transportation
-            flight_income = ticket_price * passengers * 90  # Number of flights
+            flight_income = ticket_price * passengers
 
             # Calculate the net profit
             net_profit = flight_income - (maintenance_cost + operating_cost)
