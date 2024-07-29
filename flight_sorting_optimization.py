@@ -260,42 +260,47 @@ def reorder_stops(flight_data):
         data['total_passenger_miles'] = passenger_miles
 
 def write_sorted_flights(flight_data):
-    for flight_number, data in flight_data.items():
-        num_stops = data['stops']
-        if num_stops <= 2:
-            file_name = 'modified_flights_final.txt'
-        else:
-            file_name = 'sorted_flights.txt'
-        
-        with open(file_name, 'w') as file:
-            file.write("Revising of Flight Routes\n\n")
-            for flight_number, data in flight_data.items():
-                file.write(f"Flight: {flight_number}\n")
-                file.write(f"Flight Path: {data.get('revised_flight_path', '')}\n")
-                file.write(f"Origin: {data.get('origin', '')}\n")
-                file.write(f"Origin Coordinates: {data['origin_coordinates'][0]},{data['origin_coordinates'][1]}\n")
-                file.write(f"Destination: {data.get('destination_revised', 'None')}\n")
-                file.write(f"Destination Coordinates: {data['destination_coordinates'][0]},{data['destination_coordinates'][1]}\n")
-                file.write(f"Stops: {data['stops']}\n")
-                for i in range(1, num_stops + 1):
-                    if data.get(f'stop{i}_revised', 'None') != 'None':
-                        file.write(f"Stop{i}: {data.get(f'stop{i}_revised', 'None')}\n")
-                        file.write(f"Stop{i} Coordinates: {data[f'stop{i}_coordinates'][0]},{data[f'stop{i}_coordinates'][1]}\n")
-                    else:
-                        file.write(f"Stop{i}: None\n")
-                file.write(f"Passengers: {data.get('passengers', 0)}\n")
-                file.write(f"Distance (Nautical Miles): {data.get('distance_nm', 0):.2f}\n")
-                file.write(f"Flight Time (Hours): {data.get('flight_time', 0):.2f}\n")
-                file.write(f"Operating Cost: ${data.get('operating_cost', 0):.2f}\n")
-                file.write(f"Layover Time (Hours): {data.get('layover_time', 0):.2f}\n")
-                file.write(f"Maintenance Cost: ${data.get('maintenance_cost', 0):.2f}\n")
-                file.write(f"Income of Flight: ${data.get('flight_income', 0):.2f}\n")
-                file.write(f"Net Profit of the Flight: ${data.get('net_profit', 0):.2f}\n")
-                file.write(f"Total Passenger Miles: {data.get('total_passenger_miles', 0):.2f} passenger miles.\n")
-                file.write("\n")
+    file_name = 'sorted_flights.txt'  # Change this to 'modified_flights_final.txt' if needed
+    with open(file_name, 'w') as file:
+        file.write("Revising of Flight Routes\n\n")
+        for flight_number, data in flight_data.items():
+            num_stops = data['stops']
+            file.write(f"Flight: {flight_number}\n")
+            
+            # Properly format the flight path based on the number of stops
+            if num_stops == 0:
+                flight_path = f"{data.get('origin', '')}, {data.get('destination_revised', 'None')}"
+            else:
+                stops_revised = [data.get(f'stop{i}_revised', 'None') for i in range(1, num_stops + 1)]
+                flight_path = f"{data.get('origin', '')}, {', '.join(stops_revised)}, {data.get('destination_revised', 'None')}"
+            
+            file.write(f"Flight Path: {flight_path}\n")
+            file.write(f"Origin: {data.get('origin', '')}\n")
+            file.write(f"Origin Coordinates: {data['origin_coordinates'][0]},{data['origin_coordinates'][1]}\n")
+            file.write(f"Destination: {data.get('destination_revised', 'None')}\n")
+            file.write(f"Destination Coordinates: {data['destination_coordinates'][0]},{data['destination_coordinates'][1]}\n")
+            file.write(f"Stops: {data['stops']}\n")
+            
+            # Only print stop information if stops are present
+            for i in range(1, num_stops + 1):
+                stop_revised = data.get(f'stop{i}_revised', 'None')
+                if stop_revised != 'None':
+                    file.write(f"Stop{i}: {stop_revised}\n")
+                    file.write(f"Stop{i} Coordinates: {data[f'stop{i}_coordinates'][0]},{data[f'stop{i}_coordinates'][1]}\n")
+            
+            file.write(f"Passengers: {data.get('passengers', 0)}\n")
+            file.write(f"Distance (Nautical Miles): {data.get('distance_nm', 0):.2f}\n")
+            file.write(f"Flight Time (Hours): {data.get('flight_time', 0):.2f}\n")
+            file.write(f"Operating Cost: ${data.get('operating_cost', 0):.2f}\n")
+            file.write(f"Layover Time (Hours): {data.get('layover_time', 0):.2f}\n")
+            file.write(f"Maintenance Cost: ${data.get('maintenance_cost', 0):.2f}\n")
+            file.write(f"Income of Flight: ${data.get('flight_income', 0):.2f}\n")
+            file.write(f"Net Profit of the Flight: ${data.get('net_profit', 0):.2f}\n")
+            file.write(f"Total Passenger Miles: {data.get('total_passenger_miles', 0):.2f} passenger miles.\n")
+            file.write("\n")
 
 def main():
-    file_name = 'flights.txt'  # Change this to 'modified_flights_final.txt' if needed
+    file_name = 'flights.txt'   # Change this to 'modified_flights_final.txt' if needed
     with open(file_name, 'r') as file:
         lines = file.readlines()
 
