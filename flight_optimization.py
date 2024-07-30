@@ -70,28 +70,48 @@ def parse_flight_data_initial(lines):
     
     return list(flight_data.values())
 
+def identify_bad_flight_numbers(flight_data, profit_threshold):
+    """ Identify flight numbers with net profits below the profit threshold. """
+    bad_flight_numbers = [flight['flight_number'] for flight in flight_data if flight['net_profit'] < profit_threshold]
+    return bad_flight_numbers
+
 def optimize_flights(flight_data, profit_threshold):
-    # Extract profits and filter flights with profits below the threshold
-    profits = [(i, flight_info['net_profit']) for i, flight_info in enumerate(flight_data) if 'net_profit' in flight_info]
-    worst_flights = [(i, profit) for i, profit in profits if profit < profit_threshold]
-    
-    # Count the number of bad flights
-    num_bad_flights = len(worst_flights)
-    print(f"Number of bad flights with profit below ${profit_threshold}: {num_bad_flights}")
-    
-    # Sort the worst flights by profit in ascending order (more negative profits come first)
-    worst_flights_sorted = sorted(worst_flights, key=lambda x: x[1])
-    
+    """ Optimize flights by processing those with net profits below the profit threshold. """
+    # Identify bad flight numbers
+    bad_flight_numbers = identify_bad_flight_numbers(flight_data, profit_threshold)
+
+    # Ensure bad_flight_numbers is a list
+    if not isinstance(bad_flight_numbers, list):
+        print("Error: bad_flight_numbers should be a list of flight numbers.")
+        return flight_data
+
+    # Filter flights to include only those in the bad_flight_numbers list
+    filtered_flights = [flight for flight in flight_data if flight['flight_number'] in bad_flight_numbers]
+
+    # Print the number of bad flights being processed
+    num_bad_flights = len(filtered_flights)
+    print(f"Number of bad flights to process: {num_bad_flights}")
+
+    # Sort the filtered flights by profit in ascending order (more negative profits come first)
+    worst_flights_sorted = sorted(filtered_flights, key=lambda x: x['net_profit'])
+
     # Print the worst flights and their profits
     print("\nWorst Flights and Their Profits:")
-    for flight_index, profit in worst_flights_sorted:
-        print(f"Flight {flight_data[flight_index]['flight_number']}: Profit ${profit:,.2f}")
+    for flight in worst_flights_sorted:
+        print(f"Flight {flight['flight_number']}: Profit ${flight['net_profit']:,.2f}")
 
-    # Process only the flights listed in worst_flights_sorted
-    for flight_index, _ in worst_flights_sorted:
-        flight_data = process_bad_flight(flight_data, flight_index, profit_threshold)
+    # Process only the filtered flights
+    for flight in worst_flights_sorted:
+        # Find the index of the flight in the original flight_data
+        bad_flight_index = next((i for i, f in enumerate(flight_data) if f['flight_number'] == flight['flight_number']), None)
+        
+        if bad_flight_index is not None:
+            flight_data = process_bad_flight(flight_data, bad_flight_index, profit_threshold)
+        else:
+            print(f"Error: Flight number {flight['flight_number']} not found in the flight data.")
 
     return flight_data
+
 
 def haversine(coord1, coord2):
     R = 3440.065  # Radius of the Earth in nautical miles
@@ -442,28 +462,29 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
         print(f"Error: Bad flight index {bad_flight_index} is out of range.")
         return flight_data
 
-    # Print the bad flight details
+    # Get the bad flight details
     bad_flight = flight_data[bad_flight_index]
     bad_flight_profit = bad_flight.get('net_profit', 0)
-    print(f"\nProcessing Bad Flight {bad_flight_index}:")
+    
+    print(f"\nProcessing Bad Flight {bad_flight['flight_number']}:")
     print(f"Profit: ${bad_flight_profit:,.2f}")
 
     # Print the bad flight route
     bad_flight_route = bad_flight.get('flight_path', [])
     print(f"Bad Flight Route: {bad_flight_route}")
 
-    # If the bad flight's profit is above the threshold, stop the process
+    # Check if the bad flight's profit is above the threshold
     if bad_flight_profit >= profit_threshold:
-        print(f"Bad flight {bad_flight_index} has profit above the threshold. No need to process.")
+        print(f"Bad flight {bad_flight['flight_number']} has profit above the threshold. No need to process.")
         return flight_data
 
-    # Find the top 10 candidates
+    # Find the top 10 candidate flights
     candidates = find_best_candidates(flight_data, bad_flight_index, num_candidates=10)
     
     # Print the top candidates
     print("\nTop Candidates:")
     for index, score in candidates:
-        print(f"Candidate Flight {index}: Score {score:.2f}")
+        print(f"Candidate Flight {flight_data[index]['flight_number']}: Score {score:.2f}")
     
     # Find the specialized candidate
     candidate_indices = [index for index, score in candidates]
@@ -473,7 +494,7 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
     if specialized_candidate_index is not None:
         specialized_candidate = flight_data[specialized_candidate_index]
         specialized_candidate_profit = specialized_candidate.get('net_profit', 0)
-        print(f"\nSpecialized Candidate Flight: {specialized_candidate_index}")
+        print(f"\nSpecialized Candidate Flight: {specialized_candidate['flight_number']}")
         print(f"Specialized Candidate Profit: ${specialized_candidate_profit:,.2f}")
 
         # Print the specialized candidate route
@@ -481,23 +502,25 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
         print(f"Specialized Candidate Route: {specialized_candidate_route}")
 
         # Merge the bad flight with the specialized candidate
-        print(f"\nMerging Bad Flight {bad_flight_index} with Specialized Candidate Flight {specialized_candidate_index}.")
+        print(f"\nMerging Bad Flight {bad_flight['flight_number']} with Specialized Candidate Flight {specialized_candidate['flight_number']}.")
         
-        # Ensure to provide the correct values for `formatted_outputs` and `finalized_best_candidate`
+        # Update flight paths using path_modified
         modified_path = path_modified(bad_flight, specialized_candidate)
-        formatted_outputs = reassign_coordinates(modified_path, flight_data)  # Pass flight_data here
-        finalized_best_candidate_index = specialized_candidate_index  # Correctly reference the best candidate index
+        formatted_outputs = reassign_coordinates(modified_path, flight_data) # Ensure `reassign_coordinates` is correctly implemented
+        finalized_best_candidate_index = specialized_candidate_index
         
+        # Update statistics with the new flight data
         flight_data = update_statistics(flight_data, modified_path, formatted_outputs, finalized_best_candidate_index)
         
-        # Print flight paths using path_modified
-        print(f"\nModified Flight: {modified_path}")
+        # Print modified flight path
+        print(f"\nModified Flight Path: {modified_path}")
     else:
-        print(f"\nNo suitable specialized candidate found for Bad Flight {bad_flight_index}.")
+        print(f"\nNo suitable specialized candidate found for Bad Flight {bad_flight['flight_number']}.")
 
     return flight_data
 
-def main(scoring_method='average') -> None: # Need help to write new information
+def main(scoring_method='average') -> None:
+    import time
     start_time = time.time()
     
     input_file = "sorted_flights.txt"
@@ -517,36 +540,36 @@ def main(scoring_method='average') -> None: # Need help to write new information
 
     # Write the final optimized flight data to file
     with open(output_file, "w") as file:
-        for flight_number, data in enumerate(flight_data):
-            file.write(f"Flight: {flight_number}\n")
-            file.write(f"Flight Path: {data.get('revised_flight_path_revised', '')}\n")
-            file.write(f"Origin: {data.get('origin', '')}\n")
-            origin_coords = data.get('origin_coordinates_revised', (0, 0))
+        for flight in flight_data:
+            file.write(f"Flight: {flight['flight_number']}\n")
+            file.write(f"Flight Path: {flight.get('revised_flight_path_revised', '')}\n")
+            file.write(f"Origin: {flight.get('origin', '')}\n")
+            origin_coords = flight.get('origin_coordinates_revised', (0, 0))
             file.write(f"Origin Coordinates: {origin_coords[0]},{origin_coords[1]}\n")
-            file.write(f"Destination: {data.get('destination', 'None')}\n")
-            destination_coords = data.get('destination_coordinates_revised', (0, 0))
+            file.write(f"Destination: {flight.get('destination', 'None')}\n")
+            destination_coords = flight.get('destination_coordinates_revised', (0, 0))
             file.write(f"Destination Coordinates: {destination_coords[0]},{destination_coords[1]}\n")
 
             for i in range(1, 7):
                 stop_key = f'stop{i}'
                 stop_coords_key = f'stop{i}_coordinates_revised'
-                stop = data.get(stop_key, 'None')
-                stop_coords = data.get(stop_coords_key, (0, 0))
+                stop = flight.get(stop_key, 'None')
+                stop_coords = flight.get(stop_coords_key, (0, 0))
                 file.write(f"Stop{i}: {stop}\n")
                 if stop != 'None':
                     file.write(f"Stop{i} Coordinates: {stop_coords[0]},{stop_coords[1]}\n")
                 else:
                     file.write(f"Stop{i} Coordinates: None\n")
 
-            file.write(f"Passengers: {data.get('passengers_revised', 0)}\n")
-            file.write(f"Distance (Nautical Miles): {data.get('distance_nm_revised', 0):.2f}\n")
-            file.write(f"Flight Time (Hours): {data.get('flight_time_revised', 0):.2f}\n")
-            file.write(f"Operating Cost: ${data.get('operational_cost_revised', 0):,.2f}\n")
-            file.write(f"Layover Time (Hours): {data.get('layover_time_revised', 0):.2f}\n")
-            file.write(f"Maintenance Cost: ${data.get('maintenance_cost_revised', 0):,.2f}\n")
-            file.write(f"Income of Flight: ${data.get('flight_income_revised', 0):,.2f}\n")
-            file.write(f"Net Profit of the Flight: ${data.get('net_profit_revised', 0):,.2f}\n")
-            file.write(f"Total Passenger Miles: {data.get('total_passenger_miles_revised', 0):,.2f} passenger miles.\n")
+            file.write(f"Passengers: {flight.get('passengers_revised', 0)}\n")
+            file.write(f"Distance (Nautical Miles): {flight.get('distance_nm_revised', 0):.2f}\n")
+            file.write(f"Flight Time (Hours): {flight.get('flight_time_revised', 0):.2f}\n")
+            file.write(f"Operating Cost: ${flight.get('operational_cost_revised', 0):,.2f}\n")
+            file.write(f"Layover Time (Hours): {flight.get('layover_time_revised', 0):.2f}\n")
+            file.write(f"Maintenance Cost: ${flight.get('maintenance_cost_revised', 0):,.2f}\n")
+            file.write(f"Income of Flight: ${flight.get('flight_income_revised', 0):,.2f}\n")
+            file.write(f"Net Profit of the Flight: ${flight.get('net_profit_revised', 0):,.2f}\n")
+            file.write(f"Total Passenger Miles: {flight.get('total_passenger_miles_revised', 0):,.2f} passenger miles.\n")
             file.write("\n")
 
         if any(flight.get('revised', False) for flight in flight_data):
