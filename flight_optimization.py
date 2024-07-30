@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+import time
 import numpy as np
 import scipy.integrate as integrate
 from geopy.distance import geodesic
@@ -92,26 +93,18 @@ def calculate_distances(data):
     distances = {}
     segments = []
 
-    # Calculate distances for each segment
     if num_stops == 0:
         segments.append(('origin_to_destination', origin_coords, destination_coords))
     elif num_stops == 1:
         if stops[0] is not None:
             segments.append(('origin_to_stop1', origin_coords, stops[0]))
             segments.append(('stop1_to_destination', stops[0], destination_coords))
-        else:
-            raise ValueError("Insufficient data to calculate distance with 1 stop.")
     elif num_stops == 2:
         if stops[0] is not None and stops[1] is not None:
             segments.append(('origin_to_stop1', origin_coords, stops[0]))
             segments.append(('stop1_to_stop2', stops[0], stops[1]))
             segments.append(('stop2_to_destination', stops[1], destination_coords))
-        else:
-            raise ValueError("Insufficient data to calculate distance with 2 stops.")
-    else:
-        raise ValueError("Invalid number of stops. Only 0, 1, or 2 stops are supported.")
     
-    # Compute distances for each segment
     total_distance = 0
     for label, start_coords, end_coords in segments:
         distance = haversine(start_coords, end_coords)
@@ -124,8 +117,8 @@ def calculate_proximity_score(base_flight, candidate_flight):
     def extract_coordinates(flight):
         coordinates = [
             flight['origin_coordinates'],
-            flight.get('stop1_coordinates', None),
-            flight.get('stop2_coordinates', None),
+            flight.get('stop1_coordinates'),
+            flight.get('stop2_coordinates'),
             flight['destination_coordinates']
         ]
         return [coord for coord in coordinates if coord is not None]
@@ -142,14 +135,10 @@ def calculate_proximity_score(base_flight, candidate_flight):
             if distance < min_distance:
                 min_distance = distance
         min_distances.append(min_distance)
-    
+
     # Calculate the average of minimum distances
-    average_distance = np.mean(min_distances)
-    
-    # Convert distance to score (inverse of the distance, scaled to positive range)
-    # Add a small constant to avoid division by zero if average_distance is zero
-    score = 1 / (average_distance + 1e-6)
-    
+    score = np.mean(min_distances)
+
     return score
 
 def find_best_candidates(flight_data, base_flight_index, num_candidates=10, scoring_method='average'):
@@ -162,11 +151,11 @@ def find_best_candidates(flight_data, base_flight_index, num_candidates=10, scor
                 distance_score = calculate_proximity_score(base_flight, candidate_flight)
                 candidates.append((index, distance_score))
     
-    # Sort candidates by distance score and select the top ones
-    candidates.sort(key=lambda x: x[1], reverse=True)  # Higher score is better
+    # Sort candidates by distance score in ascending order (lower is better) and select the top ones
+    candidates.sort(key=lambda x: x[1])  # Lower score is better
     return candidates[:num_candidates]
 
-def specialized_candidate(flight_data, base_flight_index, candidate_indices):
+def finalized_best_candidate(flight_data, base_flight_index, candidate_indices):
     base_flight = flight_data[base_flight_index]
     specialized_candidate_index = None
     best_candidate_score = -float('inf')  # Initialize to negative infinity for comparison
@@ -193,7 +182,7 @@ def specialized_candidate(flight_data, base_flight_index, candidate_indices):
             if combined_score > best_candidate_score:
                 best_candidate_score = combined_score
                 specialized_candidate_index = candidate_index
-
+    
     return specialized_candidate_index
 
 def path_modified(bad_flight, candidate_flight):
@@ -201,57 +190,17 @@ def path_modified(bad_flight, candidate_flight):
     bad_stops = [stop for stop in [bad_flight['origin'], bad_flight.get('stop1', None), bad_flight.get('stop2', None), bad_flight['destination']] if stop is not None]
     candidate_stops = [stop for stop in [candidate_flight['origin'], candidate_flight.get('stop1', None), candidate_flight.get('stop2', None), candidate_flight['destination']] if stop is not None]
     
-    # Convert lists to strings for merging
-    bad_path_str = ' , '.join(bad_stops)
-    candidate_path_str = ' , '.join(candidate_stops)
-    
     # Merge the paths: candidate origin + candidate stops + bad flight stops + candidate destination
-    new_path_str = f"{candidate_path_str} , {bad_path_str}"
-    
-    # Split the merged path into a list of stops
-    new_path_list = new_path_str.split(' , ')
+    new_path_list = candidate_stops[:1] + candidate_stops[1:-1] + bad_stops[1:-1] + candidate_stops[-1:]
     
     # Remove duplicates while preserving order
     seen = set()
     new_path_filtered = [x for x in new_path_list if not (x in seen or seen.add(x))]
-    
-    return ' , '.join(new_path_filtered)
 
-def best_candidate_merge(flight_data, flight_index, candidates):
-    base_flight = flight_data[flight_index]
-    specialized_candidate_index = None
-    best_candidate_index = None
-
-    for candidate_index, _ in candidates:
-        candidate = flight_data[candidate_index]
-        valid_merge, new_distance_nm, new_passenger_miles, new_oper_cost, new_income, combined_passengers, new_net_profit = updated_variables(base_flight, candidate)
-        
-        if valid_merge and new_net_profit > base_flight['net_profit']:
-            best_candidate_index = candidate_index
-            
-            # Get the new path by merging base flight's stops into the candidate flight's path
-            new_path = path_modified(base_flight, candidate)
-            
-            # Update the base flight's data with the new values
-            flight_data[flight_index].update({
-                'distance_nm': new_distance_nm,
-                'total_passenger_miles': new_passenger_miles,
-                'operational_cost': new_oper_cost,
-                'flight_income': new_income,
-                'passengers': combined_passengers,
-                'net_profit': new_net_profit,
-                'revised_flight_path': new_path,  # Set the revised flight path here
-                'revised': True
-            })
-            
-            # Set the specialized candidate index to the best candidate index
-            specialized_candidate_index = candidate_index
-            
-            # Remove the old base flight (bad flight) from the list
-            flight_data.pop(flight_index)
-            break
+    # Convert the path to a string
+    modified_flight_path = ' , '.join(new_path_filtered)
     
-    return specialized_candidate_index
+    return modified_flight_path
 
 def count_stops(flight_path):
     # Split the flight path into individual airport codes
@@ -266,10 +215,100 @@ def count_stops(flight_path):
     
     return len(stops), stops
 
+def read_airports_file(file_path):
+    airports = {}
+    with open(file_path, 'r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            if len(parts) == 5:
+                try:
+                    code, name, population, lon, lat = parts
+                    airports[code.strip()] = (float(lon), float(lat))
+                except ValueError:
+                    continue  # Skip lines with invalid data
+    return airports
+
+def reassign_coordinates(modified_flight_path, flight_data, airports_file='airports.txt'):
+    # Read airport coordinates from the file
+    airports = read_airports_file(airports_file)
+    
+    # Split the modified flight path into individual airport codes
+    path_parts = modified_flight_path.split(' , ')
+    
+    # Create a list of tuples to store IATA codes and their coordinates
+    path_coordinates = []
+    
+    for code in path_parts:
+        if code in airports:
+            path_coordinates.append((code, airports[code]))
+    
+    # Create formatted output for each stop
+    formatted_output = []
+    for i, (code, coords) in enumerate(path_coordinates):
+        formatted_output.append(f"Stop{i+1}: {code}")
+        formatted_output.append(f"Stop{i+1} Coordinates: {coords[0]}, {coords[1]}")
+    
+    # Update the flight data with the new coordinates
+    for flight in flight_data:
+        if 'origin' in flight and flight['origin'] in path_coordinates:
+            flight['origin_coordinates_revised'] = path_coordinates[path_parts.index(flight['origin'])][1]
+        
+        if 'destination' in flight and flight['destination'] in path_coordinates:
+            flight['destination_coordinates_revised'] = path_coordinates[path_parts.index(flight['destination'])][1]
+        
+        for i in range(6):  # Assuming up to 6 stops
+            stop_key = f'stop{i+1}'
+            if stop_key in flight and flight[stop_key] in path_coordinates:
+                stop_index = path_parts.index(flight[stop_key])
+                flight[f'{stop_key}_coordinates_revised'] = path_coordinates[stop_index][1]
+    
+    return formatted_output
+
+def modified_flight_distances(modified_flight_path, flight_data, formatted_output):
+    # Read formatted output to create a dictionary of coordinates
+    path_coordinates = {}
+    for line in formatted_output:
+        if line.startswith("Stop") and "Coordinates" in line:
+            parts = line.split(":")
+            stop_info = parts[0].strip().split()
+            stop_number = int(stop_info[0].replace('Stop', ''))
+            coords = parts[1].strip().split(',')
+            path_coordinates[stop_number] = (float(coords[0]), float(coords[1]))
+
+    # Include origin (0) and destination (len(formatted_output)//2 + 1)
+    path_parts = modified_flight_path.split(' , ')
+    num_stops = len(path_parts) - 2  # Exclude origin and destination
+    
+    # Initialize coordinates list
+    coords_list = []
+    
+    # Extract coordinates for origin
+    origin_code = path_parts[0]
+    if origin_code in path_coordinates:
+        coords_list.append(path_coordinates[0])
+    
+    # Extract coordinates for each stop
+    for i in range(1, num_stops + 1):
+        stop_code = path_parts[i]
+        if i in path_coordinates:
+            coords_list.append(path_coordinates[i])
+    
+    # Extract coordinates for destination
+    destination_code = path_parts[-1]
+    if num_stops + 1 in path_coordinates:
+        coords_list.append(path_coordinates[num_stops + 1])
+    
+    # Calculate distances between consecutive points
+    total_distance_nm = 0
+    for i in range(len(coords_list) - 1):
+        total_distance_nm += haversine(coords_list[i], coords_list[i + 1])
+    
+    return total_distance_nm
+
 def calculate_flight_time(lon1, lat1, lon2, lat2): # Refer back to the generation of flights
     if None in [lat1, lon1, lat2, lon2]:
         return 0, 0  # Handle invalid coordinates
-    distance_nm = haversine_distance_nm(lat1, lon1, lat2, lon2)
+    distance_nm = haversine((lat1, lon1), (lat2, lon2))
     speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
     flight_time = distance_nm / speed_knots
     operational_cost = 5757 * flight_time
@@ -287,205 +326,198 @@ def simulate_layover(stops, flight_time, operational_cost):
     
     return layover_time, maintenance_cost
 
-def update_statistics(flight_data, flight_index):
-    data = flight_data[flight_index]
+def update_statistics(flight_data, modified_flight_path, formatted_outputs, finalized_best_candidate):
+    # Extract the index of the finalized best candidate
+    best_candidate_index = finalized_best_candidate
+    
+    # Find the finalized best candidate flight data
+    finalized_best_flight = flight_data[best_candidate_index]
+    
+    # Update the flight path
+    finalized_best_flight['revised_flight_path_revised'] = modified_flight_path
+    
+    # Remove the outdated flight (bad flight)
+    flight_data = [flight for i, flight in enumerate(flight_data) if i != best_candidate_index]
+    
+    # Reassign coordinates from formatted_outputs
+    path_coordinates = {}
+    for line in formatted_outputs:
+        if line.startswith("Stop") and "Coordinates" in line:
+            parts = line.split(":")
+            stop_info = parts[0].strip().split()
+            stop_number = int(stop_info[0].replace('Stop', ''))
+            coords = parts[1].strip().split(',')
+            path_coordinates[stop_number] = (float(coords[0]), float(coords[1]))
 
-    # Get the revised flight path dynamically
-    origin = data.get('origin')
-    destination = data.get('destination')
-    stops = [data.get(f'stop{i+1}', 'None') for i in range(6) if data.get(f'stop{i+1}', 'None') != 'None']
-    flight_path = [origin] + stops + [destination]
-
-    # Retrieve coordinates for each stop
-    stops_coords = [data['origin_coordinates']]
-    for stop in stops:
-        stop_key = f"{stop.lower()}_coordinates"
-        if stop_key in data:
-            stops_coords.append(data[stop_key])
-    stops_coords.append(data['destination_coordinates'])
-
-    # Calculate total flight distance, time, and operational cost
-    total_distance_nm = 0
-    total_flight_time = 0
-    total_operational_cost = 0
-
-    for i in range(len(stops_coords) - 1):
-        coord1 = stops_coords[i]
-        coord2 = stops_coords[i + 1]
-        if coord1 and coord2:
-            flight_time, operational_cost, distance_nm = calculate_flight_time(
-                coord1[1], coord1[0], coord2[1], coord2[0]
-            )
-            total_distance_nm += distance_nm
-            total_flight_time += flight_time
-            total_operational_cost += operational_cost
-
-    # Update flight data with calculated values
-    data['flight_time'] = total_flight_time
-    data['operating_cost'] = total_operational_cost
-    data['distance_nm'] = total_distance_nm
-
+    # Extract path parts
+    path_parts = modified_flight_path.split(' , ')
+    
+    # Update flight data with new coordinates
+    for flight in flight_data:
+        if flight['origin'] in path_coordinates:
+            flight['origin_coordinates_revised'] = path_coordinates[0]
+        
+        if flight['destination'] in path_coordinates:
+            flight['destination_coordinates_revised'] = path_coordinates[len(path_coordinates) - 1]
+        
+        for stop_number in range(1, 7):  # Assuming up to 6 stops
+            stop_key = f'stop{stop_number}'
+            if stop_key in flight and flight[stop_key] in path_coordinates:
+                stop_index = path_parts.index(flight[stop_key])
+                flight[f'{stop_key}_coordinates_revised'] = path_coordinates[stop_index]
+    
+    # Calculate new distances and other statistics
+    num_stops, stops = count_stops(modified_flight_path)
+    coords_list = []
+    for i in range(len(path_parts)):
+        code = path_parts[i]
+        if i in path_coordinates:
+            coords_list.append(path_coordinates[i])
+    
+    # Calculate total flight distance
+    total_distance_nm_revised = 0
+    for i in range(len(coords_list) - 1):
+        total_distance_nm_revised += haversine(coords_list[i], coords_list[i + 1])
+    
+    # Calculate flight time and operational cost
+    origin_coords = coords_list[0]
+    destination_coords = coords_list[-1]
+    flight_time_revised, operational_cost_revised = calculate_flight_time(
+        origin_coords[1], origin_coords[0],
+        destination_coords[1], destination_coords[0]
+    )
+    
     # Simulate layover and calculate maintenance cost
-    num_stops = len(stops)
-    layover_time, maintenance_cost = simulate_layover(num_stops, total_flight_time, total_operational_cost)
-    data['layover_time'] = layover_time
-    data['maintenance_cost'] = maintenance_cost
-
+    layover_time_revised, maintenance_cost_revised = simulate_layover(num_stops, flight_time_revised, operational_cost_revised)
+    
     # Calculate flight income
-    passengers = data.get('passengers', 0)
-    flight_income = 384.85 * passengers
-    data['flight_income'] = flight_income
-
-    # Calculate the net profit
-    net_profit = flight_income - maintenance_cost - total_operational_cost
-    data['net_profit'] = net_profit
+    base_passengers = finalized_best_flight.get('passengers', 0)
+    candidate_passengers = flight_data[best_candidate_index].get('passengers', 0)
+    combined_passengers_revised = base_passengers + candidate_passengers
+    flight_income_revised = 384.85 * combined_passengers_revised
+    
+    # Calculate net profit
+    net_profit_revised = flight_income_revised - operational_cost_revised - maintenance_cost_revised
 
     # Calculate total passenger miles
-    passenger_miles = passengers * total_distance_nm
-    data['total_passenger_miles'] = passenger_miles
+    passenger_miles_revised = combined_passengers_revised * total_distance_nm_revised
+    
+    # Update statistics for the finalized best candidate
+    finalized_best_flight.update({
+        'distance_nm_revised': total_distance_nm_revised,
+        'flight_time_revised': flight_time_revised,
+        'operational_cost_revised': operational_cost_revised,
+        'maintenance_cost_revised': maintenance_cost_revised,
+        'passengers_revised': combined_passengers_revised,
+        'flight_income_revised': flight_income_revised,
+        'layover_time_revised': layover_time_revised,
+        'net_profit_revised': net_profit_revised,
+        'total_passenger_miles_revised': passenger_miles_revised,
+        'revised': True
+    })
 
     return flight_data
 
-def process_flight_data(flight_data, base_flight_index, num_candidates=10): # Sequence the process
-    # Step 1: Find the best candidates based on proximity score
-    candidates = find_best_candidates(flight_data, base_flight_index, num_candidates)
+def process_bad_flight(flight_data, bad_flight_index):
+    # Print the bad flight details
+    bad_flight = flight_data[bad_flight_index]
+    print(f"\nProcessing Bad Flight {bad_flight_index}:")
+    print(f"Profit: ${bad_flight.get('net_profit', 0):,.2f}")
+
+    # Find the top 10 candidates
+    candidates = find_best_candidates(flight_data, bad_flight_index, num_candidates=10)
     
-    # Step 2: Identify the specialized candidate
+    # Print the top candidates
+    print("\nTop Candidates:")
+    for index, score in candidates:
+        print(f"Candidate Flight {index}: Score {score:.2f}")
+    
+    # Find the specialized candidate
     candidate_indices = [index for index, score in candidates]
-    specialized_candidate_index = specialized_candidate(flight_data, base_flight_index, candidate_indices)
+    specialized_candidate_index = finalized_best_candidate(flight_data, bad_flight_index, candidate_indices)
     
-    # Step 3: Merge the best candidate
+    # Print the specialized candidate details
     if specialized_candidate_index is not None:
-        merged_flight_index = best_candidate_merge(flight_data, base_flight_index, candidates)
-        if merged_flight_index is not None:
-            # Step 4: Update the statistics of the merged flight
-            flight_data = update_statistics(flight_data, merged_flight_index)
-    
+        specialized_candidate = flight_data[specialized_candidate_index]
+        print(f"\nSpecialized Candidate Flight: {specialized_candidate_index}")
+        print(f"Specialized Candidate Profit: ${specialized_candidate.get('net_profit', 0):,.2f}")
+
+        # Merge the bad flight with the specialized candidate
+        print(f"\nMerging Bad Flight {bad_flight_index} with Specialized Candidate Flight {specialized_candidate_index}.")
+        
+        # Ensure to provide the correct values for `formatted_outputs` and `finalized_best_candidate`
+        modified_path = path_modified(bad_flight, specialized_candidate)
+        formatted_outputs = reassign_coordinates(modified_path, flight_data)  # Pass flight_data here
+        finalized_best_candidate_index = specialized_candidate_index  # Correctly reference the best candidate index
+        
+        flight_data = update_statistics(flight_data, modified_path, formatted_outputs, finalized_best_candidate_index)
+        
+        # Print flight paths using path_modified
+        print(f"\nModified Flight Route: {modified_path}")
+    else:
+        print(f"\nNo suitable specialized candidate found for Bad Flight {bad_flight_index}.")
+
     return flight_data
 
-def main(scoring_method: str = 'average') -> None:
+def main(scoring_method='average') -> None:
+    start_time = time.time()
+    
     input_file = "sorted_flights.txt"
     output_file = "modified_flights_final.txt"
 
-    try:
-        with open(input_file, "r") as file:
-            lines = file.readlines()
-    except FileNotFoundError:
-        print(f"Input file {input_file} not found.")
-        return
+    # Read input file
+    with open(input_file, "r") as file:
+        lines = file.readlines()
 
     flight_data = parse_flight_data_initial(lines)
-    optimized_flights = set()
 
-    iteration = 0
-    while True:
-        print(f"\nIteration {iteration + 1}: Optimizing flights...")
+    # Get the three worst flights
+    worst_flights = get_worst_flights_by_profit(flight_data, num_worst=3)
 
-        # Identify and process the worst flights
-        worst_flights = get_worst_flights_by_profit(flight_data, num_worst=3)
-
-        if not worst_flights:
-            print("No more flights to optimize.")
-            break
-
-        for flight in worst_flights:
-            flight_index, profit = flight
-            if flight_index in optimized_flights:
-                continue  # Skip flights that have already been optimized
-
-            print(f"\nProcessing Flight {flight_index}: Profit ${profit:.2f}")
-
-            path_non_modified = ", ".join([
-                str(flight_data[flight_index]['origin']),
-                *([str(flight_data[flight_index].get(f'stop{i+1}', 'None')) for i in range(2)]),
-                str(flight_data[flight_index]['destination'])
-            ])
-            print(f"Non-Modified Flight Path: {path_non_modified}")
-
-            path_modified = ", ".join([
-                str(flight_data[flight_index]['origin']),
-                *([str(flight_data[flight_index].get(f'stop{i+1}', 'None')) for i in range(6)]),
-                str(flight_data[flight_index]['destination'])
-            ])
-            print(f"Modified Flight Path: {path_modified}")
-
-            candidates = find_best_candidates(flight_data, flight_index, scoring_method=scoring_method)
-
-            print(f"\nPotentially optimal flights for merging with Flight {flight_index}:")
-            for candidate_index, distance in candidates:
-                print(f"Candidate Flight {candidate_index}: Distance {distance:.2f} NM")
-
-            best_candidate_index = None
-            for candidate_index, _ in candidates:
-                candidate = flight_data[candidate_index]
-                valid_merge, new_distance_nm, new_passenger_miles, new_oper_cost, new_income, combined_passengers, new_net_profit = updated_variables(flight_data[flight_index], candidate)
-                if valid_merge and new_net_profit > flight_data[flight_index]['net_profit']:
-                    best_candidate_index = candidate_index
-                    flight_data[flight_index].update({
-                        'distance_nm': new_distance_nm,
-                        'total_passenger_miles': new_passenger_miles,
-                        'operational_cost': new_oper_cost,
-                        'flight_income': new_income,
-                        'passengers': combined_passengers,
-                        'net_profit': new_net_profit,
-                        'revised_flight_path': path_modified,
-                        'revised': True
-                    })
-                    break
-
-            if best_candidate_index is not None:
-                print(f"\nBest candidate for merging with Flight {flight_index} is Flight {best_candidate_index}")
-                print(f"Modified Flight Route of Flight {flight_index}: {flight_data[flight_index].get('revised_flight_path')}\n")
-                optimized_flights.add(flight_index)
-            else:
-                print(f"\nNo suitable candidate found for merging with Flight {flight_index}.\n")
-
-        # Check if all flights have been optimized
-        if len(optimized_flights) == len(flight_data):
-            print("All flights have been optimized.")
-            break
-
-        iteration += 1
+    # Process each bad flight
+    for flight_index, profit in worst_flights:
+        flight_data = process_bad_flight(flight_data, flight_index)
 
     # Write the final optimized flight data to file
-    try:
-        with open(output_file, "w") as file:
-            for flight_number, data in enumerate(flight_data):
-                file.write(f"Flight: {flight_number}\n")
-                file.write(f"Flight Path: {data.get('revised_flight_path', '')}\n")
-                file.write(f"Origin: {data.get('origin', '')}\n")
-                file.write(f"Origin Coordinates: {data['origin_coordinates'][0]},{data['origin_coordinates'][1]}\n")
-                file.write(f"Destination: {data.get('destination', 'None')}\n")
-                file.write(f"Destination Coordinates: {data['destination_coordinates'][0]},{data['destination_coordinates'][1]}\n")
-                
-                for i in range(1, 7):
-                    stop_key = f'stop{i}'
-                    stop_coords_key = f'stop{i}_coordinates'
-                    stop = data.get(stop_key, 'None')
-                    stop_coords = data.get(stop_coords_key, (0, 0))
-                    file.write(f"Stop{i}: {stop}\n")
-                    if stop != 'None':
-                        file.write(f"Stop{i} Coordinates: {stop_coords[0]},{stop_coords[1]}\n")
-                    else:
-                        file.write(f"Stop{i} Coordinates: None\n")
+    with open(output_file, "w") as file:
+        for flight_number, data in enumerate(flight_data):
+            file.write(f"Flight: {flight_number}\n")
+            file.write(f"Flight Path: {data.get('revised_flight_path_revised', '')}\n")
+            file.write(f"Origin: {data.get('origin', '')}\n")
+            origin_coords = data.get('origin_coordinates_revised', (0, 0))
+            file.write(f"Origin Coordinates: {origin_coords[0]},{origin_coords[1]}\n")
+            file.write(f"Destination: {data.get('destination', 'None')}\n")
+            destination_coords = data.get('destination_coordinates_revised', (0, 0))
+            file.write(f"Destination Coordinates: {destination_coords[0]},{destination_coords[1]}\n")
 
-                file.write(f"Passengers: {data.get('passengers', 0)}\n")
-                file.write(f"Distance (Nautical Miles): {data.get('distance_nm', 0):.2f}\n")
-                file.write(f"Flight Time (Hours): {data.get('flight_time', 0):.2f}\n")
-                file.write(f"Operating Cost: ${data.get('operational_cost', 0):.2f}\n")
-                file.write(f"Layover Time (Hours): {data.get('layover_time', 0):.2f}\n")
-                file.write(f"Maintenance Cost: ${data.get('maintenance_cost', 0):.2f}\n")
-                file.write(f"Income of Flight: ${data.get('flight_income', 0):.2f}\n")
-                file.write(f"Net Profit of the Flight: ${data.get('net_profit', 0):.2f}\n")
-                file.write(f"Total Passenger Miles: {data.get('total_passenger_miles', 0):.2f} passenger miles.\n")
-                file.write("\n")
+            for i in range(1, 7):
+                stop_key = f'stop{i}'
+                stop_coords_key = f'stop{i}_coordinates_revised'
+                stop = data.get(stop_key, 'None')
+                stop_coords = data.get(stop_coords_key, (0, 0))
+                file.write(f"Stop{i}: {stop}\n")
+                if stop != 'None':
+                    file.write(f"Stop{i} Coordinates: {stop_coords[0]},{stop_coords[1]}\n")
+                else:
+                    file.write(f"Stop{i} Coordinates: None\n")
 
-            if any(flight.get('revised', False) for flight in flight_data):
-                file.write("Note: Some flights have been revised.\n")
-                file.write("\n")
+            file.write(f"Passengers: {data.get('passengers_revised', 0)}\n")
+            file.write(f"Distance (Nautical Miles): {data.get('distance_nm_revised', 0):.2f}\n")
+            file.write(f"Flight Time (Hours): {data.get('flight_time_revised', 0):.2f}\n")
+            file.write(f"Operating Cost: ${data.get('operational_cost_revised', 0):.2f}\n")
+            file.write(f"Layover Time (Hours): {data.get('layover_time_revised', 0):.2f}\n")
+            file.write(f"Maintenance Cost: ${data.get('maintenance_cost_revised', 0):.2f}\n")
+            file.write(f"Income of Flight: ${data.get('flight_income_revised', 0):.2f}\n")
+            file.write(f"Net Profit of the Flight: ${data.get('net_profit_revised', 0):.2f}\n")
+            file.write(f"Total Passenger Miles: {data.get('total_passenger_miles_revised', 0):.2f} passenger miles.\n")
+            file.write("\n")
 
-    except IOError:
-        print(f"Error writing to file {output_file}.")
+    if any(flight.get('revised', False) for flight in flight_data):
+        file.write("Note: Some flights have been revised.\n")
+        file.write("Revised flights are indicated with updated paths and statistics.\n")
+
+    end_time = time.time()
+    print(f"\nTotal processing time: {end_time - start_time:.2f} seconds.")
 
 if __name__ == "__main__":
-    main(scoring_method='average')
+    main()
