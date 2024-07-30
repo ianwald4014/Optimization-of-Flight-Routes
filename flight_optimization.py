@@ -64,10 +64,15 @@ def parse_flight_data_initial(lines):
 
     return list(flight_data.values())
 
-def get_worst_flights_by_profit(flight_data, num_worst=3):
+def get_worst_flights_by_profit(flight_data, profit_threshold):
+    # Extract profits and filter flights with profits below the threshold
     profits = [(i, flight_info['net_profit']) for i, flight_info in enumerate(flight_data)]
-    sorted_profits = sorted(profits, key=lambda x: x[1])
-    return sorted_profits[:num_worst]
+    worst_flights = [(i, profit) for i, profit in profits if profit < profit_threshold]
+    
+    # Sort the worst flights by profit in ascending order (more negative profits come first)
+    sorted_worst_flights = sorted(worst_flights, key=lambda x: x[1])
+    
+    return sorted_worst_flights
 
 def haversine(coord1, coord2):
     R = 3440.065  # Radius of the Earth in nautical miles
@@ -158,27 +163,21 @@ def find_best_candidates(flight_data, base_flight_index, num_candidates=10, scor
 def finalized_best_candidate(flight_data, base_flight_index, candidate_indices):
     base_flight = flight_data[base_flight_index]
     specialized_candidate_index = None
-    best_candidate_score = -float('inf')  # Initialize to negative infinity for comparison
+    best_candidate_score = -float('inf')
     
-    # Retrieve the base flight data
     base_passengers = base_flight.get('passengers', 0)
     base_net_profit = base_flight.get('net_profit', 0)
-    base_passenger_miles = base_flight.get('total_passenger_miles', 0)
     
-    # Iterate through candidate flight indices
     for candidate_index in candidate_indices:
         candidate_flight = flight_data[candidate_index]
         candidate_passengers = candidate_flight.get('passengers', 0)
         candidate_net_profit = candidate_flight.get('net_profit', 0)
-        candidate_passenger_miles = candidate_flight.get('total_passenger_miles', 0)
         candidate_proximity_score = calculate_proximity_score(base_flight, candidate_flight)
         
-        # Check if the combined number of passengers is less than or equal to 204
-        if base_passengers + candidate_passengers <= 204:
-            # Compute a combined score considering net profit, passenger miles, and proximity score
-            combined_score = (candidate_net_profit + candidate_passenger_miles + candidate_proximity_score)
+        # Ensure that the candidate's profit is greater than the base flight's profit
+        if candidate_net_profit > base_net_profit and base_passengers + candidate_passengers <= 204:
+            combined_score = (candidate_net_profit + candidate_proximity_score)
             
-            # Check if this candidate is better
             if combined_score > best_candidate_score:
                 best_candidate_score = combined_score
                 specialized_candidate_index = candidate_index
@@ -419,6 +418,11 @@ def update_statistics(flight_data, modified_flight_path, formatted_outputs, fina
     return flight_data
 
 def process_bad_flight(flight_data, bad_flight_index):
+    # Check if the index is valid
+    if not (0 <= bad_flight_index < len(flight_data)):
+        print(f"Error: Bad flight index {bad_flight_index} is out of range.")
+        return flight_data
+
     # Print the bad flight details
     bad_flight = flight_data[bad_flight_index]
     print(f"\nProcessing Bad Flight {bad_flight_index}:")
@@ -471,8 +475,11 @@ def main(scoring_method='average') -> None:
 
     flight_data = parse_flight_data_initial(lines)
 
-    # Get the three worst flights
-    worst_flights = get_worst_flights_by_profit(flight_data, num_worst=3)
+    # Set the profit threshold to filter flights with profits less than this value
+    profit_threshold = 0  # Change this value to the desired threshold
+
+    # Get the flights with profits below the threshold
+    worst_flights = get_worst_flights_by_profit(flight_data, profit_threshold)
 
     # Process each bad flight
     for flight_index, profit in worst_flights:
@@ -512,9 +519,9 @@ def main(scoring_method='average') -> None:
             file.write(f"Total Passenger Miles: {data.get('total_passenger_miles_revised', 0):.2f} passenger miles.\n")
             file.write("\n")
 
-    if any(flight.get('revised', False) for flight in flight_data):
-        file.write("Note: Some flights have been revised.\n")
-        file.write("Revised flights are indicated with updated paths and statistics.\n")
+        if any(flight.get('revised', False) for flight in flight_data):
+            file.write("Note: Some flights have been revised.\n")
+            file.write("Revised flights are indicated with updated paths and statistics.\n")
 
     end_time = time.time()
     print(f"\nTotal processing time: {end_time - start_time:.2f} seconds.")
