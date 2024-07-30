@@ -9,59 +9,82 @@ from math import radians, sin, cos, sqrt, atan2
 def parse_flight_data_initial(lines):
     flight_data = {}
     flight_number = None
+    current_lines = []
+    
     for line in lines:
+        line = line.strip()  # Remove leading and trailing whitespace
+        
         if line.startswith("Flight:"):
+            # Save previous flight data if it exists
+            if flight_number is not None:
+                flight_data[flight_number]['lines'] = current_lines
+            
+            # Start a new flight entry
             flight_number = int(line.split(":")[1].strip())
             flight_data[flight_number] = {}
-        elif line.startswith("Flight Path:"):
-            flight_data[flight_number]['flight_path'] = line.split(":")[1].strip()
-        elif line.startswith("Origin:"):
-            flight_data[flight_number]['origin'] = line.split(":")[1].strip().split()[0]
-        elif line.startswith("Origin Coordinates:"):
-            coords = line.split(":")[1].strip().split(",")
-            flight_data[flight_number]['origin_coordinates'] = (float(coords[0]), float(coords[1]))
-        elif line.startswith("Destination:"):
-            flight_data[flight_number]['destination'] = line.split(":")[1].strip().split()[0]
-        elif line.startswith("Destination Coordinates:"):
-            coords = line.split(":")[1].strip().split(",")
-            flight_data[flight_number]['destination_coordinates'] = (float(coords[0]), float(coords[1]))
-        elif line.startswith("Stops:"):
-            flight_data[flight_number]['stops'] = int(line.split(":")[1].strip())
-        elif line.startswith("Stop1:"):
-            stop1 = line.split(":")[1].strip().split()[0]
-            if stop1 != "None":
-                flight_data[flight_number]['stop1'] = stop1
-        elif line.startswith("Stop1 Coordinates:"):
-            coords = line.split(":")[1].strip().split(",")
-            flight_data[flight_number]['stop1_coordinates'] = (float(coords[0]), float(coords[1]))
-        elif line.startswith("Stop2:"):
-            stop2 = line.split(":")[1].strip().split()[0]
-            if stop2 != "None":
-                flight_data[flight_number]['stop2'] = stop2
-        elif line.startswith("Stop2 Coordinates:"):
-            coords = line.split(":")[1].strip().split(",")
-            flight_data[flight_number]['stop2_coordinates'] = (float(coords[0]), float(coords[1]))
-        elif line.startswith("Passengers:"):
-            flight_data[flight_number]['passengers'] = int(line.split(":")[1].strip())
-        elif line.startswith("Distance (Nautical Miles):"):
-            flight_data[flight_number]['distance_nm'] = float(line.split(":")[1].strip())
-        elif line.startswith("Flight Time (Hours):"):
-            flight_data[flight_number]['flight_time'] = float(line.split(":")[1].strip())
-        elif line.startswith("Operating Cost:"):
-            flight_data[flight_number]['operational_cost'] = float(line.split(": $")[1].strip())
-        elif line.startswith("Layover Time (Hours):"):
-            flight_data[flight_number]['layover_time'] = float(line.split(":")[1].strip())
-        elif line.startswith("Maintenance Cost:"):
-            flight_data[flight_number]['maintenance_cost'] = float(line.split(": $")[1].strip())
-        elif line.startswith("Income of Flight:"):
-            flight_data[flight_number]['flight_income'] = float(line.split(": $")[1].strip())
-        elif line.startswith("Net Profit of the Flight:"):
-            flight_data[flight_number]['net_profit'] = float(line.split(": $")[1].strip())
-        elif line.startswith("Note: This flight has been revised"):
-            flight_data[flight_number]['revised'] = True
-        elif line.startswith("Total Passenger Miles:"):
-            continue
-
+            current_lines = [line]
+        
+        else:
+            # Append line to the current flight's lines
+            if flight_number is not None:
+                current_lines.append(line)
+                
+                if line.startswith("Flight Path:"):
+                    flight_data[flight_number]['flight_path'] = line.split(":")[1].strip()
+                elif line.startswith("Origin:"):
+                    flight_data[flight_number]['origin'] = line.split(":")[1].strip()
+                elif line.startswith("Origin Coordinates:"):
+                    coords = line.split(":")[1].strip().split(",")
+                    flight_data[flight_number]['origin_coordinates'] = (float(coords[0]), float(coords[1]))
+                elif line.startswith("Destination:"):
+                    flight_data[flight_number]['destination'] = line.split(":")[1].strip()
+                elif line.startswith("Destination Coordinates:"):
+                    coords = line.split(":")[1].strip().split(",")
+                    flight_data[flight_number]['destination_coordinates'] = (float(coords[0]), float(coords[1]))
+                elif line.startswith("Stops:"):
+                    flight_data[flight_number]['stops'] = int(line.split(":")[1].strip())
+                elif line.startswith("Stop1:"):
+                    stop1 = line.split(":")[1].strip()
+                    if stop1 != "None":
+                        flight_data[flight_number]['stop1'] = stop1
+                elif line.startswith("Stop1 Coordinates:"):
+                    coords = line.split(":")[1].strip().split(",")
+                    flight_data[flight_number]['stop1_coordinates'] = (float(coords[0]), float(coords[1]))
+                elif line.startswith("Stop2:"):
+                    stop2 = line.split(":")[1].strip()
+                    if stop2 != "None":
+                        flight_data[flight_number]['stop2'] = stop2
+                elif line.startswith("Stop2 Coordinates:"):
+                    coords = line.split(":")[1].strip().split(",")
+                    flight_data[flight_number]['stop2_coordinates'] = (float(coords[0]), float(coords[1]))
+                elif line.startswith("Passengers:"):
+                    flight_data[flight_number]['passengers'] = int(line.split(":")[1].strip())
+                elif line.startswith("Distance (Nautical Miles):"):
+                    flight_data[flight_number]['distance_nm'] = float(line.split(":")[1].strip())
+                elif line.startswith("Flight Time (Hours):"):
+                    flight_data[flight_number]['flight_time'] = float(line.split(":")[1].strip())
+                elif line.startswith("Operating Cost:"):
+                    flight_data[flight_number]['operational_cost'] = float(line.split(": $")[1].strip())
+                elif line.startswith("Layover Time (Hours):"):
+                    flight_data[flight_number]['layover_time'] = float(line.split(":")[1].strip())
+                elif line.startswith("Maintenance Cost:"):
+                    flight_data[flight_number]['maintenance_cost'] = float(line.split(": $")[1].strip())
+                elif line.startswith("Income of Flight:"):
+                    flight_data[flight_number]['flight_income'] = float(line.split(": $")[1].strip())
+                elif line.startswith("Net Profit of the Flight:"):
+                    net_profit_str = line.split(": $")[1].strip()
+                    try:
+                        flight_data[flight_number]['net_profit'] = float(net_profit_str)
+                    except ValueError:
+                        print(f"Error parsing net profit '{net_profit_str}' for flight {flight_number}")
+                        flight_data[flight_number]['net_profit'] = None
+                elif line.startswith("Total Passenger Miles:"):
+                    continue  # Skip or handle if needed
+    
+    # Don't forget to save the last flight's data
+    if flight_number is not None:
+        flight_data[flight_number]['lines'] = current_lines
+    
     return list(flight_data.values())
 
 def optimize_flights(flight_data, profit_threshold):
@@ -69,10 +92,19 @@ def optimize_flights(flight_data, profit_threshold):
     profits = [(i, flight_info['net_profit']) for i, flight_info in enumerate(flight_data)]
     worst_flights = [(i, profit) for i, profit in profits if profit < profit_threshold]
     
+    # Count the number of bad flights
+    num_bad_flights = len(worst_flights)
+    print(f"Number of bad flights with profit below ${profit_threshold}: {num_bad_flights}")
+    
     # Sort the worst flights by profit in ascending order (more negative profits come first)
     worst_flights_sorted = sorted(worst_flights, key=lambda x: x[1])
+    
+    # Print the worst flights and their profits
+    print("\nWorst Flights and Their Profits:")
+    for flight_index, profit in worst_flights_sorted:
+        print(f"Flight {flight_index}: Profit ${profit:,.2f}")
 
-    # Process each bad flight
+    # Process only the flights listed in worst_flights_sorted
     for flight_index, _ in worst_flights_sorted:
         flight_data = process_bad_flight(flight_data, flight_index, profit_threshold)
 
@@ -482,7 +514,7 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
 
     return flight_data
 
-def main(scoring_method='average') -> None:
+def main(scoring_method='average') -> None: # Need help to write new information
     start_time = time.time()
     
     input_file = "sorted_flights.txt"
