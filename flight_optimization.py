@@ -112,7 +112,6 @@ def optimize_flights(flight_data, profit_threshold):
 
     return flight_data
 
-
 def haversine(coord1, coord2):
     R = 3440.065  # Radius of the Earth in nautical miles
     lat1, lon1 = radians(coord1[0]), radians(coord1[1])
@@ -224,21 +223,46 @@ def finalized_best_candidate(flight_data, base_flight_index, candidate_indices):
     return specialized_candidate_index
 
 def path_modified(bad_flight, candidate_flight):
-    # Extract and split the stops from both flights, handling None values
-    bad_stops = [stop for stop in [bad_flight['origin'], bad_flight.get('stop1', None), bad_flight.get('stop2', None), bad_flight['destination']] if stop is not None]
-    candidate_stops = [stop for stop in [candidate_flight['origin'], candidate_flight.get('stop1', None), candidate_flight.get('stop2', None), candidate_flight['destination']] if stop is not None]
-    
-    # Merge the paths: candidate origin + candidate stops + bad flight stops + candidate destination
-    new_path_list = candidate_stops[:1] + candidate_stops[1:-1] + bad_stops[1:-1] + candidate_stops[-1:]
-    
-    # Remove duplicates while preserving order
-    seen = set()
-    new_path_filtered = [x for x in new_path_list if not (x in seen or seen.add(x))]
+    # Extract stops from both flights, excluding None values
+    bad_stops = [stop for stop in [bad_flight.get('origin', None), 
+                                   bad_flight.get('stop1', None), 
+                                   bad_flight.get('stop2', None), 
+                                   bad_flight.get('stop3', None), 
+                                   bad_flight.get('stop4', None), 
+                                   bad_flight.get('stop5', None), 
+                                   bad_flight.get('destination', None)] if stop is not None]
 
-    # Convert the path to a string
-    modified_flight_path = ' , '.join(new_path_filtered)
+    candidate_stops = [stop for stop in [candidate_flight.get('origin', None), 
+                                         candidate_flight.get('stop1', None), 
+                                         candidate_flight.get('stop2', None), 
+                                         candidate_flight.get('stop3', None), 
+                                         candidate_flight.get('stop4', None), 
+                                         candidate_flight.get('stop5', None), 
+                                         candidate_flight.get('destination', None)] if stop is not None]
     
-    return modified_flight_path
+    # Create a combined list of stops, ensuring all stops from the bad flight are included
+    combined_path_list = []
+    seen = set()
+    
+    # Start with candidate stops, ensuring no duplication of the bad flight's stops
+    for stop in candidate_stops:
+        if stop not in seen:
+            combined_path_list.append(stop)
+            seen.add(stop)
+    
+    # Append bad flight stops while ensuring no duplicates
+    for stop in bad_stops:
+        if stop not in seen:
+            combined_path_list.append(stop)
+            seen.add(stop)
+    
+    # Convert the combined path to a string with no extra spaces
+    modified_flight_path = ' , '.join(combined_path_list)
+
+    # Create a path string specifically for printing
+    modified_flight_path_string = ', '.join(combined_path_list)
+    
+    return modified_flight_path, modified_flight_path_string
 
 def count_stops(flight_path):
     # Split the flight path into individual airport codes
@@ -503,17 +527,19 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
 
         # Merge the bad flight with the specialized candidate
         print(f"\nMerging Bad Flight {bad_flight['flight_number']} with Specialized Candidate Flight {specialized_candidate['flight_number']}.")
-        
+
         # Update flight paths using path_modified
-        modified_path = path_modified(bad_flight, specialized_candidate)
-        formatted_outputs = reassign_coordinates(modified_path, flight_data) # Ensure `reassign_coordinates` is correctly implemented
+        modified_path, modified_path_string = path_modified(bad_flight, specialized_candidate)
+        
+        # Use modified_path for reassign_coordinates
+        formatted_outputs = reassign_coordinates(modified_path, flight_data)  # Ensure `reassign_coordinates` is correctly implemented
         finalized_best_candidate_index = specialized_candidate_index
         
         # Update statistics with the new flight data
         flight_data = update_statistics(flight_data, modified_path, formatted_outputs, finalized_best_candidate_index)
         
         # Print modified flight path
-        print(f"\nModified Flight Path: {modified_path}")
+        print(f"\nModified Flight Path: {modified_path_string}")
     else:
         print(f"\nNo suitable specialized candidate found for Bad Flight {bad_flight['flight_number']}.")
 
