@@ -433,6 +433,10 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
     print(f"\nProcessing Bad Flight {bad_flight_index}:")
     print(f"Profit: ${bad_flight_profit:,.2f}")
 
+    # Print the bad flight route
+    bad_flight_route = bad_flight.get('flight_path', [])
+    print(f"Bad Flight Route: {bad_flight_route}")
+
     # If the bad flight's profit is above the threshold, stop the process
     if bad_flight_profit >= profit_threshold:
         print(f"Bad flight {bad_flight_index} has profit above the threshold. No need to process.")
@@ -453,8 +457,13 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
     # Print the specialized candidate details
     if specialized_candidate_index is not None:
         specialized_candidate = flight_data[specialized_candidate_index]
+        specialized_candidate_profit = specialized_candidate.get('net_profit', 0)
         print(f"\nSpecialized Candidate Flight: {specialized_candidate_index}")
-        print(f"Specialized Candidate Profit: ${specialized_candidate.get('net_profit', 0):,.2f}")
+        print(f"Specialized Candidate Profit: ${specialized_candidate_profit:,.2f}")
+
+        # Print the specialized candidate route
+        specialized_candidate_route = specialized_candidate.get('flight_path', [])
+        print(f"Specialized Candidate Route: {specialized_candidate_route}")
 
         # Merge the bad flight with the specialized candidate
         print(f"\nMerging Bad Flight {bad_flight_index} with Specialized Candidate Flight {specialized_candidate_index}.")
@@ -467,7 +476,7 @@ def process_bad_flight(flight_data, bad_flight_index, profit_threshold):
         flight_data = update_statistics(flight_data, modified_path, formatted_outputs, finalized_best_candidate_index)
         
         # Print flight paths using path_modified
-        print(f"\nModified Flight Route: {modified_path}")
+        print(f"\nModified Flight: {modified_path}")
     else:
         print(f"\nNo suitable specialized candidate found for Bad Flight {bad_flight_index}.")
 
