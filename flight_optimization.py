@@ -550,7 +550,7 @@ def main(scoring_method='average') -> None:
     start_time = time.time()
     
     input_file = "sorted_flights.txt"
-    output_file = "modified_flights_final.txt"
+    output_file = "modified_flights.txt"
 
     # Read input file
     with open(input_file, "r") as file:
