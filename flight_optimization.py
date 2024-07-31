@@ -21,11 +21,7 @@ This program follows the new style of formatting.
 
 import sys
 import pprint
-import time
-import random
 import numpy as np
-import scipy.integrate as integrate
-from geopy.distance import geodesic
 from math import radians, sin, cos, sqrt, atan2
 
 from flight_utils import *
