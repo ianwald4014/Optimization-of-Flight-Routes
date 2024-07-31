@@ -69,7 +69,7 @@ To generate all possible flights from a set number of airports with no optimizat
 python3 flight_generator.py
 ```
 
-Running the command in the terminal, you can view in view the output files (`generated_flights_new.txt`) in the terminal:
+Running the command in the terminal, you can view in view the output file (`generated_flights_new.txt`) in the terminal:
  ```
  cat generated_flights_new.txt
  ```
@@ -159,7 +159,6 @@ python3 flight_graphs.py
 
 To close animation, abort the task in terminal with Ctrl c.
 
-** FINSHED **
 
 
 
