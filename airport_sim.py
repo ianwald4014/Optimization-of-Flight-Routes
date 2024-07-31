@@ -5,14 +5,17 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 from matplotlib.animation import FuncAnimation
 
+from flight_utils import *
+
 class FlightSimulation: 
-    def read_flights(self, filename): # Reads flights.txt
+    def read_flights(self, filename): # Reads generated_flights_new.txt
         flight_data = []
         with open(filename, 'r') as file:
             lines = file.readlines()
 
         for line in lines:
-            if line.startswith("Flight Path:"):
+            # if line.startswith("Flight Path:"):
+            if line.startswith("flight_path:"):
                 flight_path = line.split(":")[1].strip().split(", ") # Reads the flight path from left to right 
                 flight_data.append(flight_path)
         return flight_data
@@ -95,7 +98,8 @@ def main():
     airports = sim.read_airports(airports_filename)
 
     # Choose the file you want to visualize
-    flights_filename = 'flights.txt'    
+    flights_filename = 'generated_flights_new.txt'    
+    # flights_filename = 'flights.txt'    
     # flights_filename = 'sorted_flights.txt'
     flight_data = sim.read_flights(flights_filename)
     
