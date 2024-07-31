@@ -148,7 +148,7 @@ python3 airport_sim.py sorted_flights_new.txt
 
 To close animation, abort the task in terminal with Ctrl c.
 
-**Analysis of All Programs**
+***Analysis of All Programs***
 
 After running all steps before, we can produce a bar graph that analyzes across all three output files on the variables of profitability (total net profit), total passenger miles (Traveled distance/Demand), and total passengers.
 Execute the following command:
