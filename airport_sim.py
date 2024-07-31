@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+import sys
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
@@ -93,15 +94,18 @@ class FlightSimulation:
         plt.show()
 
 def main():
+    # other examples which user could put on command line:
+    # sorted_flights_new.txt or profitable_flights.txt
+    flights_fname = 'generated_flights_new.txt'
+    if len(sys.argv) > 2:
+        raise Exception(f'*error* too many arguments - usage: {sys.argv[0]} [flight_fname]')
+    elif len(sys.argv) == 2:
+        flights_fname = sys.argv[1]
     sim = FlightSimulation()
     airports_filename = 'airports.txt'
     airports = sim.read_airports(airports_filename)
 
-    # Choose the file you want to visualize
-    flights_filename = 'generated_flights_new.txt'    
-    # flights_filename = 'flights.txt'    
-    # flights_filename = 'sorted_flights.txt'
-    flight_data = sim.read_flights(flights_filename)
+    flight_data = sim.read_flights(flights_fname)
     
     fig, ax = sim.create_map(airports)
 
