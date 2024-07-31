@@ -3,67 +3,31 @@
 import random
 from math import radians, sin, cos, sqrt, atan2
 
-# Airport data with latitude and longitude
-airports = {
-    'LAX': {'lat': 34.0522, 'lon': -118.2437},
-    'PHX': {'lat': 33.4484, 'lon': -112.074},
-    'DEN': {'lat': 39.7392, 'lon': -104.9903},
-    'DFW': {'lat': 32.8975, 'lon': -97.0404},
-    'JFK': {'lat': 40.6413, 'lon': -73.7781},
-    'MIA': {'lat': 25.7617, 'lon': -80.1918},
-    'SEA': {'lat': 47.6062, 'lon': -122.3321},
-    'ORD': {'lat': 41.9786, 'lon': -87.9048},
-    'ABQ': {'lat': 35.0844, 'lon': -106.6504},
-    'MCI': {'lat': 39.2978, 'lon': -94.7139},
-}
-
-def haversine_distance_nm(lat1, lon1, lat2, lon2): # AOI
-    """Calculate distance in nautical miles using the haversine formula."""
-    R = 3440.065  # Radius of Earth in nautical miles
-    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
-    
-    dlat = lat2 - lat1
-    dlon = lon2 - lon1
-    
-    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
-    c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    
-    distance_nm = R * c
-    return distance_nm
-
-def calculate_flight_time(lon1, lat1, lon2, lat2):
-    """Calculate flight time and operational cost."""
-    if None in [lat1, lon1, lat2, lon2]:
-        return 0, 0  # Handle invalid coordinates
-    distance_nm = haversine_distance_nm(lat1, lon1, lat2, lon2)
-    speed_knots = 485  # Average speed of a Boeing 737 MAX in knots
-    flight_time = distance_nm / speed_knots
-    operational_cost = 5757 * flight_time
-    return flight_time, operational_cost
+from flight_utils import *
 
 def simulate_layover(stops, flight_time, operational_cost):
     """Simulate layover time and calculate maintenance cost."""
     layover_time = 0
     maintenance_cost = 0
-    
     if stops > 0:
         layover_time = 1.5 * stops  # Layover time in hours
         maintenance_cost_per_hour = 150  # Maintenance cost per hour
         maintenance_cost = (layover_time * maintenance_cost_per_hour) + operational_cost
     else:
         maintenance_cost = operational_cost
-
     return layover_time, maintenance_cost
 
-# Initialize variables
-routes = []
-route_id = 1
-total_passenger_miles = 0
+def main():
+    # Initialize variables
+    routes = []
+    route_id = 1
+    total_passenger_miles = 0
 
-# Generate all possible routes
-for origin_code, origin_data in airports.items():
-    for dest_code, dest_data in airports.items():
-        if origin_code != dest_code:  # Ensure origin and destination are different
+    # Generate all possible routes
+    for origin_code, origin_data in airports.items():
+        for dest_code, dest_data in airports.items():
+            if origin_code == dest_code:  # Ensure origin and destination are different
+                continue
 
             # Initialize distance and time
             total_distance_nm = 0
@@ -178,36 +142,44 @@ for origin_code, origin_data in airports.items():
             # Append route data to routes list
             routes.append(route_data)
             route_id += 1
-            
-# Write data to a text file
-with open('flights.txt', 'w') as file:
-    for route in routes:
-        file.write(f"Flight: {route['Route']}\n")
-        file.write(f"Flight Path: {route['Origin']}, {route['Stop1']}, {route['Stop2']}, {route['Destination']}\n")
-        file.write(f"Origin: {route['Origin']}\n")
-        file.write(f"Origin Coordinates: {route['Origin_Latitude']}, {route['Origin_Longitude']}\n")
-        file.write(f"Destination: {route['Destination']}\n")
-        file.write(f"Destination Coordinates: {route['Destination_Latitude']}, {route['Destination_Longitude']}\n")
-        file.write(f"Stops: {route['Stops']}\n")
-        if route['Stop1'] != 'None':
-            file.write(f"Stop1: {route['Stop1']}\n")
-            file.write(f"Stop1 Coordinates: {route['Stop1_Latitude']},{route['Stop1_Longitude']}\n")
-        else:
-            file.write(f"Stop1: {route['Stop1']}\n")
-        if route['Stop2'] != 'None':
-            file.write(f"Stop2: {route['Stop2']}\n")
-            file.write(f"Stop2 Coordinates: {route['Stop2_Latitude']},{route['Stop2_Longitude']}\n")
-        else:
-            file.write(f"Stop2: {route['Stop2']}\n")
-        file.write(f"Passengers: {route['Passengers']}\n")
-        file.write(f"Distance (Nautical Miles): {route['Distance_Nautical_Miles']:.2f}\n")
-        file.write(f"Flight Time (Hours): {route['Flight_Time']:.2f}\n")
-        file.write(f"Operating Cost: ${route['Operating_Cost']:.2f}\n")
-        file.write(f"Layover Time (Hours): {route['Layover_Time']:.2f}\n")
-        file.write(f"Maintenance Cost: ${route['Maintenance_Cost']:.2f}\n")
-        file.write(f"Income of Flight: ${route['Flight_Income']:.2f}\n")
-        file.write(f"Net Profit of the Flight: ${route['Net_Profit']:.2f}\n")
-        file.write(f"Total Passenger Miles: {route['Passenger_Miles']:.2f} passenger miles.\n")
-        file.write("\n")
 
-print("All possible flight routes data generated and saved to flights.txt")
+    # write new format alongside old one
+    fname = 'generated_flights_new.txt'
+    write_flights_oldstyle2newstyle(fname, routes)
+            
+    # Write data to a text file
+    with open('flights.txt', 'w') as fp:
+        for route in routes:
+            # append_route(fp, route)
+            fp.write(f"Flight: {route['Route']}\n")
+            fp.write(f"Flight Path: {route['Origin']}, {route['Stop1']}, {route['Stop2']}, {route['Destination']}\n")
+            fp.write(f"Origin: {route['Origin']}\n")
+            fp.write(f"Origin Coordinates: {route['Origin_Latitude']}, {route['Origin_Longitude']}\n")
+            fp.write(f"Destination: {route['Destination']}\n")
+            fp.write(f"Destination Coordinates: {route['Destination_Latitude']}, {route['Destination_Longitude']}\n")
+            fp.write(f"Stops: {route['Stops']}\n")
+            if route['Stop1'] != 'None':
+                fp.write(f"Stop1: {route['Stop1']}\n")
+                fp.write(f"Stop1 Coordinates: {route['Stop1_Latitude']},{route['Stop1_Longitude']}\n")
+            else:
+                fp.write(f"Stop1: {route['Stop1']}\n")
+            if route['Stop2'] != 'None':
+                fp.write(f"Stop2: {route['Stop2']}\n")
+                fp.write(f"Stop2 Coordinates: {route['Stop2_Latitude']},{route['Stop2_Longitude']}\n")
+            else:
+                fp.write(f"Stop2: {route['Stop2']}\n")
+            fp.write(f"Passengers: {route['Passengers']}\n")
+            fp.write(f"Distance (Nautical Miles): {route['Distance_Nautical_Miles']:.2f}\n")
+            fp.write(f"Flight Time (Hours): {route['Flight_Time']:.2f}\n")
+            fp.write(f"Operating Cost: ${route['Operating_Cost']:.2f}\n")
+            fp.write(f"Layover Time (Hours): {route['Layover_Time']:.2f}\n")
+            fp.write(f"Maintenance Cost: ${route['Maintenance_Cost']:.2f}\n")
+            fp.write(f"Income of Flight: ${route['Flight_Income']:.2f}\n")
+            fp.write(f"Net Profit of the Flight: ${route['Net_Profit']:.2f}\n")
+            fp.write(f"Total Passenger Miles: {route['Passenger_Miles']:.2f} passenger miles.\n")
+            fp.write("\n")
+    print("All possible flight routes data generated and saved to flights.txt")
+
+
+if __name__ == '__main__':
+    main()

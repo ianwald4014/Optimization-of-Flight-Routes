@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
 
+"""Loads a list of flights, calculates the flight path for each, and
+writes out a file sorted by total miles flown.  The shortest of those
+paths is written out first.
+"""
+
+import sys
+import pprint
 import re
 from geopy.distance import geodesic
 from math import radians, sin, cos, sqrt, atan2
+
+from flight_utils import *
 
 def parse_flight_data(lines):
     flight_data = {}
@@ -283,6 +292,9 @@ def reorder_stops(flight_data):
     return flight_data
 
 def write_sorted_flights(flight_data):
+    pprint.pprint(flight_data)
+    return                      # FIXME:
+
     file_name = 'sorted_flights.txt'  # Change this to 'modified_flights_final.txt' if needed
     with open(file_name, 'w') as file:
         file.write("Revising of Flight Routes\n\n")
@@ -324,17 +336,43 @@ def write_sorted_flights(flight_data):
 
 def main():
     file_name = 'flights.txt'   # Change this to 'modified_flights_final.txt' if needed
-    with open(file_name, 'r') as file:
+    file_name_newstyle = 'generated_flights_new.txt'
+    if len(sys.argv) > 2:
+        raise Exception('Too many arguments')
+    elif len(sys.argv) == 2:
+        file_name_newstyle = sys.argv[1]
+
+    # oldstyle approach
+    with open('flights.txt', 'r') as file:
         lines = file.readlines()
 
     flight_data = parse_flight_data(lines)
     reorder_stops(flight_data)
     write_sorted_flights(flight_data)
 
-    if file_name == 'flights.txt':
-        print("All flight paths have been sorted successfully within sorted_flights.txt")
-    else:
-        print("All flight paths have been sorted successfully within modified_flights_final.txt")
+    # then do the newstyle approach
+    all_flights_new = load_flights_newstyle(file_name_newstyle)
+    print('============ what I just loaded ================')
+    pprint.pprint(all_flights_new)
+    print('================== (DONE) ======================')
+    ordered_flights = reorder_stops_new(all_flights_new)
+    write_flights_newstyle('sorted_flights_new.txt', ordered_flights)
+
+def reorder_stops_new(all_flights):
+    """Takes a list of all the flight routes and reorders *each* flight
+    path by its total distance traveled."""
+    reordered_flight_list = []
+    for record in all_flights:
+        orig_city_order = flight_path2city_list(record['flight_path'])
+        orig_distance = calc_distance_new(orig_city_order)
+        new_city_order = rearrange_cities_for_shortest_path(orig_city_order)
+        new_distance = calc_distance_new(new_city_order)
+        print('REORDER:', record['flight_number'], orig_distance, new_city_order, new_distance)
+        new_record = record
+        new_record['flight_path'] = ', '.join(new_city_order)
+        reordered_flight_list.append(new_record)
+    return reordered_flight_list
+
         
 if __name__ == "__main__":
     main()
