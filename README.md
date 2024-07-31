@@ -62,7 +62,7 @@ pip install cartopy matplotlib
 
 ## Instructions
 
-**Create Series of Flights**
+***Create Series of Flights***
 
 To generate all possible flights from a set number of airports with no optimization, run the following: 
 ```
@@ -80,7 +80,7 @@ Running the command in the terminal, you can view in view the output file (`gene
 or
  View in preferred editor.
 
-**Optimization of the Flight Routes: Sequencing of Stops:**
+***Optimization of the Flight Routes: Sequencing of Stops***
 
 With the generation of flights, the program will then optimize the flight paths and change them to reduce distance by rearranging the orders of airports in the flight path.
 
@@ -99,7 +99,7 @@ Running the command in the terminal, you can view in view the output files (`sor
  less sorted_flights_new.txt
  ```
 
-**Continuation of Optimization of the Flight Routes: Identify and Replace Bad Profitable Flights**
+***Continuation of Optimization of the Flight Routes: Identify and Replace Bad Profitable Flights***
 
 After the sorting of flight paths, this program will seek to identify all bad flights that are below a profit threshold. This program will then remove and find replacements of flights based on proximity.
 
@@ -160,5 +160,6 @@ python3 flight_graphs.py
 To close animation, abort the task in terminal with Ctrl c.
 
 
+***END***
 
 
