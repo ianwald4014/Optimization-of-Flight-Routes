@@ -2,9 +2,9 @@
 
 ## Overview
 
-Simulating imaginary flight routes and metrics and visualizes these
-routes on a map of the continental United States. Furthermore, optimizing flight
-routes by reducing distance, maximizing profitability, and to search and replacing "bad proftiable" routes.
+Simulating flight routes and metrics and visualizes these
+routes on a map of the continental United States; seeking to optimizing flight
+routes by reducing distance, maximizing profitability, and to search and replacing "bad" routes.
 
 The procedure might be seen as this flowchart:
 
