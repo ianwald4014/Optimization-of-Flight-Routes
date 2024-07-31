@@ -69,7 +69,7 @@ To generate all possible flights from a set number of airports with no optimizat
 python3 flight_generator.py
 ```
 
-Running the command in the terminal, you can view in view the output file (`generated_flights_new.txt`) in the terminal:
+Running the command in the terminal, you can view in view the output file (`generated_flights_new.txt`) with an editor or the command line with:
  ```
  cat generated_flights_new.txt
  ```
@@ -79,6 +79,7 @@ Running the command in the terminal, you can view in view the output file (`gene
  ```
 or
  View in preferred editor.
+
 
 ***Optimization of the Flight Routes: Sequencing of Stops***
 
@@ -98,6 +99,7 @@ Running the command in the terminal, you can view in view the output files (`sor
  ```
  less sorted_flights_new.txt
  ```
+
 
 ***Continuation of Optimization of the Flight Routes: Identify and Replace Bad Profitable Flights***
 
@@ -129,6 +131,7 @@ or
 less profitable_flights.txt
 ```
 
+
 ***Run Visualization of Programs***
 
 With the usage of `airport_sim.py`, these output files from all three previous programs (`profitable_flights.txt`, `generated_flights_new.txt`, `sorted_flights_new.txt`) can be visualized in an animation.
@@ -147,6 +150,7 @@ python3 airport_sim.py sorted_flights_new.txt
 ```
 
 To close animation, abort the task in terminal with Ctrl c.
+
 
 ***Analysis of All Programs***
 
