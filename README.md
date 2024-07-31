@@ -2,13 +2,10 @@
 
 ## Overview
 
-This project simulates imaginary flight routes and visualizes these
+Simulating imaginary flight routes and visualizes these
 routes on a map of the continental United States. The simulation
-generates various flight paths, including routes with one or two
-stops, and calculates metrics such as flight time, operational cost,
-maintenance cost, and net profit. The goal is to optimize flight
-routes by identifying and replacing "bad" routes and adjusting others
-as needed.
+generates various flight routes and calculates various metrics. The goal is to optimize flight
+routes by reducing distance, maximizing profitability, and to search and replacing "bad proftiable" routes.
 
 The procedure might be seen as this flowchart:
 
