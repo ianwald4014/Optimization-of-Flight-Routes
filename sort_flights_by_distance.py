@@ -335,7 +335,7 @@ def write_sorted_flights(flight_data):
             file.write("\n")
 
 def main():
-    file_name = 'flights.txt'   # Change this to 'modified_flights_final.txt' if needed
+    file_name = 'flights.txt'  
     file_name_newstyle = 'generated_flights_new.txt'
     if len(sys.argv) > 2:
         raise Exception('Too many arguments')
@@ -356,7 +356,10 @@ def main():
     pprint.pprint(all_flights_new)
     print('================== (DONE) ======================')
     ordered_flights = reorder_stops_new(all_flights_new)
-    write_flights_newstyle('sorted_flights_new.txt', ordered_flights)
+    if file_name_newstyle == 'profitable_flights.txt':
+        write_flights_newstyle('sorted_profitable_flights.txt', ordered_flights)
+    else:
+        write_flights_newstyle('sorted_flights_new.txt', ordered_flights)
 
 def reorder_stops_new(all_flights):
     """Takes a list of all the flight routes and reorders *each* flight
