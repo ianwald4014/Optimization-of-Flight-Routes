@@ -62,7 +62,7 @@ pip install cartopy matplotlib
 
 ## Instructions
 
-**Create Series Of Flights**
+**Create Series of Flights**
 
 To generate all possible flights from a set number of airports with no optimization, run the following: 
 ```
