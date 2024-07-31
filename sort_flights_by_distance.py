@@ -8,7 +8,6 @@ paths is written out first.
 import sys
 import pprint
 import re
-from geopy.distance import geodesic
 from math import radians, sin, cos, sqrt, atan2
 
 from flight_utils import *
