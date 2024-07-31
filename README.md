@@ -90,7 +90,8 @@ Once the flights have been generated in `generated_flights_new.txt` run:
 python3 sort_flights_by_distance.py 
 ```
 
-Running the command in the terminal, you can view in view the output files (`sorted_flights_new.txt`) in the terminal:
+Running the command in the terminal, you can view in view the output files (`sorted_flights_new.txt`) with an editor  or the terminal with:
+
  ```
  cat sorted_flights_new.txt
  ```
@@ -98,19 +99,19 @@ Running the command in the terminal, you can view in view the output files (`sor
  ```
  less sorted_flights_new.txt
  ```
-or
-View in preferred editor.
-
 
 **Continuation of Optimization of the Flight Routes: Identify and Replace Bad Profitable Flights**
 
 After the sorting of flight paths, this program will seek to identify all bad flights that are below a profit threshold. This program will then remove and find replacements of flights based on proximity.
 
 With the verifiation of input files have information (`sorted_flights_new.txt` [Default] or `generated_flights_new.txt`), run the following command:
+
 ```
 python3 flight_optimization.py 
 ```
+
 Program is capable of generating output with different input .txt files. These instances can be seen with,
+
 ```
 python3 flight_optimization.py sorted_flights_new.txt
 ```
@@ -120,18 +121,20 @@ python3 flight_optimization.py generated_flights_new.txt
 ```
 
 You can view output of the information (`profitable_flights.txt`) via an editor or executing in the terminal,
+
 ```
 cat profitable_flights.txt
 ```
 or
 ```
-less profitable_flightsl.txt
-```current
+less profitable_flights.txt
+```
 
 ***Run Visualization of Programs***
 
 With the usage of `airport_sim.py`, these output files from all three previous programs (`profitable_flights.txt`, `generated_flights_new.txt`, `sorted_flights_new.txt`) can be visualized in an animation.
 Run the possible commands for desired output:
+
 ```
 python3 airport_sim.py profitable_flights.txt
 ```
@@ -150,6 +153,7 @@ To close animation, abort the task in terminal with Ctrl c.
 
 After running all steps before, we can produce a bar graph that analyzes across all three output files on the variables of profitability (total net profit), total passenger miles (Traveled distance/Demand), and total passengers.
 Execute the following command:
+
 ```
 python3 flight_graphs.py
 ```
