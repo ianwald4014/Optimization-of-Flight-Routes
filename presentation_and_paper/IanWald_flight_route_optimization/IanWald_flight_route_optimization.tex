@@ -51,7 +51,7 @@ Recent technological advancements have paved the way for innovative simulation m
 To simulate various hypothetical flight routes across the continental United States, a Python program was developed to generate all possible flights from a predefined set of airports. This initial step involved creating a dataset of potential routes, including direct flights and those with one or two layovers. The program calculated essential metrics for each route, such as total distance, flight time, operational and maintenance costs, layover time, number of passengers, and net profit. The Haversine formula was employed to determine distances between geographic coordinates, while a simulation model accounted for layover impacts. The generated flight data were compiled into a comprehensive dataset, stored in a text file (\texttt{generated\_flights\_new.txt}), for subsequent analysis and optimization. 
 
 \subsection*{Optimization of Flight Routes: Sequencing of Stops}
-\begin{figure}[h!] % 'h!' for placing figure here
+\begin{figure}[h!] 
 \centering
 \includegraphics[width=\textwidth]{images/sorting_alg.png}
 \caption{Route Optimization Comparison: The chart contrasts the original (ORIG) and optimized (OPTIMAL) routes, including reordering sequence, previous distance, airport order, and new distance.}
@@ -111,7 +111,6 @@ To visualize the outputs and understand how the flight routes would look in the 
     \centering
     \includegraphics[width=\textwidth]{images/Figure_1.png}
     \caption {Bar graph displaying the totals for passenger miles, net profit, and passengers across all three optimization layers}
-    \label{fig:bottom}
 \end{minipage}
 
 \end{figure}
@@ -140,7 +139,7 @@ Several potential errors could affect the accuracy and effectiveness of the flig
 
 The flight optimization methodology proved effective in enhancing route efficiency by minimizing travel distances and recalculating performance metrics, which likely led to increased profitability. By systematically identifying and eliminating unprofitable flights and finding geographically and economically viable replacements, the approach minimized disruption while optimizing profitability. The accommodation of passengers from eliminated flights, though capped, demonstrated a practical method for managing passenger rerouting. Visualization tools and detailed data analysis provided clear insights into the improvements achieved, confirming the effectiveness of the optimization process. Future efforts should focus on refining distance calculations, improving data accuracy, exploring more sophisticated optimization algorithms, and incorporating real-world constraints for a more comprehensive and practical approach.
 
-\section*{Acknowledgements}
+\section{Acknowledgements}
 
 I would like to express my gratitude to my mentor, Ed Fenimore for his invaluable support, assistance, and insight as he was instrumental in navigating the complexities of this project. Additionally, I extend my thanks to the Institute for Computing in Research for their resources and support. Special thanks are also due to Rhonda Crespo and Mark Galassi for their encouragement and contributions.
 
