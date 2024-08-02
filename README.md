@@ -75,7 +75,7 @@ To generate all possible flights from a set number of airports with no optimizat
 python3 flight_generator.py
 ```
 
-Running the command in the terminal, you can view in view the output file (`generated_flights_new.txt`) with an editor or the command line with:
+You can view in view the output file (`generated_flights_new.txt`) with an editor or the command line with:
  ```
  cat generated_flights_new.txt
  ```
@@ -96,7 +96,7 @@ Once the flights have been generated in `generated_flights_new.txt` run:
 python3 sort_flights_by_distance.py 
 ```
 
-Running the command in the terminal, you can view in view the output files (`sorted_flights_new.txt`) with an editor  or the terminal with:
+The output files (`sorted_flights_new.txt`) can be view with an editor or the terminal with:
 
  ```
  cat sorted_flights_new.txt
