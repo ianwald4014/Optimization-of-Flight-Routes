@@ -31,7 +31,7 @@ Before running the scripts, make sure you have the following Python modules inst
 - **cartopy**: Used for map visualization.
 - **matplotlib**: Required for plotting.
 
-Pior to instlalation of any modules, ensure pip is installed, if not, run:
+Pior to installation of any modules, ensure pip is installed, if not, run:
 ```
 sudo apt-get install python3-pip
 ```
