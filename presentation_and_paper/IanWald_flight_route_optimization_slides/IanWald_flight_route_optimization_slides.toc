@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Context}{2}{0}{1}
+\beamer@sectionintoc {2}{Research Question}{3}{0}{2}
+\beamer@sectionintoc {3}{Strategy}{5}{0}{3}
+\beamer@sectionintoc {4}{Flight Generator}{6}{0}{4}
+\beamer@sectionintoc {5}{Haversine Formula}{7}{0}{5}
+\beamer@sectionintoc {6}{Sorting Flight Path}{8}{0}{6}
+\beamer@sectionintoc {7}{Flight Unsorted}{9}{0}{7}
+\beamer@sectionintoc {8}{Flight Sorted}{10}{0}{8}
+\beamer@sectionintoc {9}{Remove and Replace Bad Flights}{11}{0}{9}
+\beamer@sectionintoc {10}{Results and Analysis}{12}{0}{10}
+\beamer@sectionintoc {11}{Future Work}{13}{0}{11}

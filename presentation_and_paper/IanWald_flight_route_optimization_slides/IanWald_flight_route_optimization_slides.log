@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.26)  1 AUG 2024 10:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.26)  1 AUG 2024 20:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**sample.tex
-(./sample.tex
+**IanWald_flight_route_optimization_slides.tex
+(./IanWald_flight_route_optimization_slides.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -791,27 +791,28 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count344
 \l__pdf_internal_box=\box80
 )
-No file sample.aux.
-\openout1 = `sample.aux'.
+(./IanWald_flight_route_optimization_slides.aux)
+\openout1 = `IanWald_flight_route_optimization_slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -868,7 +869,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 37.
+Package hyperref Info: Link coloring OFF on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -881,54 +882,57 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count351
 )
-LaTeX Info: Redefining \ref on input line 37.
-LaTeX Info: Redefining \pageref on input line 37.
-LaTeX Info: Redefining \nameref on input line 37.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
+
+(./IanWald_flight_route_optimization_slides.out)
+(./IanWald_flight_route_optimization_slides.out)
 \@outlinefile=\write5
-\openout5 = `sample.out'.
+\openout5 = `IanWald_flight_route_optimization_slides.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 37.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 39.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 39.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 37.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 37.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 39.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 37.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 37.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 39.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 37.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 37.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 39.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 37.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 37.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 39.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 37.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 39.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 37.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 37.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 37.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 37.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 37.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 37.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -956,70 +960,25 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+ (./IanWald_flight_route_optimization_slides.nav) [1
 
-No file sample.nav.
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-./sample.tex:79: Package PGF Math Error: Unknown operator `t' or `t@' (in '-0.t
-').
-
-See the PGF Math package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.79 \end{frame}
-                
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-
-./sample.tex:79: Package PGF Math Error: Unknown operator `t' or `t@' (in '-0.t
-').
-
-See the PGF Math package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.79 \end{frame}
-                
-(That was another \errmessage.)
-
-[2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] [3
 
 ]
-<images/MaximumParaboloid.png, id=48, 569.12625pt x 426.84468pt>
+<images/MaximumParaboloid.png, id=90, 569.12625pt x 426.84468pt>
 File: images/MaximumParaboloid.png Graphic file (type png)
 <use images/MaximumParaboloid.png>
-Package pdftex.def Info: images/MaximumParaboloid.png  used on input line 134.
+Package pdftex.def Info: images/MaximumParaboloid.png  used on input line 117.
 (pdftex.def)             Requested size: 195.00348pt x 146.25204pt.
-
-
-./sample.tex:134: Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.134     \end{frame}
-                     
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 134
+LaTeX Font Info:    Trying to load font information for U+msa on input line 117
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 134
+LaTeX Font Info:    Trying to load font information for U+msb on input line 117
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1027,127 +986,133 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [4
 
  <./images/MaximumParaboloid.png (PNG copy)>]
-Underfull \hbox (badness 7814) in paragraph at lines 180--180
-\OT1/cmss/bx/n/10.95 Stored in: 
- []
-
-
-Underfull \hbox (badness 4765) in paragraph at lines 180--180
-\OT1/cmss/bx/n/10.95 Stored in: 
- []
-
-
-Underfull \hbox (badness 4765) in paragraph at lines 180--180
-\OT1/cmss/bx/n/10.95 Stored in: 
- []
-
-
-Overfull \hbox (2.31851pt too wide) in paragraph at lines 180--180
+Overfull \hbox (3.32532pt too wide) in paragraph at lines 142--142
 [][]  
  []
 
 [5
 
 ]
+<images/flight_output.png, id=103, 310.15875pt x 594.22pt>
+File: images/flight_output.png Graphic file (type png)
+<use images/flight_output.png>
+Package pdftex.def Info: images/flight_output.png  used on input line 170.
+(pdftex.def)             Requested size: 195.00348pt x 373.59895pt.
 
-LaTeX Warning: File `images/Screenshot from 2024-07-31 16-20-31.png' not found 
-on input line 194.
-
-
-./sample.tex:194: Package pdftex.def Error: File `images/Screenshot from 2024-0
-7-31 16-20-31.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.194 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./sample.tex:194: Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.194 \end{frame}
-                 
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \vbox (164.05576pt too high) detected at line 170
+ []
 
 [6
 
-] [7
+ <./images/flight_output.png>]
+<images/Illustration_of_great-circle_distance.svg.png, id=110, 803.0pt x 803.0p
+t>
+File: images/Illustration_of_great-circle_distance.svg.png Graphic file (type p
+ng)
+<use images/Illustration_of_great-circle_distance.svg.png>
+Package pdftex.def Info: images/Illustration_of_great-circle_distance.svg.png  
+used on input line 198.
+(pdftex.def)             Requested size: 195.00348pt x 195.00294pt.
 
-] [8
+Overfull \vbox (3.45975pt too high) detected at line 198
+ []
+
+[7
+
+ <./images/Illustration_of_great-circle_distance.svg.png>]
+<images/sorting_output.png, id=122, 616.3025pt x 156.585pt>
+File: images/sorting_output.png Graphic file (type png)
+<use images/sorting_output.png>
+Package pdftex.def Info: images/sorting_output.png  used on input line 233.
+(pdftex.def)             Requested size: 390.01237pt x 97.63123pt.
+ [8
+
+ <./images/sorting_output.png>]
+<images/flights_unsort.png, id=128, 1538.74875pt x 759.83875pt>
+File: images/flights_unsort.png Graphic file (type png)
+<use images/flights_unsort.png>
+Package pdftex.def Info: images/flights_unsort.png  used on input line 241.
+(pdftex.def)             Requested size: 433.34402pt x 213.98238pt.
+
+Overfull \vbox (4.43918pt too high) detected at line 241
+ []
+
+[9
+
+ <./images/flights_unsort.png>]
+<images/flight_sort.png, id=134, 1571.8725pt x 770.88pt>
+File: images/flight_sort.png Graphic file (type png)
+<use images/flight_sort.png>
+Package pdftex.def Info: images/flight_sort.png  used on input line 249.
+(pdftex.def)             Requested size: 433.34402pt x 212.5161pt.
+
+Overfull \vbox (2.9729pt too high) detected at line 249
+ []
+
+[10
+
+ <./images/flight_sort.png>]
+<images/replace_candidate.png, id=140, 615.29875pt x 71.26625pt>
+File: images/replace_candidate.png Graphic file (type png)
+<use images/replace_candidate.png>
+Package pdftex.def Info: images/replace_candidate.png  used on input line 285.
+(pdftex.def)             Requested size: 390.0156pt x 54.91757pt.
+ [11
+
+ <./images/replace_candidate.png>]
+<images/Figure_1.png, id=146, 1443.3925pt x 875.27pt>
+File: images/Figure_1.png Graphic file (type png)
+<use images/Figure_1.png>
+Package pdftex.def Info: images/Figure_1.png  used on input line 295.
+(pdftex.def)             Requested size: 362.23477pt x 219.65836pt.
+
+Overfull \vbox (18.11516pt too high) detected at line 295
+ []
+
+[12
+
+ <./images/Figure_1.png>] [13
 
 ]
-\openout4 = `sample.vrb'.
-
- (./sample.vrb
-
-LaTeX Warning: Citation `p1' on page 9 undefined on input line 4.
-
-) [9
-
-] [10
-
-] [11
-
- </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write6
-\openout6 = `sample.nav'.
+\openout6 = `IanWald_flight_route_optimization_slides.nav'.
 
 \tf@toc=\write7
-\openout7 = `sample.toc'.
+\openout7 = `IanWald_flight_route_optimization_slides.toc'.
 
 \tf@snm=\write8
-\openout8 = `sample.snm'.
-
- (./sample.aux)
-
-LaTeX Warning: There were undefined references.
+\openout8 = `IanWald_flight_route_optimization_slides.snm'.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `sample.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `sample.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  F6DE8C6CDB2F083695FA866563C49141;1091.
+(./IanWald_flight_route_optimization_slides.aux)
+Package rerunfilecheck Info: File `IanWald_flight_route_optimization_slides.out
+' has not changed.
+(rerunfilecheck)             Checksum: 215781EF299A6F2B9CD02A93EF3B047E;1384.
  ) 
 Here is how much of TeX's memory you used:
- 26295 strings out of 480247
- 531797 string characters out of 5896151
- 760679 words of memory out of 5000000
- 43668 multiletter control sequences out of 15000+600000
- 482171 words of font info for 75 fonts, out of 8000000 for 9000
+ 26371 strings out of 480247
+ 531939 string characters out of 5896151
+ 758004 words of memory out of 5000000
+ 43741 multiletter control sequences out of 15000+600000
+ 483113 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,11n,104p,403b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt10.pfb>
-Output written on sample.pdf (11 pages, 331325 bytes).
+ 99i,11n,104p,437b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmtt9.pfb>
+Output written on IanWald_flight_route_optimization_slides.pdf (13 pages, 70953
+4 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 207 words of extra memory for PDF output out of 10000 (max. 10000000)
 
