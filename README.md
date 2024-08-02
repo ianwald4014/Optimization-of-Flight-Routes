@@ -37,7 +37,7 @@ sudo apt-get install python3-pip
 ```
 
 
-You can install these modules using pip:
+You can then install these modules using pip:
 
 ```
 pip install cartopy matplotlib
