@@ -117,7 +117,7 @@ With the verifiation of input files have information (`sorted_flights_new.txt` [
 python3 flight_optimization.py 
 ```
 
-Program is capable of generating output with different input .txt files. These instances can be seen with,
+Program is capable of generating output with different input .txt files. These instances can be seen with:
 
 ```
 python3 flight_optimization.py sorted_flights_new.txt
@@ -127,7 +127,7 @@ and
 python3 flight_optimization.py generated_flights_new.txt
 ```
 
-You can view output of the information (`profitable_flights.txt`) via an editor or executing in the terminal,
+You can view output of the information (`profitable_flights.txt`) via an editor or executing in the terminal with,
 
 ```
 cat profitable_flights.txt
